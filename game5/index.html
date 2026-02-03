@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="public/style/inpublic.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21M3 6H21M3 18H21" stroke="var(--logo-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+           <p>play.wygsgame.top</p>
+            <button class="search-btn" id="searchToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="var(--logo-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+        <div class="search-input">
+            <span class="search-back" id="searchBack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="var(--logo-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Search for games">
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="categories-menu" id="categoriesMenu">
+        <div class="categories-header">
+            <span class="categories-title">Menu</span>
+            <span class="close-categories" id="closeCategories">✕</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+    <div class="ads">
+        <div id="div-gpt-ad-home1"></div>
+      </div>
+
+        <div class="category-section">
+            <div class="section-header">
+                <h2 class="section-title base1" data-category="recommended">Recommend</h2>
+            </div>
+            <div class="homepage-game-grid" id="recommendedGamesGrid">
+                
+            </div>
+        </div>
+
+        <div class="ads">
+            <div id="div-gpt-ad-home2"></div>
+          </div>
+       
+
+        <div class="category-section"></div>
+        <div class="ads">
+            <div id="div-gpt-ad-home3"></div>
+          </div>
+         
+        <div class="category-section"></div>
+        <div class="ads">
+            <div id="div-gpt-ad-home4"></div>
+          </div>
+        <div class="category-section"></div>
+        <div class="ads">
+            <div id="div-gpt-ad-home5"></div>
+          </div>
+
+          <div class="category-section"></div>
+          <div class="category-section"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="pages/about.html" class="footer-link">About us</a>
+            <a href="pages/privacy.html" class="footer-link">Privacy Policy</a>
+          </div>
+          <div class="footer-copyright">Copyright © 2025-2026 play.wygsgame.top All rights Reserved.</div>
+        </div>
+      </footer>
+
+    <script type="module" src="./public/js/index.js"></script>
+    <script type="module" src="./public/js/inpublic.js"></script>
+    <script type="module">
+        import { ad_code_identifier } from "./ads.js";
+     
+       
+        if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./homegg.js";
+          document.body.appendChild(script);
+        } else {
+       
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./homegg_ads.js";
+          document.body.appendChild(script);
+        }
+      </script>
+</body>
+</html>
