@@ -1,7 +1,7 @@
 
 :root {
-    --color1: #e63946;
-    --color2: #39e6d9;
+    --color1: #ba55d3;
+    --color2: #6ed355;
     --primary-gradient1: linear-gradient(
         180deg,
         color-mix(in srgb, var(--color1) 85%, #ffffff 15%) 0%,
@@ -14,7 +14,7 @@
     );
     --text-primary: #2c2c2c;
     --text-muted: #999;
-    --logo-color: #ffffff;
+    --logo-color: #2c2c2c;
 }
 
 * {
