@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="stylesheet" href="./public/style/inpublic.css">
+</head>
+<body class="detail-page">
+    
+    <header class="header">
+        <a href="index.html" class="header-icon back-button">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <div class="header-center">
+            <span class="center-logo">heddles.fun</span>
+        </div>
+        <a href="#" class="header-icon" id="menuToggle">
+            <img src="public/images/category.svg" alt="category" class="category-icon-img">
+        </a>
+    </header>
+    
+    <main class="main-content">
+        <div class="ads">
+            <div id="div-gpt-ad-detail1"></div>
+        </div>
+        <div class="game-detail-container">
+            <img src="" alt="" class="game-image-large" id="gameIcon">
+            <h3 class="purchase-title" id="purchaseTitle">Game Title</h3>
+            <a href="#" class="buy-now-btn" id="playButton">
+                <img src="public/images/play.svg" alt="Play" class="play-button-image">
+                <span class="play-text">Play</span>
+            </a>
+            <div class="game-intro" id="gameIntro">
+                <p class="game-intro-text">Loading...</p>
+            </div>
+        </div>
+        
+        <section class="recommended-section">
+            <h2 class="section-title">
+                <img src="public/images/hot2.png" alt="Hot" class="section-icon">
+                Popular Games
+            </h2>
+            <div id="recommendedGames" class="card-grid">
+                
+            </div>
+        </section>
+    </main>
+    
+    
+    <a href="index.html" class="home-float-button" title="back to home">
+        <img src="public/images/home.svg" alt="Home" class="home-float-button-image">
+    </a>
+
+    <script type="module" src="./public/js/inpublic.js"></script>
+    <script type="module" src="./public/js/detail.js"></script>
+    <script type="module">
+        import { ad_code_identifier } from "./ads.js";
+        if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./detailgg.js";
+          document.body.appendChild(script);
+        } else {
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./detailgg_ads.js";
+          document.body.appendChild(script);
+        }
+      </script>
+</body>
+</html>
+

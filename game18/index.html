@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/style/inpublic.css">
+</head>
+<body>
+    
+    <header class="header">
+        <button class="header-icon" id="searchIconBtn" type="button">
+            <img src="public/images/search.svg" alt="search" class="search-icon-img">
+        </button>
+        <a href="index.html" class="logo">
+            <p>apricitys.com</p>
+        </a>
+        <a href="#" class="header-icon" id="menuToggle">
+            <img src="public/images/category.svg" alt="category" class="category-icon-img">
+        </a>
+    </header>
+ 
+    
+    <main class="main-content home-main">
+
+        <div class="search-section" id="searchOverlay">
+            <div class="search-bar">
+                <img src="public/images/search.svg" alt="search" class="search-icon-left">
+                <input type="text" id="searchInput" placeholder="Search...">
+            </div>
+        </div>
+
+           <div class="ads">
+        <div id="div-gpt-ad-home1" style="margin-top: 50px;"></div>
+    </div> 
+      <section class="category-section"></section>
+        <div class="ads">
+            <div id="div-gpt-ad-home2"></div>
+        </div>
+        <section class="category-section"></section>
+        <div class="ads">
+            <div id="div-gpt-ad-home3"></div>
+        </div>
+        <section class="category-section"></section>
+        <div class="ads">
+            <div id="div-gpt-ad-home4"></div>
+        </div> 
+        <section class="category-section"></section>
+        <div class="ads">
+            <div id="div-gpt-ad-home5"></div>
+        </div>
+        <section class="category-section"></section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="pages/privacy.html">Privacy</a>
+            <span class="footer-separator">|</span>
+            <a href="pages/terms.html">Terms of use</a>
+            <span class="footer-separator">|</span>
+            <a href="pages/credits.html">Credits</a>
+        </div>
+        <div class="footer-brand">apricitys.com</div>
+        <div class="footer-notice">
+            <p>Discover exciting HTML5 games, play free online games, and explore endless entertainment. Stay updated with the latest game releases and gaming trends.</p>
+        </div>
+    </footer>
+
+    
+<script type="module" src="./public/js/inpublic.js"></script>
+<script type="module" src="./public/js/index.js"></script>
+<script type="module">
+      import { ad_code_identifier } from "./ads.js";
+    
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./homegg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./homegg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
+</body>
+</html>
