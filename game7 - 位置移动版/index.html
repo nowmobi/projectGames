@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./public/style/inpublic.css">
+
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <P>read.panoramafind.fun</P>
+            </a>
+            <div class="header-icons">
+                <a href="#" class="header-icon" id="menuToggle">☰</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="categories-menu" id="categoriesMenu">
+        <div class="categories-header">
+            <span class="categories-title">Menu</span>
+            <span class="close-categories" id="closeCategories">✕</span>
+        </div>
+        <div class="category-item active" data-category="home">
+            <span class="category-name">Home</span>
+        </div>
+    </div>
+
+   
+<main class="main-content">
+    <div class="ads">
+        <div id="div-gpt-ad-home1"></div>
+      </div>
+        <div class="search-section">
+            <div class="search-bar" id="searchBar">
+                <input type="text" id="searchInput" placeholder="Search games...">
+                <button class="search-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8" stroke="var(--theme-color)" stroke-width="2"/>
+                        <path d="m21 21-4.35-4.35" stroke="var(--theme-color)" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <section class="category-section"> 
+            <div class="section-header"> 
+                <h2 class="section-title">Featured Games</h2> 
+            </div> 
+            <div class="game-grid" id="homepageGameGrid"> 
+                <div class="game-card" id="homepage-game-1"></div> 
+                <div class="game-card" id="homepage-game-2"></div> 
+            </div> 
+            <div class="ads"> 
+                <div id="div-gpt-ad-home1">1</div> 
+              </div> 
+            <div class="game-grid"> 
+                <div class="game-card" id="homepage-game-3"></div> 
+                <div class="game-card" id="homepage-game-4"></div> 
+            </div> 
+        </section>
+
+        <div class="ads">
+            <div id="div-gpt-ad-home2"></div>
+          </div>
+        <section class="category-section">
+            <div class="section-header">
+                <h2 class="section-title"></h2>
+                <div class="section-right">
+                    <a href="" class="section-more">MORE</a>
+                </div>
+            </div>
+            <div class="game-grid">
+                
+            </div>
+        </section>
+        <div class="ads">
+            <div id="div-gpt-ad-home3"></div>
+          </div>
+        <section class="category-section">
+            <div class="section-header">
+                <h2 class="section-title"></h2>
+                <div class="section-right">
+                    <a href="" class="section-more">MORE</a>
+                </div>
+            </div>
+            <div class="game-grid">
+                
+            </div>
+        </section>
+        <div class="ads">
+            <div id="div-gpt-ad-home4"></div>
+          </div>
+        <section class="category-section">
+            <div class="section-header">
+                <h2 class="section-title"></h2>
+                <div class="section-right">
+                    <a href="" class="section-more">MORE</a>
+                </div>
+            </div>
+            <div class="game-grid">
+                
+            </div>
+        </section>
+        <div class="ads">
+            <div id="div-gpt-ad-home5"></div>
+          </div>
+        <section class="category-section">
+            <div class="section-header">
+                <h2 class="section-title"></h2>
+                <div class="section-right">
+                    <a href="" class="section-more">MORE</a>
+                </div>
+            </div>
+            <div class="game-grid">
+                
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="section-header">
+                <h2 class="section-title"></h2>
+                <div class="section-right">
+                    <a href="" class="section-more">MORE</a>
+                </div>
+            </div>
+            <div class="game-grid">
+                
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="section-header">
+                <h2 class="section-title"></h2>
+                <div class="section-right">
+                    <a href="" class="section-more">MORE</a>
+                </div>
+            </div>
+            <div class="game-grid">
+                
+            </div>
+        </section>
+
+    </main>
+
+        <footer class="footer">
+        
+        <div class="footer-links">
+            <a href="pages/privacy.html">Privacy Policy</a>
+            <a href="pages/terms.html">Terms of Use</a>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="footer-brand">read.panoramafind.fun</div>
+            <div class="footer-copyright-text">© 2026 read.panoramafind.fun. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script type="module" src="./public/js/index.js"></script>
+    <script type="module">
+        import { ad_code_identifier } from "./ads.js";
+      
+        if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./homegg.js";
+          document.body.appendChild(script);
+        } else {
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./homegg_ads.js";
+          document.body.appendChild(script);
+        }
+      </script>
+
+      
+    </body>
+</html>

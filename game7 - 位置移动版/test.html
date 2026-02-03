@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Featured Games</title>
+    <link rel="stylesheet" href="./public/style/inpublic.css">
+</head>
+<body>
+    <div class="main-content">
+        <section class="category-section"> 
+            <div class="section-header"> 
+                <h2 class="section-title">Featured Games</h2> 
+            </div> 
+            <div class="game-grid" id="homepageGameGrid"> 
+                <div class="game-card" id="homepage-game-1"></div> 
+                <div class="game-card" id="homepage-game-2"></div> 
+            </div> 
+            <div class="ads"> 
+                <div id="div-gpt-ad-home1">1</div> 
+              </div> 
+            <div class="game-grid"> 
+                <div class="game-card" id="homepage-game-3"></div> 
+                <div class="game-card" id="homepage-game-4"></div> 
+            </div> 
+        </section>
+    </div>
+    
+    <script>
+        // Mock game data for testing
+        const mockGames = [
+            {
+                id: 1,
+                name: "Test Game 1",
+                image: "https://via.placeholder.com/150",
+                rating: 4
+            },
+            {
+                id: 2,
+                name: "Test Game 2",
+                image: "https://via.placeholder.com/150",
+                rating: 3
+            },
+            {
+                id: 3,
+                name: "Test Game 3",
+                image: "https://via.placeholder.com/150",
+                rating: 5
+            },
+            {
+                id: 4,
+                name: "Test Game 4",
+                image: "https://via.placeholder.com/150",
+                rating: 2
+            }
+        ];
+        
+        // Mock generateGameCardHTML function
+        function generateGameCardHTML(game, useHomepageCard = false) {
+            const stars = '★'.repeat(game.rating) + '☆'.repeat(5 - game.rating);
+            const cardClass = useHomepageCard ? 'homepage-game-card' : 'game-card';
+            const imgClass = useHomepageCard ? 'homepage-game-image' : '';
+            const titleClass = useHomepageCard ? '' : 'game-title';
+            
+            return `
+                <div class="${cardClass}">
+                    <img src="${game.image}" alt="${game.name}" ${imgClass ? `class="${imgClass}"` : ''} loading="lazy">
+                    <h3 ${titleClass ? `class="${titleClass}"` : ''}>${game.name}</h3>
+                    <div class="homepage-game-info">
+                        <div class="homepage-game-rating">
+                            <span class="stars">${stars}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Mock generateHomepageGames function
+        function generateHomepageGames() {
+            const homepageGameGrid = document.getElementById('homepageGameGrid');
+            if (!homepageGameGrid) return;
+            
+            // Get both game grids
+            const firstGameGrid = document.getElementById('homepageGameGrid');
+            const secondGameGrid = homepageGameGrid.parentElement.querySelector('.game-grid:nth-of-type(2)');
+            
+            if (firstGameGrid) {
+                // Add first 2 games to the first grid
+                firstGameGrid.innerHTML = mockGames.slice(0, 2).map(game => generateGameCardHTML(game, false)).join('');
+            }
+            
+            if (secondGameGrid) {
+                // Add last 2 games to the second grid
+                secondGameGrid.innerHTML = mockGames.slice(2, 4).map(game => generateGameCardHTML(game, false)).join('');
+            }
+        }
+        
+        // Run the function when the page loads
+        document.addEventListener('DOMContentLoaded', generateHomepageGames);
+    </script>
+</body>
+</html>
