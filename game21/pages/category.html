@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category</title>
+    <link rel="stylesheet" href="../public/style/inpublic.css" />
+     <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5090017_0pi94vsx2bpb.css" />
+     <link rel="icon" href="../public/icon.png"/>
+  </head>
+  <body class="category-page">
+    <header class="header">
+      <div class="header-content">
+        <a href="../index.html" class="logo">
+         <p>geophytes.fun</p>
+        </a>
+        <div class="header-icons">
+          <a href="#" class="header-icon" id="searchToggle">🔍</a>
+          <a href="#" class="header-icon" id="menuToggle">☰</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+      <div class="search-input">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search games..." />
+        <span class="close-search" id="closeSearch">✕</span>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="categories-menu" id="categoriesMenu">
+      <div class="categories-header">
+        <span class="categories-title">Categories</span>
+        <span class="close-categories" id="closeCategories">✕</span>
+      </div>
+      <div class="category-item active" data-category="home">
+        <span class="category-name">Home</span>
+        <span class="category-count" id="homeCount">0</span>
+      </div>
+      <div id="categoryItemsContainer">
+        
+      </div>
+    </div>
+
+    <main class="main-content">
+      <div class="category-header">
+        <div class="category-title-section">
+          <h1 class="category-title" id="categoryTitle">Loading...</h1>
+        </div>
+      </div>
+
+      <div id="gamesGrid"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/pages/privacy.html">Privacy Policy</a>
+        <a href="/pages/terms.html">Terms of Use</a>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="footer-brand">geophytes.fun</div>
+        <div class="footer-copyright-text">
+          © 2026 geophytes.fun All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <div class="top-btn iconfont icon-fanhuidingbu1" id="topBtn" style="font-size: 40px;">
+    
+    </div>
+
+    <script type="module" src="../public/js/inpublic.js"></script>
+  </body>
+</html>

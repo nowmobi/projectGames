@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Details</title>
+    <link rel="stylesheet" href="./public/style/inpublic.css" />
+    <link rel="icon" href="public/icon.png"/>
+  </head>
+  <body class="detail-page">
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+         <p>geophytes.fun</p>
+        </a>
+        <div class="header-icons">
+          <a href="#" class="header-icon" id="searchToggle">🔍</a>
+          <a href="#" class="header-icon" id="menuToggle">☰</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+      <div class="search-input">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search games..." />
+        <span class="close-search" id="closeSearch">✕</span>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="categories-menu" id="categoriesMenu">
+      <div class="categories-header">
+        <span class="categories-title">Categories</span>
+        <span class="close-categories" id="closeCategories">✕</span>
+      </div>
+      <div class="category-item active" data-category="home">
+        <span class="category-name">Home</span>
+        <span class="category-count" id="homeCount">0</span>
+      </div>
+      <div id="categoryItemsContainer">
+       
+      </div>
+    </div>
+
+    <main class="main-content">
+      <div class="ads" style="margin-bottom: 20px;">
+        <div id="div-gpt-ad-detail1"></div>
+      </div>
+
+      <div class="game-detail-container">
+        <div class="game-header">
+          <img src="" alt="" class="game-icon" id="gameIcon" />
+          <div class="game-info">
+            <h1 class="game-title" id="gameTitle">Loading...</h1>
+            <div class="game-category" id="gameCategory">Category</div>
+            <div class="game-rating">
+              <span class="stars" id="gameStars">★★★★★</span>
+              <span class="rating-text" id="ratingText">5/5</span>
+            </div>
+          </div>
+        </div>
+        <p class="game-description" id="gameDescription">
+          Game description loading...
+        </p>
+        <div class="play-button-container">
+          <a href="#" class="play-button" id="playButton">Play Now</a>
+        </div>
+      </div>
+
+      <section class="recommended-section">
+        <h2 class="section-title">You May Also Like</h2>
+        <div class="recommended-grid" id="recommendedGames"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="./pages/privacy.html">Privacy Policy</a>
+        <a href="./pages/terms.html">Terms of Use</a>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="footer-brand">geophytes.fun</div>
+        <div class="footer-copyright-text">
+          © 2026 geophytes.fun All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./public/js/detail.js"></script>
+    <script type="module" src="./public/js/inpublic.js"></script>
+    <script type="module">
+      import { ad_code_identifier } from "./ads.js";
+    
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./detailgg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./detailgg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
+  </body>
+</html>

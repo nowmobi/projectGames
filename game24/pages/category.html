@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="../public/style/inpublic.css">
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/c/font_5090017_0pi94vsx2bpb.css"
+    />
+</head>
+<body class="category-page-body">
+    
+    <header class="header">
+        <div class="header-content">
+            <button class="menu-btn" id="backButton" onclick="window.location.href='../index.html' + (window.channel ? '?channel=' + window.channel : '');">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <p>bullates.site</p>
+            <button class="search-btn" id="searchToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+        <div class="search-input">
+            <span class="search-back" id="searchBack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Search for games">
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <main class="main-content">
+        <div id="gamesGrid">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-links mt-5">
+            <a href="about.html" class="footer-link">About us</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="terms.html" class="footer-link">Terms of Use</a>
+          </div>
+          <div class="footer-copyright">Copyright © 2021-2026 bullates.site All rights Reserved.</div>
+        </div>
+      </footer>
+       <div class="top-btn iconfont icon-icon--fanhuidingbu" id="topBtn" style="font-size: 20px;">
+    
+    </div>
+
+
+    <script type="module" src="../public/js/inpublic.js"></script>
+</body>
+</html>
