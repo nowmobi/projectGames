@@ -86,7 +86,7 @@ const DEFAULT_CATEGORIES = [
 ];
 
 
-export const INFO_TYPE = 'info5';
+export const INFO_TYPE = 'info2';
 
 export async function getCategoryOrder() {
   const infoType = INFO_TYPE;
