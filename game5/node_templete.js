@@ -121,17 +121,18 @@ function updateDomainInHTML(domain) {
                 let fileModified = false;
                 let replacedInFile = 0;
                 
-                // 更新顶部header中的域名
-                const headerDomainRegex = /<p>[^<>]+<\/p>/g;
-                htmlContent = htmlContent.replace(headerDomainRegex, (match) => {
-                    const pContent = match.match(/<p>([^<>]+)<\/p>/);
-                    if (pContent && pContent[1] && pContent[1].includes('.')) {
-                        fileModified = true;
-                        replacedInFile++;
-                        return `<p>${cleanDomain}</p>`;
-                    }
-                    return match;
-                });
+                   // 更新顶部header中的域名（只匹配header-content中的p标签）
+                const headerContentRegex = /(<div class="header-content">[\s\S]*?<p>)([^<>]+)(<\/p>[\s\S]*?<\/div>)/;
+                if (headerContentRegex.test(htmlContent)) {
+                    htmlContent = htmlContent.replace(headerContentRegex, (match, before, content, after) => {
+                        if (content && content.includes('.')) {
+                            fileModified = true;
+                            replacedInFile++;
+                            return `${before}${cleanDomain}${after}`;
+                        }
+                        return match;
+                    });
+                }
                 
                 // 检查是否包含版权信息
                 if (htmlContent.includes('Copyright ©')) {
