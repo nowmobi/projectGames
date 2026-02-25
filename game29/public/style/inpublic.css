@@ -484,7 +484,7 @@ html {
 
 .category-section {
     margin-bottom: 30px;
-    background: white;
+    background: #d4e5ef;
     border-radius: 15px;
     padding: 25px 20px 30px 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -614,22 +614,56 @@ html {
     background: var(--primary-background);
 }
 
+/* 修改后的homepage-play-button样式 - 更现代的设计 */
 .homepage-play-button {
-    background: var(--primary-background);
-    color: var(--text-color);
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 10px;
-    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
     text-align: center;
-    transition: background 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     border: none;
     width: 100%;
     display: block;
-    margin-top: 0;
+    margin-top: 8px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
 }
 
+/* 添加悬停效果 */
+.homepage-play-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(45deg, #ff5252, #ff9800);
+}
+
+/* 添加按下效果 */
+.homepage-play-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+}
+
+/* 添加动画效果 */
+.homepage-play-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.homepage-play-button:hover::before {
+    left: 100%;
+}
 
 @media (max-width: 768px) {
     .header-content {
@@ -656,7 +690,7 @@ html {
     }
     
     .homepage-game-card {
-        height: 150px;
+        height: 160px;
     }
     
     .homepage-game-card img {
@@ -688,11 +722,18 @@ html {
         font-size: 10px;
     }
     
+    /* 移动端的homepage-play-button样式 */
     .homepage-play-button {
-        padding: 6px 12px;
-        font-size: 11px;
-        border-radius: 16px;
-        margin-top: auto;
+        padding: 10px 16px;
+        font-size: 12px;
+        border-radius: 22px;
+        margin-top: 6px;
+        box-shadow: 0 3px 12px rgba(255, 107, 107, 0.3);
+    }
+    
+    .homepage-play-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 16px rgba(255, 107, 107, 0.5);
     }
 }
 
@@ -707,7 +748,7 @@ html {
     }
     
     .homepage-game-card {
-        height: 140px;
+        height: 160px;
     }
     
     .homepage-game-card img {
@@ -739,11 +780,18 @@ html {
         font-size: 9px;
     }
     
+    /* 小屏幕的homepage-play-button样式 */
     .homepage-play-button {
-        padding: 5px 10px;
-        font-size: 10px;
-        border-radius: 14px;
-        margin-top: auto;
+        padding: 8px 14px;
+        font-size: 11px;
+        border-radius: 20px;
+        margin-top: 5px;
+        box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+    }
+    
+    .homepage-play-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
     }
     
     .section-title {
@@ -761,8 +809,309 @@ html {
     }
 }
 
+/* 轮播图组件样式 */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
+.carousel-wrapper {
+    position: relative;
+    height: 150px; /* 从300px缩小到150px */
+}
 
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-slide.prev {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: white;
+    position: relative;
+}
+
+.carousel-image {
+    flex: 0 0 40%; /* 固定占40%宽度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.carousel-image img {
+    max-width: 100%;
+    max-height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-image img:hover {
+    transform: scale(1.05);
+}
+
+.carousel-text {
+    flex: 0 0 60%; /* 固定占60%宽度 */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-category {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    margin-bottom: 12px;
+    align-self: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
+    position: relative;
+    white-space: nowrap; /* 强制不换行 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    text-overflow: ellipsis; /* 添加省略号 */
+    max-width: 100%; /* 限制最大宽度 */
+}
+
+.carousel-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    opacity: 0.9;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.carousel-play-btn {
+    background: var(--primary-background);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-play-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 导航按钮 */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 20px;
+}
+
+.carousel-next {
+    right: 20px;
+}
+
+.carousel-nav svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+/* 指示点 */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        height: 200px;
+    }
+    
+    .carousel-slide {
+        flex-direction: row; /* 保持横向布局 */
+    }
+    
+    .carousel-content {
+        flex-direction: row;
+        padding: 15px;
+    }
+    
+    .carousel-image {
+        flex: 0 0 35%; /* 移动端图片占比稍小 */
+        padding: 8px;
+        order: 2; /* 图片放在右侧 */
+    }
+    
+    .carousel-image img {
+        max-height: 80px;
+    }
+    
+    .carousel-text {
+        flex: 0 0 65%; /* 文字占比更大 */
+        padding: 0 15px;
+        order: 1; /* 文字放在左侧 */
+    }
+    
+    .carousel-title {
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .carousel-description {
+        font-size: 12px;
+        -webkit-line-clamp: 3; /* 移动端显示更多行 */
+    }
+    
+    .carousel-play-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-prev {
+        left: 10px;
+    }
+    
+    .carousel-next {
+        right: 10px;
+    }
+    
+    .carousel-nav svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-wrapper {
+        height: 175px;
+    }
+    
+    .carousel-content {
+        padding: 12px;
+    }
+    
+    .carousel-image {
+        flex: 0 0 30%; /* 小屏幕图片占比更小 */
+        padding: 6px;
+    }
+    
+    .carousel-image img {
+        max-height: 70px;
+    }
+    
+    .carousel-text {
+        flex: 0 0 70%;
+        padding: 0 12px;
+    }
+    
+    .carousel-title {
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .carousel-description {
+        font-size: 11px;
+    }
+    
+    .carousel-play-btn {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
 
 @media (max-width: 768px) {
     .categories-menu {
@@ -1798,3 +2147,78 @@ body.detail-page-body .detail-page {
     align-items: center;
   }
   
+/* 添加额外的视觉效果 */
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.carousel-slide:hover::before {
+    opacity: 1;
+}
+
+.carousel-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
+    position: relative;
+}
+
+.carousel-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-background);
+    border-radius: 2px;
+}
+
+.carousel-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    opacity: 0.9;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 为不同分类添加特殊效果 */
+.carousel-slide[data-category="action"] .carousel-category {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+}
+
+.carousel-slide[data-category="adventure"] .carousel-category {
+    background: linear-gradient(45deg, #4834d4, #686de0);
+    color: white;
+}
+
+.carousel-slide[data-category="puzzle"] .carousel-category {
+    background: linear-gradient(45deg, #6ab04c, #badc58);
+    color: white;
+}
+
+.carousel-slide[data-category="racing"] .carousel-category {
+    background: linear-gradient(45deg, #ff9ff3, #f368e0);
+    color: white;
+}
+
+.carousel-slide[data-category="sports"] .carousel-category {
+    background: linear-gradient(45deg, #feca57, #ff9ff3);
+    color: white;
+}
