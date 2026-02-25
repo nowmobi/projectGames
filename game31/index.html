@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./public/style/inpublic.css">
+</head>
+<body>
+    
+    <header class="header">
+        <button class="header-icon" id="searchIconBtn" type="button">
+            <img src="public/images/search.svg" alt="search" class="search-icon-img">
+        </button>
+        <a href="index.html" class="logo">moilfuns.fun</a>
+        <a href="#" class="header-icon" id="menuToggle">
+            <img src="public/images/category.svg" alt="category" class="category-icon-img">
+        </a>
+    </header>
+    <div class="ads" style="margin-top: 50px;">
+        <div id="div-gpt-ad-home1">11</div>
+    </div> 
+    
+    <main class="main-content home-main">
+    
+        <div id="random-game-recommendations"></div>
+        <div class="search-section" id="searchOverlay">
+            <div class="search-bar">
+                <img src="public/images/search.svg" alt="search" class="search-icon-left">
+                <input type="text" id="searchInput" placeholder="Search...">
+            </div>
+        </div>
+         <section class="category-section"></section>
+        <div class="ads">
+            <div id="div-gpt-ad-home2" style="color: red;">22</div>
+        </div>
+        <section class="category-section"></section>
+        <div class="ads">
+            <div id="div-gpt-ad-home3" style="color: red;">33</div>
+        </div>
+        <section class="category-section"></section>
+        <div class="ads">
+            <div id="div-gpt-ad-home4" style="color: red;">44</div>
+        </div> 
+        <section class="category-section"></section>
+        <div class="ads">
+            <div id="div-gpt-ad-home5" style="color: red;">55</div>
+        </div>
+        <section class="category-section"></section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-brand">moilfuns.fun</div>
+        <div class="footer-links">
+            <a href="pages/privacy.html">Privacy</a>
+            <span class="footer-separator">|</span>
+            <a href="pages/terms.html">Terms of use</a>
+        </div>
+    </footer>
+
+    
+<script type="module" src="./public/js/inpublic.js"></script>
+<script type="module" src="./public/js/index.js"></script>
+<script type="module">
+      import { ad_code_identifier } from "./ads.js";
+    
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./homegg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./homegg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
+</body>
+</html>
