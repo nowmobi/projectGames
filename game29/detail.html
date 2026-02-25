@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="stylesheet" href="public/style/inpublic.css">
+
+</head>
+<body class="detail-page-body">
+    
+    <header class="header">
+        <div class="header-content">
+            <button class="menu-btn" id="backButton">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="var(--text-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <p class="site-name">play.apricate.cloud</p>
+
+            <button class="search-btn" id="searchToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5 C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="var(--text-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+        <div class="search-input">
+            <span class="search-back" id="searchBack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Search for games">
+            <button class="search-button" id="searchButton">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+  
+<main class="main-content">
+
+    <div class="ads">
+        <div id="div-gpt-ad-detail1"></div>
+      </div>
+        <div class="detail-page">
+
+            <div id="gameDetailContainer">
+                
+                <div style="padding: 20px; text-align: center; color: #666;">
+                    <p>Loading game details...</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="recommended-section">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="recommended-grid" id="recommendedGames">
+                
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="public/js/detail.js"></script>
+    <script src="public/js/inpublic.js"></script>
+    <script type="module">
+    import { ad_code_identifier } from "./ads.js";
+    if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src = "./detailgg.js";
+      document.body.appendChild(script);
+    } else {
+      
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src = "./detailgg_ads.js";
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>

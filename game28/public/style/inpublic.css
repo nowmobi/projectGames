@@ -1,6 +1,6 @@
 
 :root {
-    --primary-color: #eba46f;
+    --primary-color: #957aa9;
     --primary-gradient: linear-gradient(
         135deg,
         color-mix(in srgb, var(--primary-color) 85%, #ffffff 15%) 0%,
@@ -401,10 +401,10 @@ body {
 .home-float-button {
     position: fixed;
     bottom: 180px;
-    right: 20px;
+    right: 17px;
     width: 55px;
     height: 55px;
-    background: transparent;
+    background: #fff;
     border: 2px solid var(--primary-color);
     border-radius: 50%;
     display: flex;
@@ -429,10 +429,9 @@ body {
     display: block;
 }
 
-/* 新增：返回顶部按钮样式 */
 .back-to-top {
     position: fixed;
-    top: 45%;
+   bottom: 340px;
     transform: translateY(calc(50% + 60px));
     right: 20px;
     width: 50px;
@@ -452,6 +451,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+    border: 2px solid #fff;
 }
 
 .back-to-top.show {
@@ -1136,7 +1136,6 @@ body {
 .category-content-title-text {
     font-size: 20px;
     font-weight: 600;
-    color: var(--primary-color);
     transition: opacity 0.3s ease;
 }
 

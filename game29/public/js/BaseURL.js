@@ -1,8 +1,6 @@
-
-export const BASE_URL = "https://datajson.pages.dev/games5/db6.json";
+export const BASE_URL = "https://datajson.pages.dev/games5/db1.json";
 
 const baseUrl = 'https://games5-65b.pages.dev';
-
 
 
 let gameDetails = [];
@@ -65,13 +63,9 @@ const DEFAULT_CATEGORIES = [
 
 
 export async function getCategoryOrder() {
-  const infoType = 'info2';
+  const infoType = 'info1';
   try {
-    const response = await fetch(BASE_URL);
-    if (!response.ok) {
-      return DEFAULT_CATEGORIES;
-    }
-    const data = await response.json();
+     const data = await loadGameData();
 
     if (Array.isArray(data) && data.length > 0 && data[0] && data[0][infoType]) {
       const categories = data[0][infoType];
@@ -85,7 +79,6 @@ export async function getCategoryOrder() {
     return DEFAULT_CATEGORIES;
   }
 }
-
 
 export function getImgUrl(game) {
 
