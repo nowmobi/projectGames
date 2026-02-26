@@ -1,7 +1,7 @@
 
 :root {
-    --color1: #70c588;
-    --color2: #c570ad;
+    --color1: #f0ff31;
+    --color2: #4031ff;
     --primary-gradient1: linear-gradient(
         180deg,
         color-mix(in srgb, var(--color1) 85%, #ffffff 15%) 0%,

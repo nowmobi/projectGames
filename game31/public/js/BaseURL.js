@@ -1,4 +1,4 @@
-export const BASE_URL = "https://games5-65b.pages.dev/db1.json";
+export const BASE_URL = "https://games5-65b.pages.dev/db6.json";
 
 
 let gameDetails = [];
@@ -62,7 +62,7 @@ const DEFAULT_CATEGORIES = [
 
 
 export async function getCategoryOrder() {
-  const infoType = 'info1';
+  const infoType = 'info5';
   try {
      const data = await loadGameData();
     if (Array.isArray(data) && data.length > 0 && data[0] && data[0][infoType]) {
@@ -79,7 +79,7 @@ export async function getCategoryOrder() {
 }
 
 export function getDataBaseUrl() {
-  return BASE_URL.replace('/db1.json', '');
+  return BASE_URL.replace('/db6.json', '');
 }
 
 export function getImgUrl(game) {

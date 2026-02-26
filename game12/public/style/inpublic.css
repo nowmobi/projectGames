@@ -16,18 +16,18 @@
 
 :root {
     
-    --primary-color: #4caf50;
-    --primary-color-light: #dbefdc;
-    --primary-color-lighter: #b7dfb9;
-    --primary-color-rgb: 76, 175, 80;
-    --primary-color-rgba-15: rgba(76, 175, 80, 0.15);
-    --primary-color-rgba-25: rgba(76, 175, 80, 0.25);
-    --primary-color-rgba-30: rgba(76, 175, 80, 0.3);
-    --primary-color-rgba-10: rgba(76, 175, 80, 0.1);
+    --primary-color: #957aa9;
+    --primary-color-light: #eae4ee;
+    --primary-color-lighter: #d5cadd;
+    --primary-color-rgb: 149, 122, 169;
+    --primary-color-rgba-15: rgba(149, 122, 169, 0.15);
+    --primary-color-rgba-25: rgba(149, 122, 169, 0.25);
+    --primary-color-rgba-30: rgba(149, 122, 169, 0.3);
+    --primary-color-rgba-10: rgba(149, 122, 169, 0.1);
     --text-primary: #2c2c2c;
     --text-muted: #999;
     --bg-primary: #ffffff;
-    --logo-color: #1e4620;
+    --logo-color: #3c3144;
 }
 
 
@@ -180,7 +180,7 @@ html {
 
 .category-btn.active {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-lighter) 100%);
-    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 3px 10px rgba(149, 122, 169, 0.3);
 }
 
 .category-btn-icon {
