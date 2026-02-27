@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="stylesheet" href="public/style/inpublic.css">
+
+</head>
+<body class="detail-page-body">
+    
+    <header class="header">
+        <div class="header-content">
+            <button class="menu-btn" id="backButton" onclick="window.location.href='index.html' + (window.channel ? '?channel=' + window.channel : '');">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="var(--text-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+           <p>play.apricate.cloud</p>
+
+            <button class="search-btn" id="searchToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="var(--text-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+        <div class="search-input">
+            <span class="search-back" id="searchBack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Search for games">
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <main class="main-content">
+
+        <div class="ads">
+            <div id="div-gpt-ad-detail1"></div>
+          </div>
+        <div class="detail-page">
+           
+            <div class="game-detail">
+                <div class="game-header">
+                    <div class="game-image">
+                        <img id="gameImage" src="" alt="">
+                        <div class="game-image-fallback">
+                            <span id="gameNameFallback"></span>
+                        </div>
+                    </div>
+                    <div class="game-actions">
+                        <a id="playButton" href="" class="play-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7z" fill="currentColor"/>
+                            </svg>
+                            Play Now
+                        </a>
+                    </div>
+                    <div class="game-info">
+                        <h1 id="gameTitle" class="game-title"></h1>
+                        <div class="game-stats">
+                            <div class="stat">
+                                <span class="stat-label">Rating:</span>
+                                <div class="rating">
+                                    
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Downloads:</span>
+                                <span id="gameDownloads" class="stat-value"></span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Category:</span>
+                                <span id="gameCategory" class="stat-value"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-description">
+                    <h2>Description</h2>
+                    <div class="description-content">
+                        <p id="gameDescription"></p>
+                    </div>
+                </div>
+
+            <div class="recommended-games">
+                <h2 class="recommended-title">Recommended Games</h2>
+                <div class="recommended-grid" id="recommendedGrid">
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-links mt-5">
+            <a href="pages/about.html" class="footer-link">About us</a>
+            <a href="pages/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="pages/terms.html" class="footer-link">Terms of Use</a>
+          </div>
+          <div class="footer-copyright">Copyright © 2025-2026 play.apricate.cloud All rights Reserved.</div>
+        </div>
+      </footer>
+
+    <script type="module" src="public/js/detail.js"></script>
+    <script type="module" src="public/js/inpublic.js"></script>
+ <script type="module">
+    import { ad_code_identifier } from "./ads.js";
+    if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src = "./detailgg.js";
+      document.body.appendChild(script);
+    } else {
+      
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src = "./detailgg_ads.js";
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
