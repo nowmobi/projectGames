@@ -1,0 +1,271 @@
+/* Game Design CSS - 霓虹灯效果样式 */
+:root {
+    --neon-blue: #00f3ff;
+    --neon-purple: #b35aff;
+    --neon-pink: #ff5aff;
+    --neon-green: #5aff8c;
+    --neon-orange: #ff9a5a;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+}
+
+/* 搜索框样式 */
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    border-radius: 15px;
+    padding: 12px 20px;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.search-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+    animation: neonGlow 3s infinite alternate;
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--text-primary);
+    background: transparent;
+    padding: 0;
+}
+
+.search-bar input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.search-btn svg circle,
+.search-btn svg path {
+    stroke: var(--neon-blue);
+}
+
+/* Featured Games 标题 */
+.section-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #00f3ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+}
+
+/* 游戏卡片容器 */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+/* 游戏卡片 */
+.game-card {
+    background: rgba(31, 31, 31, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 243, 255, 0.3);
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: linear-gradient(45deg, 
+        var(--neon-blue), 
+        var(--neon-purple), 
+        var(--neon-pink), 
+        var(--neon-green),
+        var(--neon-orange)
+    );
+    z-index: -1;
+    opacity: 0.7;
+    filter: blur(10px);
+    animation: pulseGlow 3s infinite alternate;
+}
+
+.game-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.game-card-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.7);
+    z-index: 1;
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* 游戏信息区域 */
+.game-card-content {
+    color: var(--text-primary);
+}
+
+.game-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.game-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--neon-green);
+}
+
+.game-card-downloads {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--neon-orange);
+}
+
+.game-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 10px 0 15px 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* PLAY按钮 */
+.game-card-link-btn {
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    color: var(--text-primary);
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 45px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 243, 255, 0.4);
+}
+
+.game-card-link-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.game-card-link-btn:hover {
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 243, 255, 0.6);
+}
+
+.game-card-link-btn:hover::before {
+    left: 100%;
+}
+
+.game-card-link-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 243, 255, 0.3);
+}
+
+/* 动画效果 */
+@keyframes neonGlow {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes pulseGlow {
+    0% { opacity: 0.5; transform: scale(1); }
+    100% { opacity: 0.8; transform: scale(1.02); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .game-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 15px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .game-card-link-btn {
+        height: 40px;
+        font-size: 14px;
+    }
+}

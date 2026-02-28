@@ -1,0 +1,700 @@
+
+:root {
+    
+    --primary-color: pink;
+    
+    --text-primary: #2c2c2c;
+    --text-muted: #999;
+    --text-dark: #1e293b;
+    
+    --bg-primary: #ffffff;
+    --bg-dark: #1f2937;
+    --bg-overlay: rgba(0, 0, 0, 0.8);
+    
+    --border-color: #999;
+    
+    --header-height: 50px;
+    --border-radius-sm: 5px;
+    --border-radius-md: 15px;
+    --border-radius-full: 50%;
+    
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+    
+    --font-size-xs: 11px;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-menu: -5px 0 25px rgba(0, 0, 0, 0.08);
+    
+    --z-index-base: 1;
+    --z-index-menu: 997;
+    --z-index-header: 998;
+    
+    --max-width-content: 680px;
+    --max-width-container: 1200px;
+    --grid-columns: repeat(2, 1fr);
+    --grid-gap-sm: 15px;
+    
+    /* 手绘风格颜色变量 */
+    --hand-drawn-border-color: #a88c7d;
+    --hand-drawn-bg-light: #fff9f5;
+    --hand-drawn-bg-gradient-start: #ffe6e6;
+    --hand-drawn-bg-gradient-end: #fff9e6;
+    --hand-drawn-btn-gradient-start: #ff9999;
+    --hand-drawn-btn-gradient-end: #ffcc99;
+    --hand-drawn-btn-hover-start: #ff8080;
+    --hand-drawn-btn-hover-end: #ffbb80;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    padding: var(--spacing-xs) var(--spacing-lg);
+    z-index: var(--z-index-header);
+    box-shadow: var(--shadow-sm);
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--bg-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 160px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.header-icons {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.header-icon {
+    color: var(--bg-primary);
+    font-size: var(--font-size-lg);
+    text-decoration: none;
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.header-icon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.header-icon:active {
+    transform: scale(0.95);
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-full);
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+}
+
+.back-button svg {
+    width: 36px;
+    height: 36px;
+}
+
+.back-button svg path {
+    stroke: var(--bg-primary);
+    fill: none;
+}
+
+
+.categories-menu {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    background: var(--bg-primary);
+    width: 165px;
+    height: calc(100vh - var(--header-height));
+    z-index: var(--z-index-menu);
+    box-shadow: var(--shadow-menu);
+    transform: translateX(100%);
+    overflow-y: auto;
+    border-radius: 0;
+    border: 1px solid var(--border-color);
+}
+
+.categories-menu.active {
+    transform: translateX(0);
+}
+
+.categories-header {
+    padding: var(--spacing-sm);
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.categories-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: 0.3px;
+}
+
+.close-categories {
+    color: var(--muted);
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    padding: 6px;
+    border-radius: var(--border-radius-full);
+    font-weight: normal;
+    background: var(--bg-primary);
+    border: none;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-item {
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: transparent;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.category-item.active {
+    background: var(--bg-primary);
+    font-weight: 600;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+.category-name {
+    border: 1px solid var(--text-muted);
+    color: var(--primary-color);
+    padding: 8px;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+
+.main-content {
+    margin-top: var(--header-height);
+    padding: var(--spacing-md);
+    max-width: var(--max-width-content);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: var(--z-index-base);
+    background: var(--bg-primary);
+    box-shadow: none;
+}
+
+
+.footer {
+    margin-top: auto;
+    border: 1px solid var(--border-color);
+}
+
+.footer-links {
+    background-color: var(--primary-color);
+    padding: var(--spacing-sm);
+    text-align: center;
+    background: transparent;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: var(--font-size-md);
+}
+
+.footer-copyright {
+  
+    text-align: center;
+    color: var(--bg-primary);
+}
+
+.footer-copyright-text {
+    margin-bottom:10px;
+    color: var(--text-muted);
+    font-size: var(--font-size-base);
+}
+
+
+/* 手绘风格游戏卡片样式 */
+.game-card {
+    background: var(--hand-drawn-bg-light);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--hand-drawn-border-color);
+    /* 添加手绘风格边框效果 */
+    border-image: linear-gradient(45deg, transparent, var(--hand-drawn-border-color), transparent) 1;
+    /* 添加贴纸效果阴影 */
+    box-shadow: 0 8px 20px rgba(168, 140, 125, 0.2), 
+                inset 0 2px 4px rgba(255, 255, 255, 0.8);
+    /* 添加手绘风格边角装饰 */
+    background-image: 
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.5) 0%, transparent 20%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.5) 0%, transparent 20%),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.5) 0%, transparent 20%),
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.5) 0%, transparent 20%);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: top left, top right, bottom left, bottom right;
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 24px;
+    height: 24px;
+    background: var(--hand-drawn-bg-light);
+    border: 2px solid var(--hand-drawn-border-color);
+    border-radius: 50%;
+    z-index: 1;
+    transform: rotate(15deg);
+}
+
+.game-card::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    background: var(--hand-drawn-bg-light);
+    border: 2px solid var(--hand-drawn-border-color);
+    border-radius: 50%;
+    z-index: 1;
+    transform: rotate(-15deg);
+}
+
+.game-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--border-radius-sm);
+    /* 添加手绘边框效果 */
+    border: 2px solid var(--hand-drawn-border-color);
+    box-shadow: 0 4px 12px rgba(168, 140, 125, 0.15);
+    height: 150px;
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--border-radius-sm);
+}
+
+.game-card-badge {
+    position: absolute;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    background: var(--hand-drawn-bg-light);
+    opacity: 0.9;
+    border-radius: var(--border-radius-sm);
+    padding: 6px 12px;
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    color: var(--hand-drawn-border-color);
+    z-index: 2;
+    text-transform: capitalize;
+    border: 1px solid var(--hand-drawn-border-color);
+    box-shadow: 0 2px 6px rgba(168, 140, 125, 0.2);
+}
+
+.game-card-content {
+    padding: var(--spacing-sm) 0 0 0;
+    position: relative;
+}
+
+.game-card-title {
+    font-size: var(--font-size-base);
+    color: var(--hand-drawn-border-color);
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 添加对话气泡样式 */
+    position: relative;
+    padding: 8px 16px;
+    background: var(--hand-drawn-bg-light);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--hand-drawn-border-color);
+    box-shadow: 0 2px 6px rgba(168, 140, 125, 0.1);
+}
+
+.game-card-title::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--hand-drawn-bg-light);
+    border-top-color: var(--hand-drawn-bg-light);
+    box-shadow: -2px -2px 4px rgba(168, 140, 125, 0.1);
+}
+
+.game-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.game-card-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.game-card-btn {
+    border: 1px solid var(--hand-drawn-border-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--hand-drawn-border-color);
+    background: var(--hand-drawn-bg-light);
+    padding: 6px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.game-card-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(168, 140, 125, 0.2);
+}
+
+.game-card-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    padding-right: var(--spacing-sm);
+}
+
+.game-card-link::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 16px solid var(--hand-drawn-border-color);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+/* 手绘风格PLAY按钮样式 */
+.play-button {
+    background: linear-gradient(135deg, var(--hand-drawn-btn-gradient-start), var(--hand-drawn-btn-gradient-end));
+    color: var(--text-primary);
+    border-radius: var(--border-radius-full);
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 6px 15px rgba(255, 153, 153, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.play-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.play-button:hover {
+    background: linear-gradient(135deg, var(--hand-drawn-btn-hover-start), var(--hand-drawn-btn-hover-end));
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 153, 153, 0.4);
+}
+
+.play-button:hover::before {
+    transform: translateX(0);
+}
+
+.play-button svg {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    fill: white;
+}
+
+/* 淡色渐变背景用于卡片容器 */
+.game-grid {
+    display: grid;
+    grid-template-columns: var(--grid-columns);
+    gap: var(--grid-gap-sm);
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--hand-drawn-bg-gradient-start), var(--hand-drawn-bg-gradient-end));
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+/* 游戏卡片悬停效果 */
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(168, 140, 125, 0.3);
+    border-color: var(--hand-drawn-border-color);
+}
+
+/* 搜索框样式 */
+.search-section {
+    margin-bottom: var(--spacing-sm);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--hand-drawn-bg-light);
+    border: 2px solid var(--hand-drawn-border-color);
+    padding: 0;
+    box-shadow: var(--shadow-md), 
+                inset 0 2px 6px rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-md);
+    position: relative;
+}
+
+.search-bar::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 24px;
+    height: 24px;
+    background: var(--hand-drawn-bg-light);
+    border: 2px solid var(--hand-drawn-border-color);
+    border-radius: 50%;
+    z-index: 1;
+    transform: rotate(15deg);
+}
+
+.search-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    background: var(--hand-drawn-bg-light);
+    border: 2px solid var(--hand-drawn-border-color);
+    border-radius: 50%;
+    z-index: 1;
+    transform: rotate(-15deg);
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: var(--font-size-md);
+    padding: 12px 16px;
+    background: transparent;
+    color: var(--text-primary);
+    border-radius: var(--border-radius-md);
+    /* 添加手绘风格内边框 */
+    border: 1px solid rgba(168, 140, 125, 0.3);
+}
+
+.search-bar input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.search-btn {
+    background: linear-gradient(135deg, var(--hand-drawn-btn-gradient-start), var(--hand-drawn-btn-gradient-end));
+    border: none;
+    border-left: 1px solid var(--hand-drawn-border-color);
+    color: var(--bg-primary);
+    padding: 12px var(--spacing-lg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    box-shadow: 0 4px 12px rgba(255, 153, 153, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.search-btn:hover {
+    background: linear-gradient(135deg, var(--hand-drawn-btn-hover-start), var(--hand-drawn-btn-hover-end));
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(255, 153, 153, 0.3);
+}
+
+.search-btn:hover::before {
+    transform: translateX(0);
+}
+
+.search-btn svg {
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+}
+
+.search-btn svg circle,
+.search-btn svg path {
+    stroke: var(--bg-primary);
+    fill: none;
+    stroke-width: 2;
+}
+
+/* 搜索框悬停效果 */
+.search-bar:hover {
+    border-color: var(--hand-drawn-border-color);
+    box-shadow: 0 8px 25px rgba(168, 140, 125, 0.3),
+                inset 0 2px 6px rgba(255, 255, 255, 0.8);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .search-bar {
+        max-width: 100%;
+    }
+    
+    .search-bar input {
+        padding: 10px 12px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .search-btn {
+        min-width: 50px;
+        padding: 10px var(--spacing-sm);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .game-card {
+        padding: var(--spacing-xs);
+    }
+    
+    .game-card-title {
+        padding: 6px 12px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .play-button {
+        width: 40px;
+        height: 40px;
+    }
+}
