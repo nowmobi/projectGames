@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./public/style/inpublic.css">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="index.html" class="logo">
+            <p>sec.zxcgame.top</p>
+        </a>
+        <div class="header-icons">
+            <button class="header-icon" id="searchIconBtn" type="button">
+                 <img src="./public/images/search.svg" alt="">
+            </button>
+            <a href="#" class="header-icon" id="menuToggle">
+                <img src="./public/images/category.svg" alt="">
+            </a>
+        </div>
+    </header>
+    <div class="ads" style="margin-top: 50px;">
+        <div id="div-gpt-ad-home1"></div>
+    </div>
+    
+    
+    <main class="main-content">
+
+
+        <section class="random-games-section">
+            <div class="random-games-container" id="randomGamesContainer">
+                
+            </div>
+        </section>
+        
+        <div class="category-bar">
+            <div class="category-scroll-container">
+                <div class="category-buttons" id="categoryButtons">
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="search-section" id="searchOverlay">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button class="search-btn" type="button">
+                    <img src="./public/images/search.svg" alt="Search" width="20" height="20">
+                </button>
+            </div>
+        </div> <div class="ads">
+            <div id="div-gpt-ad-home2"></div>
+        </div>
+        
+        <section class="featured-games-section">
+            <h2 class="section-title">Featured Games</h2>
+            <div class="featured-games-container" id="featuredGamesContainer">
+                
+            </div>
+        </section>
+        
+      <div class="game-card"></div>
+        <div class="game-card"></div>
+            <div class="ads">
+            <div id="div-gpt-ad-home3"></div>
+        </div>
+            <div class="game-card"></div>
+        <div class="game-card"></div>
+        <div class="game-card"></div>
+    
+      <div class="ads">
+            <div id="div-gpt-ad-home4"></div>
+        </div>       
+        <div class="game-card"></div>
+        <div class="game-card"></div>
+         <div class="game-card"></div>
+        <div class="ads">
+            <div id="div-gpt-ad-home5"></div>
+        </div>
+        <div class="game-card"></div>
+        <div class="game-card"></div>
+         <div class="game-card"></div> 
+         <div class="game-card"></div>
+
+        
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-brand">sec.zxcgame.top</div>
+        <div class="footer-description">sec.zxcgame.top is a platform that offers a variety of fun H5 games, allowing you to enjoy gaming anytime and anywhere. We are committed to providing players with the best gaming experience.</div>
+        <div class="footer-links">
+            <a href="pages/privacy.html">Privacy</a>
+            <span class="footer-separator">|</span>
+            <a href="pages/terms.html">Terms of use</a>
+        </div>
+    </footer>
+
+    
+<script type="module" src="./public/js/inpublic.js"></script>
+<script type="module" src="./public/js/index.js"></script>
+<script type="module">
+      import { ad_code_identifier } from "./ads.js";
+    
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./homegg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./homegg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
+</body>
+</html>
