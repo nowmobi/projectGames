@@ -229,7 +229,6 @@ body:has(.search-section.active) .hot-games-section {
 .hot-game-card-title {
     font-size: 14px;
     font-weight: 600;
-    color: var(--text-primary);
     padding: 4px;
     margin: 0;
     line-height: 1.3;
@@ -379,7 +378,6 @@ body:has(.search-section.active) .hot-games-section {
 .category-btn-text {
     font-size: 12px;
     font-weight: 500;
-    color: var(--text-primary);
     text-align: center;
     line-height: 1.2;
     transition: all 0.2s ease;
@@ -875,7 +873,6 @@ body:has(.hot-games-section) .category-bar {
 .game-title {
     font-size: 20px;
     font-weight: 800;
-    color: var(--text-primary);
     margin: 0;
     line-height: 1.2;
 }
@@ -943,7 +940,6 @@ body:has(.hot-games-section) .category-bar {
 .stat-value {
     font-size: 20px;
     font-weight: 700;
-    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 4px;
@@ -1033,7 +1029,6 @@ body:has(.hot-games-section) .category-bar {
 .recommended-section .section-title {
     font-size: 22px;
     font-weight: 800;
-    color: var(--text-primary);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
