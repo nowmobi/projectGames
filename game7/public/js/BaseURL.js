@@ -1,8 +1,16 @@
-export const BASE_URL = "https://datajson.pages.dev/games5/db1.json";
+// export const BASE_URL = "https://datajson.pages.dev/games5/db3.json";
+
+// export const Category_URL = BASE_URL;
+
+// const baseUrl = 'https://games5-65b.pages.dev';
+
+
+export const BASE_URL = "https://datajson.pages.dev/games7/db1.json";
 
 export const Category_URL = BASE_URL;
 
-const baseUrl = 'https://games5-65b.pages.dev';
+const baseUrl = 'https://games7.pages.dev';
+
 
 
 let gameDetails = [];
@@ -99,7 +107,7 @@ export function getGameDetail(id) {
 }
 
 export function getGameUrl(gameId) {
-  return `${baseUrl}/games1/${gameId}/index.html`;
+  return `${baseUrl}/games/${gameId}/index.html`;
 }
 
 const DEFAULT_CATEGORIES = [
@@ -115,7 +123,7 @@ const DEFAULT_CATEGORIES = [
 
 
 export const getInfoType = () => {
-  return 'info3'; 
+  return 'info1'; 
 };
 
 export async function getCategoryOrder() {
