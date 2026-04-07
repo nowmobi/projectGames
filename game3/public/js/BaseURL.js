@@ -1,6 +1,17 @@
-export const BASE_URL = "https://datajson.pages.dev/games5/db1.json";
+// export const BASE_URL = "https://datajson.pages.dev/games5/db1.json";
 
-const baseUrl = 'https://games5-65b.pages.dev';
+// const baseUrl = 'https://games5-65b.pages.dev';
+
+// export const BASE_URL = "https://datajson.pages.dev/games9-data.json";
+
+// const baseUrl = 'https://games9-4av.pages.dev';
+
+export const BASE_URL = "https://datajson.pages.dev/games10-data.json";
+
+const baseUrl = 'https://games10-1rg.pages.dev';
+
+
+
 
 export function getDataBaseUrl() {
   return baseUrl;
@@ -72,7 +83,7 @@ export function getGameDetail(id) {
 }
 
 export function getGameUrl(gameId) {
-  return `${baseUrl}/games1/${gameId}/index.html`;
+  return `${baseUrl}/games/${gameId}/index.html`;
 }
 
 const DEFAULT_CATEGORIES = [
