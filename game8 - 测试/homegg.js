@@ -1,8 +1,5 @@
-
-
 import { ad_code_identifier } from "./ads.js";
 console.log("Ad Code Identifier:", ad_code_identifier);
-
 
 let bannerAdList = [];
 
@@ -14,6 +11,10 @@ let interstitialAdList = [];
 
 (function () {
   
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlChannel = urlParams.get("channel");
+  const storedChannel = sessionStorage.getItem("channel");
 
   
   const status = ad_code_identifier.status;
@@ -25,10 +26,16 @@ let interstitialAdList = [];
   }
 
   console.log("✅ Status is 1, proceeding with ad initialization");
+// const urlChannel = new URLSearchParams(window.location.search).get("channel");
 
   
-  const gtagId = ad_code_identifier.gtag;
+  let gtagId = ad_code_identifier.gtag;
 
+  if (ad_code_identifier.gtags && Object.keys(ad_code_identifier.gtags).length > 0 && urlChannel) {
+    gtagId = ad_code_identifier.gtags[urlChannel];
+  }
+
+  console.log(gtagId,'gtagIds')
   
   const gptScript = document.createElement("script");
   gptScript.async = true;
@@ -54,10 +61,6 @@ let interstitialAdList = [];
 
   console.log("✅ Scripts injected into head");
 
-  
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlChannel = urlParams.get("channel");
-  const storedChannel = sessionStorage.getItem("channel");
 
   
   if (urlChannel) {
@@ -68,7 +71,12 @@ let interstitialAdList = [];
   const channelParam = storedChannel || urlChannel;
 
   
-  const randadParam = ad_code_identifier.randad;
+  let randadParam = ad_code_identifier.randad;
+
+  if (ad_code_identifier.randads && Object.keys(ad_code_identifier.randads).length > 0 && urlChannel) {
+    randadParam = ad_code_identifier.randads[urlChannel];
+  }
+
 
   console.log("URL channel parameter:", channelParam);
   console.log("Ad randad parameter:", randadParam);

@@ -13,36 +13,39 @@ let anchorAdList = [];
 let interstitialAdList = [];
 
 (function () {
-  
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlChannel = urlParams.get("channel");
+  const storedChannel = sessionStorage.getItem("channel");
 
-  
   const status = ad_code_identifier.status;
   console.log("Ad status:", status);
 
   if (status != 1) {
     console.log("⚠️ Status is not 1, skipping ad initialization");
-    return; 
+    return;
   }
 
   console.log("✅ Status is 1, proceeding with ad initialization");
 
-  
-  const gtagId = ad_code_identifier.gtag;
+  let gtagId = ad_code_identifier.gtag;
 
-  
+  if (ad_code_identifier.gtags && Object.keys(ad_code_identifier.gtags).length > 0 && urlChannel) {
+    gtagId = ad_code_identifier.gtags[urlChannel];
+  }
+
+    console.log(gtagId,'gtagIds detail')
+
   const gptScript = document.createElement("script");
   gptScript.async = true;
   gptScript.src = "https://securepubads.g.doubleclick.net/tag/js/gpt.js";
   gptScript.crossOrigin = "anonymous";
   document.head.appendChild(gptScript);
 
-  
   const gtagScript = document.createElement("script");
   gtagScript.async = true;
   gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${gtagId}`;
   document.head.appendChild(gtagScript);
 
-  
   const gtagConfigScript = document.createElement("script");
   gtagConfigScript.textContent = `
     window.dataLayer = window.dataLayer || [];
@@ -54,41 +57,35 @@ let interstitialAdList = [];
 
   console.log("✅ Scripts injected into head");
 
-  
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlChannel = urlParams.get("channel");
-  const storedChannel = sessionStorage.getItem("channel");
-
-  
   if (urlChannel) {
     sessionStorage.setItem("channel", urlChannel);
   }
 
-  
   const channelParam = storedChannel || urlChannel;
 
-  
-  const randadParam = ad_code_identifier.randad;
+  let randadParam = ad_code_identifier.randad;
+
+
+  if (ad_code_identifier.randads && Object.keys(ad_code_identifier.randads).length > 0 && urlChannel) {
+    randadParam = ad_code_identifier.randads[urlChannel];
+  }
+
 
   console.log("URL channel parameter:", channelParam);
   console.log("Ad randad parameter:", randadParam);
 
-  
   const adunits = ad_code_identifier.adunit;
   let selectedAdunit = null;
 
-  
   if (channelParam && adunits[channelParam]) {
     selectedAdunit = adunits[channelParam];
     console.log(`✅ Found matching channel: ${channelParam}`);
   } else {
-    
     const firstKey = Object.keys(adunits)[0];
     selectedAdunit = adunits[firstKey];
     console.log(`⚠️ No matching channel, using first adunit: ${firstKey}`);
   }
 
-  
   if (selectedAdunit && selectedAdunit.detail) {
     bannerAdList = selectedAdunit.detail.map((item, index) => ({
       id: `div-gpt-ad-detail${index + 1}`,
@@ -99,7 +96,6 @@ let interstitialAdList = [];
     console.log("✅ Banner ad list created:", bannerAdList);
   }
 
-  
   if (
     selectedAdunit &&
     selectedAdunit.detail_anchor &&
@@ -111,7 +107,6 @@ let interstitialAdList = [];
     console.log("✅ Anchor ad list created:", anchorAdList);
   }
 
-  
   if (
     selectedAdunit &&
     selectedAdunit.interstitial &&
@@ -123,11 +118,9 @@ let interstitialAdList = [];
     console.log("✅ Interstitial ad list created:", interstitialAdList);
   }
 
-  
   if (randadParam == 1 || randadParam == 3) {
     console.log("🎲 Randad is 1 or 3, shuffling ad slots...");
 
-    
     function shuffleArray(array) {
       const shuffled = [...array];
       for (let i = shuffled.length - 1; i > 0; i--) {
@@ -137,7 +130,6 @@ let interstitialAdList = [];
       return shuffled;
     }
 
-    
     if (bannerAdList.length > 0) {
       const originalSlots = bannerAdList.map((ad) => ad.slot);
       const shuffledSlots = shuffleArray(originalSlots);
@@ -152,7 +144,6 @@ let interstitialAdList = [];
   }
 })();
 
-
 const checkGoogleAdSenseLoaded = () => {
   return (
     window.googletag &&
@@ -162,7 +153,6 @@ const checkGoogleAdSenseLoaded = () => {
     typeof window.googletag.display === "function"
   );
 };
-
 
 const loadBannerAd = (slotName, size, divId) => {
   try {
@@ -181,7 +171,7 @@ const loadAnchorAd = (slotName) => {
   try {
     const anchorSlot = googletag.defineOutOfPageSlot(
       slotName,
-      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+      googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR,
     );
     if (anchorSlot) {
       anchorSlot.setTargeting("test", "anchor").addService(googletag.pubads());
@@ -196,7 +186,7 @@ const loadInterstitialAd = (slotName) => {
   try {
     const interstitialSlot = window.googletag.defineOutOfPageSlot(
       slotName,
-      googletag.enums.OutOfPageFormat.INTERSTITIAL
+      googletag.enums.OutOfPageFormat.INTERSTITIAL,
     );
     if (interstitialSlot) {
       interstitialSlot.addService(googletag.pubads()).setConfig({
@@ -216,10 +206,8 @@ const initializeAllAds = () => {
 
   bannerAdList.forEach((ad) => loadBannerAd(ad.slot, ad.size, ad.divId));
 
-  
   anchorAdList.forEach((ad) => loadAnchorAd(ad.slot));
 
-  
   interstitialAdList.forEach((ad) => loadInterstitialAd(ad.slot));
 
   window.googletag.pubads().enableSingleRequest();
@@ -228,25 +216,21 @@ const initializeAllAds = () => {
   console.log("✅ All ad slots defined successfully.");
   console.log("🔍 Checking and displaying existing static ads...");
 
-  
   googletag.cmd.push(function () {
     bannerAdList.forEach((ad) => {
       const element = document.getElementById(ad.id);
       if (element) {
-        
         googletag.display(ad.id);
       } else {
-        
       }
     });
   });
 };
 
-
 window.displayDynamicAd = (adId) => {
   googletag.cmd.push(function () {
     console.log(
-      `📡 Received display request, preparing to display dynamic ad: ${adId}`
+      `📡 Received display request, preparing to display dynamic ad: ${adId}`,
     );
     const element = document.getElementById(adId);
     if (element) {
@@ -261,7 +245,6 @@ window.displayDynamicAd = (adId) => {
     }
   });
 };
-
 
 window.displayAllDynamicAds = () => {
   if (!checkGoogleAdSenseLoaded() || !window.googletag) {
@@ -284,7 +267,7 @@ window.displayAllDynamicAds = () => {
     }
   });
   console.log(
-    `📊 Batch display completed, successfully displayed ${displayedCount}/${bannerAdList.length} ads`
+    `📊 Batch display completed, successfully displayed ${displayedCount}/${bannerAdList.length} ads`,
   );
 };
 
