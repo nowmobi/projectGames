@@ -205,12 +205,9 @@ function setupImageErrorHandler(imgElement, gameName) {
 
 
 async function checkGameAvailability(gamePath) {
-    try {
-        const response = await fetch(gamePath);
-        return response.ok;
-    } catch (error) {
-        return false;
-    }
+    // 简化检查，直接返回true，避免CORS问题
+    // 实际的游戏可用性会在用户访问时由浏览器处理
+    return true;
 }
 
 
@@ -218,15 +215,9 @@ function setupPlayButtonHandler(playButton, game) {
     const gamePath = getGameUrl(game.id);
     playButton.href = gamePath;
     
-    playButton.onclick = async function(e) {
-        e.preventDefault();
-        const isAvailable = await checkGameAvailability(gamePath);
-        
-        if (isAvailable) {
-            window.location.href = gamePath;
-        } else {
-            showGameUnavailableMessage(game.name);
-        }
+    playButton.onclick = function(e) {
+        // 直接跳转到游戏页面，让浏览器处理实际的访问
+        window.location.href = gamePath;
     };
 }
 

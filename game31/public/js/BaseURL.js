@@ -1,6 +1,5 @@
-export const BASE_URL = "https://games5-65b.pages.dev/db6.json";
-
-
+export const BASE_URL = "https://datajson.pages.dev/games7/db6.json";
+const baseUrl = 'https://games7.pages.dev';
 let gameDetails = [];
 let dataLoadPromise = null;
 
@@ -46,8 +45,9 @@ export function getGameDetail(id) {
 }
 
 export function getGameUrl(gameId) {
-  const baseUrl = getDataBaseUrl();
-  return `${baseUrl}/games1/${gameId}/index.html`;
+ 
+  const baseUrl = 'https://games7.pages.dev';
+  return `${baseUrl}/games/${gameId}/index.html`;
 }
 
 const DEFAULT_CATEGORIES = [
@@ -62,7 +62,7 @@ const DEFAULT_CATEGORIES = [
 
 
 export async function getCategoryOrder() {
-  const infoType = 'info5';
+  const infoType = 'info3';
   try {
      const data = await loadGameData();
     if (Array.isArray(data) && data.length > 0 && data[0] && data[0][infoType]) {
@@ -83,8 +83,7 @@ export function getDataBaseUrl() {
 }
 
 export function getImgUrl(game) {
-  const baseUrl = getDataBaseUrl();
-
+ 
   if (!game.img && !game.image) {
     return `${baseUrl}/icons/${game.id}.jpg`;
   }
