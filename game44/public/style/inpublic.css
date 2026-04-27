@@ -1,7 +1,7 @@
 
 :root {
     
-    --primary-color: #746097;
+    --primary-color: #1660ab;
     
     
     --text-primary: #2c2c2c;
@@ -292,7 +292,7 @@ html {
 }
 
 .game-card {
-    background: var(--bg-primary);
+    background: var(--primary-color);
     padding: var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     overflow: hidden;
@@ -469,9 +469,22 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--bg-primary);
-    padding: var(--spacing-sm) 0;
+    background: transparent;
+    padding: var(--spacing-lg) var(--spacing-sm);
     width: 100%;
+    border-bottom: 2px solid rgba(116, 96, 151, 0.3);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--primary-color);
 }
 
 .section-more {

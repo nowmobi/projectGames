@@ -1,4 +1,4 @@
-/* Game Design CSS - 霓虹灯效果样式 */
+
 :root {
     --neon-blue: #00f3ff;
     --neon-purple: #b35aff;
@@ -10,7 +10,6 @@
     --text-secondary: #cccccc;
 }
 
-/* 搜索框样式 */
 .search-bar {
     max-width: 600px;
     margin: 0 auto;
@@ -61,7 +60,6 @@
     stroke: var(--neon-blue);
 }
 
-/* Featured Games 标题 */
 .section-title {
     font-size: 28px;
     font-weight: 800;
@@ -85,7 +83,6 @@
     box-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
 }
 
-/* 游戏卡片容器 */
 .game-grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(280px, 1fr));
@@ -94,9 +91,8 @@
     padding: 0 15px;
 }
 
-/* 游戏卡片 */
 .game-card {
-    background: rgba(31, 31, 31, 0.8);
+    background: var(--primary-color);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -160,7 +156,6 @@
     border-radius: 12px;
 }
 
-/* 游戏信息区域 */
 .game-card-content {
     color: var(--text-primary);
 }
@@ -198,7 +193,6 @@
     text-overflow: ellipsis;
 }
 
-/* PLAY按钮 */
 .game-card-link-btn {
     background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
     color: var(--text-primary);
@@ -242,7 +236,6 @@
     box-shadow: 0 2px 8px rgba(0, 243, 255, 0.3);
 }
 
-/* 动画效果 */
 @keyframes neonGlow {
     0% { opacity: 0.5; }
     100% { opacity: 1; }
@@ -253,7 +246,6 @@
     100% { opacity: 0.8; transform: scale(1.02); }
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
     .game-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
