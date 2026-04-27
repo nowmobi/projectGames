@@ -12,7 +12,7 @@
         <button class="header-icon" id="searchIconBtn" type="button">
             <img src="public/images/search.svg" alt="search" class="search-icon-img">
         </button>
-        <a href="index.html" class="logo">labialism.com</a>
+        <a href="index.html" class="logo">game.circumundulate.com</a>
         <a href="#" class="header-icon" id="menuToggle">
             <img src="public/images/category.svg" alt="category" class="category-icon-img">
         </a>
@@ -50,7 +50,7 @@
     </main>
     
     <footer class="footer">
-        <div class="footer-brand">labialism.com</div>
+        <div class="footer-brand">game.circumundulate.com</div>
         <div class="footer-links">
             <a href="pages/privacy.html">Privacy</a>
             <span class="footer-separator">|</span>
@@ -58,6 +58,32 @@
         </div>
     </footer>
 
+    <script>
+        function adjustLogoFontSize() {
+            const logo = document.querySelector('.logo');
+            if (!logo) return;
+            
+            const header = document.querySelector('.header');
+            if (!header) return;
+            
+            const headerWidth = header.offsetWidth;
+            const iconWidth = 32; 
+            const padding = 40; 
+            const availableWidth = headerWidth - (iconWidth * 2) - padding - 20; 
+            
+            logo.style.fontSize = '24px';
+            
+            let fontSize = 24;
+            while (logo.scrollWidth > availableWidth && fontSize > 16) {
+                fontSize -= 1;
+                logo.style.fontSize = fontSize + 'px';
+            }
+        }
+        
+        window.addEventListener('load', adjustLogoFontSize);
+       
+        window.addEventListener('resize', adjustLogoFontSize);
+    </script>
     
 <script type="module" src="./public/js/inpublic.js"></script>
 <script type="module" src="./public/js/index.js"></script>

@@ -1,4 +1,4 @@
-export const BASE_URL = "https://datajson.pages.dev/games7/db6.json";
+export const BASE_URL = "https://datajson.pages.dev/games7/db9.json";
 const baseUrl = 'https://games7.pages.dev';
 let gameDetails = [];
 let dataLoadPromise = null;
@@ -79,7 +79,7 @@ export async function getCategoryOrder() {
 }
 
 export function getDataBaseUrl() {
-  return BASE_URL.replace('/db6.json', '');
+  return BASE_URL.replace('/db9.json', '');
 }
 
 export function getImgUrl(game) {

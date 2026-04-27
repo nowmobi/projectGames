@@ -1,7 +1,7 @@
 
 :root {
-    --color1: #f0ff31;
-    --color2: #4031ff;
+    --color1: #6b496a;
+    --color2: #496b4a;
     --primary-gradient1: linear-gradient(
         180deg,
         color-mix(in srgb, var(--color1) 85%, #ffffff 15%) 0%,
@@ -12,9 +12,9 @@
         color-mix(in srgb, var(--color2) 85%, #ffffff 15%) 0%,
         color-mix(in srgb, var(--color1) 92%,  #ffffff 8%) 100%
     );
-    --text-primary: #2c2c2c;
+    --text-primary: #ffffff;
     --text-muted: #999;
-    --logo-color: #2c2c2c;
+    --logo-color: #ffffff;
 }
 
 * {
@@ -178,9 +178,15 @@ body {
     display: flex;
     align-items: center;
     order: 2;
-    flex: 1;
+    flex: 0 1 auto;
     justify-content: center;
     margin: 0 10px;
+    min-width: 0;
+    max-width: calc(100% - 80px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: font-size 0.2s ease;
 }
 
 .header > .header-icon:last-child {
@@ -246,6 +252,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: font-size 0.2s ease;
 }
 
 .header-title-text {

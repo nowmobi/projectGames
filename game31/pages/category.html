@@ -15,7 +15,7 @@
             </svg>
         </a>
         <div class="header-center">
-            <span class="center-logo">labialism.com</span>
+            <span class="center-logo">game.circumundulate.com</span>
         </div>
     </header>
 
@@ -45,6 +45,32 @@
     <a href="../index.html" class="home-float-button" title="back to home">
         <img src="../public/images/home.svg" alt="Home" class="home-float-button-image">
     </a>
+
+    <script>
+        function adjustCenterLogoFontSize() {
+            const centerLogo = document.querySelector('.center-logo');
+            if (!centerLogo) return;
+            
+            const header = document.querySelector('.header');
+            if (!header) return;
+            
+            const headerWidth = header.offsetWidth;
+            const iconWidth = 42; 
+            const padding = 40; 
+            const availableWidth = headerWidth - iconWidth - padding - 20; 
+            
+            centerLogo.style.fontSize = '24px';
+            
+            let fontSize = 24;
+            while (centerLogo.scrollWidth > availableWidth && fontSize > 12) {
+                fontSize -= 1;
+                centerLogo.style.fontSize = fontSize + 'px';
+            }
+        }
+        
+        window.addEventListener('load', adjustCenterLogoFontSize);
+        window.addEventListener('resize', adjustCenterLogoFontSize);
+    </script>
 
     
 <script type="module" src="../public/js/inpublic.js"></script>
