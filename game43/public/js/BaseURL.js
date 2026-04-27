@@ -7,7 +7,7 @@ const baseUrl = 'https://games5-65b.pages.dev';
 
 let gameDetails = [];
 let categoryDetails = [];
-// 使用Map来缓存基于URL的fetch请求结果
+
 const fetchCache = new Map();
 
 export async function loadGameData() {

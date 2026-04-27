@@ -341,7 +341,7 @@ html {
     gap: 20px;
     margin-bottom: 40px;
     position: relative;
-    padding: 25px 0px 25px 25px;
+    padding: 15px 0px 15px 25px;
     background: #fff;
 }
 
@@ -359,6 +359,7 @@ html {
     color: inherit;
     /* 让所有卡片都有相同的z-index基础 */
     z-index: 1;
+    height: 150px;
 }
 
 /* 第二列的卡片向左移动60px并叠加 */
@@ -373,13 +374,13 @@ html {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* 调整hover效果以适应位移 */
 .game-card:nth-child(2n):hover {
     transform: translateX(-60px) translateY(-2px);
 }
 
 .game-card img {
-    width: 100%;
+    width: 100px;
+    height: 70px;
     aspect-ratio: 1;
     height: auto;
     border-radius: 12px;
@@ -389,21 +390,18 @@ html {
     z-index: 2;
 }
 
-/* 圆形图片样式 - 奇数位置 */
 .game-card:nth-child(odd) img {
     border-radius: 50%;
 }
 
-/* 梯形图片样式 - 偶数位置 */
 .game-card:nth-child(even) img {
-    border-radius: 20px 20px 5px 5px; /* 上边圆角，下边直角形成梯形效果 */
+    border-radius: 20px 20px 5px 5px; 
 }
 
 .game-title {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     color: #333;
-    margin: 0 0 12px 0;
     line-height: 1.3;
     padding: 0;
     display: -webkit-box;
@@ -484,7 +482,7 @@ html {
     }
     
     .game-card img {
-        height: 120px;
+        height: 70px;
     }
     
     
@@ -535,9 +533,9 @@ html {
     position: relative;
     overflow: visible;
     z-index: 1;
+    height: 150px;
 }
 
-/* 首页第二列的卡片向左移动60px并叠加 */
 .homepage-game-card:nth-child(2n) {
     transform: translateX(-25px);
     z-index: 2;
@@ -549,15 +547,14 @@ html {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* 调整首页hover效果 */
 .homepage-game-card:nth-child(2n):hover {
     transform: translateX(-60px) translateY(-2px);
 }
 
 .homepage-game-image {
-    width: 100%;
+    width: 100px;
+    height: 70px;
     aspect-ratio: 1;
-    height: auto;
     border-radius: 12px;
     object-fit: cover;
     margin-bottom: 0;
@@ -565,21 +562,18 @@ html {
     z-index: 2;
 }
 
-/* 首页圆形图片样式 - 奇数位置 */
 .homepage-game-card:nth-child(odd) .homepage-game-image {
     border-radius: 50%;
 }
 
-/* 首页梯形图片样式 - 偶数位置 */
 .homepage-game-card:nth-child(even) .homepage-game-image {
-    border-radius: 20px 20px 5px 5px; /* 上边圆角，下边直角形成梯形效果 */
+    border-radius: 20px 20px 5px 5px; 
 }
 
 .homepage-game-card h3 {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     color: #333;
-    margin: 0 0 12px 0;
     line-height: 1.3;
     padding: 0;
     display: -webkit-box;
@@ -788,7 +782,6 @@ html {
     margin-left: 42px;
 }
 
-/* 推荐页面第二列的卡片向左移动60px并叠加 */
 .recommended-game:nth-child(2n) {
     transform: translateX(-60px);
     z-index: 2;
@@ -800,7 +793,6 @@ html {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* 调整推荐页面hover效果 */
 .recommended-game:nth-child(2n):hover {
     transform: translateX(-60px) translateY(-2px);
 }
@@ -817,14 +809,13 @@ html {
     margin-top: -60px;
 }
 
-/* 推荐页面圆形图片样式 - 奇数位置 */
 .recommended-game:nth-child(odd) img {
     border-radius: 50%;
 }
 
-/* 推荐页面梯形图片样式 - 偶数位置 */
+
 .recommended-game:nth-child(even) img {
-    border-radius: 20px 20px 5px 5px; /* 上边圆角，下边直角形成梯形效果 */
+    border-radius: 20px 20px 5px 5px; 
 }
 
 .recommended-game h3 {
