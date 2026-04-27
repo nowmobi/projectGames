@@ -4,18 +4,18 @@ import { initSearch } from './inpublic.js';
 let gameDetails = [];
 let categoryOrder = [];
 
-// 轮播图数据 - 使用实际游戏数据
+
 let carouselGames = [];
 
-// 初始化轮播图
+
 function initCarousel() {
   if (!carouselSlides || carouselGames.length === 0) return;
   
-  // 清空现有内容
+
   carouselSlides.innerHTML = '';
   carouselIndicators.innerHTML = '';
   
-  // 创建轮播项
+
   carouselGames.forEach((game, index) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
@@ -25,35 +25,37 @@ function initCarousel() {
         <h3 class="carousel-slide-title">${game.name}</h3>
         <p class="carousel-slide-desc">Featured Game - Click to Play</p>
       </div>
+      <div class="carousel-game-name-overlay">
+        <span class="game-name-text">${game.name}</span>
+      </div>
     `;
-    // 添加点击事件跳转到游戏详情页
+
     slide.addEventListener('click', () => {
       window.location.href = `detail.html?id=${game.id}${window.channel ? '&channel=' + window.channel : ''}`;
     });
     carouselSlides.appendChild(slide);
     
-    // 创建指示器
+
     const indicator = document.createElement('div');
     indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
     indicator.addEventListener('click', () => goToSlide(index));
     carouselIndicators.appendChild(indicator);
   });
   
-  // 设置轮播图宽度
+
   updateCarouselWidth();
   
-  // 绑定事件
+
   if (carouselPrev) {
     carouselPrev.addEventListener('click', prevSlide);
   }
   if (carouselNext) {
     carouselNext.addEventListener('click', nextSlide);
   }
-  
-  // 开始自动播放
+
   startAutoPlay();
   
-  // 鼠标悬停暂停
+
   const carouselContainer = document.querySelector('.carousel-container');
   if (carouselContainer) {
     carouselContainer.addEventListener('mouseenter', stopAutoPlay);
@@ -61,11 +63,11 @@ function initCarousel() {
   }
 }
 
-// 选择特色游戏用于轮播图
+
 function selectFeaturedGames() {
   if (!gameDetails || gameDetails.length === 0) return [];
   
-  // 筛选有效游戏
+ 
   const validGames = gameDetails.filter(game => {
     return game && 
            game.id !== null && 
@@ -79,7 +81,7 @@ function selectFeaturedGames() {
   
   if (validGames.length === 0) return [];
   
-  // 随机选择4个游戏作为轮播图
+
   const shuffledGames = [...validGames].sort(() => 0.5 - Math.random());
   return shuffledGames.slice(0, 4);
 }
@@ -94,13 +96,12 @@ const recommendedGamesGrid = document.getElementById('recommendedGamesGrid');
 const categoriesMenu = document.getElementById('categoriesMenu');
 const mainContent = document.querySelector('.main-content');
 
-// 轮播图相关元素
+
 const carouselSlides = document.getElementById('carouselSlides');
 const carouselPrev = document.getElementById('carouselPrev');
 const carouselNext = document.getElementById('carouselNext');
 const carouselIndicators = document.getElementById('carouselIndicators');
 
-// 更新轮播图宽度
 function updateCarouselWidth() {
   const slides = document.querySelectorAll('.carousel-slide');
   if (slides.length > 0) {
@@ -108,7 +109,6 @@ function updateCarouselWidth() {
   }
 }
 
-// 切换到指定幻灯片
 function goToSlide(index) {
   const slides = document.querySelectorAll('.carousel-slide');
   const indicators = document.querySelectorAll('.indicator');
@@ -118,32 +118,32 @@ function goToSlide(index) {
   
   currentSlide = index;
   
-  // 移动轮播图
+
   carouselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
   
-  // 更新指示器
+
   indicators.forEach((indicator, i) => {
     indicator.classList.toggle('active', i === currentSlide);
   });
 }
 
-// 下一张
+
 function nextSlide() {
   goToSlide(currentSlide + 1);
 }
 
-// 上一张
+
 function prevSlide() {
   goToSlide(currentSlide - 1);
 }
 
-// 开始自动播放
+
 function startAutoPlay() {
-  stopAutoPlay(); // 先清除现有定时器
-  slideInterval = setInterval(nextSlide, 4000); // 每4秒切换一次
+  stopAutoPlay(); 
+  slideInterval = setInterval(nextSlide, 4000); 
 }
 
-// 停止自动播放
+
 function stopAutoPlay() {
   if (slideInterval) {
     clearInterval(slideInterval);
@@ -350,7 +350,7 @@ document.addEventListener('click', (e) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // 加载游戏数据
+     
         const [gameData, categories] = await Promise.all([
             loadGameData(),
             getCategoryOrder()
@@ -358,32 +358,32 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         gameDetails = gameData;
         
-        // 处理分类顺序
+
         if (Array.isArray(categories) && categories.length > 0) {
-            // 过滤有效的分类名称
+        
             categoryOrder = categories.filter(cat => typeof cat === 'string' && cat.trim().length > 0);
         } else {
-            // 默认分类顺序
+    
             categoryOrder = ['puzzle', 'action', 'adventure', 'racing', 'sports', 'kids', 'girl'];
         }
         
         if (gameDetails.length > 0) {
-            // 选择特色游戏用于轮播图
+    
             carouselGames = selectFeaturedGames();
             
-            // 初始化轮播图
+  
             initCarousel();
             
-            // 生成推荐游戏
+    
             generateRecommendedGames();
             
-            // 生成侧边栏分类
+         
             generateSidebarCategories(categoryOrder);
             
-            // 生成分类区域
+    
             generateCategorySections(categoryOrder);
             
-            // 为每个分类生成游戏
+       
             const categoryInfo = getCategoryInfo();
             categoryOrder.forEach((category) => {
                 const categoryLower = String(category).toLowerCase().trim();
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
             
-            // 初始化搜索功能
+   
             await initSearch();
         } else {
             console.warn('No game data loaded');
