@@ -1,6 +1,6 @@
-export const BASE_URL = "https://datajson.pages.dev/games5/db3.json";
+export const BASE_URL = "https://datajson.pages.dev/games7/db12.json";
+const baseUrl = 'https://games7.pages.dev';
 
-const baseUrl = 'https://games5-65b.pages.dev';
 export function getDataBaseUrl() {
   return baseUrl;
 }
