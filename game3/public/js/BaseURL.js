@@ -1,14 +1,13 @@
-// export const BASE_URL = "https://datajson.pages.dev/games5/db1.json";
-
-// const baseUrl = 'https://games5-65b.pages.dev';
+export const BASE_URL = "https://datajson.pages.dev/games7/db9.json";
+const baseUrl = 'https://games7.pages.dev';
 
 // export const BASE_URL = "https://datajson.pages.dev/games9-data.json";
 
 // const baseUrl = 'https://games9-4av.pages.dev';
 
-export const BASE_URL = "https://datajson.pages.dev/games10-data.json";
+// export const BASE_URL = "https://datajson.pages.dev/games10-data.json";
 
-const baseUrl = 'https://games10-1rg.pages.dev';
+// const baseUrl = 'https://games10-1rg.pages.dev';
 
 
 
