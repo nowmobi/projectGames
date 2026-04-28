@@ -1,7 +1,7 @@
 
 :root {
     
-    --primary-color: pink;
+    --primary-color: green;
     
     --text-primary: #2c2c2c;
     --text-muted: #999;
@@ -45,7 +45,6 @@
     --grid-columns: repeat(2, 1fr);
     --grid-gap-sm: 15px;
     
-    /* 手绘风格颜色变量 */
     --hand-drawn-border-color: #a88c7d;
     --hand-drawn-bg-light: #fff9f5;
     --hand-drawn-bg-gradient-start: #ffe6e6;
@@ -286,8 +285,6 @@ html {
     font-size: var(--font-size-base);
 }
 
-
-/* 手绘风格游戏卡片样式 */
 .game-card {
     background: var(--hand-drawn-bg-light);
     padding: var(--spacing-sm);
@@ -301,12 +298,9 @@ html {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--hand-drawn-border-color);
-    /* 添加手绘风格边框效果 */
     border-image: linear-gradient(45deg, transparent, var(--hand-drawn-border-color), transparent) 1;
-    /* 添加贴纸效果阴影 */
     box-shadow: 0 8px 20px rgba(168, 140, 125, 0.2), 
                 inset 0 2px 4px rgba(255, 255, 255, 0.8);
-    /* 添加手绘风格边角装饰 */
     background-image: 
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.5) 0%, transparent 20%),
         radial-gradient(circle at top right, rgba(255, 255, 255, 0.5) 0%, transparent 20%),
@@ -351,7 +345,6 @@ html {
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: var(--border-radius-sm);
-    /* 添加手绘边框效果 */
     border: 2px solid var(--hand-drawn-border-color);
     box-shadow: 0 4px 12px rgba(168, 140, 125, 0.15);
     height: 150px;
@@ -397,7 +390,6 @@ html {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* 添加对话气泡样式 */
     position: relative;
     padding: 8px 16px;
     background: var(--hand-drawn-bg-light);
@@ -470,7 +462,6 @@ html {
     border-bottom: 10px solid transparent;
 }
 
-/* 手绘风格PLAY按钮样式 */
 .play-button {
     background: linear-gradient(135deg, var(--hand-drawn-btn-gradient-start), var(--hand-drawn-btn-gradient-end));
     color: var(--text-primary);
@@ -519,29 +510,23 @@ html {
     fill: white;
 }
 
-/* 淡色渐变背景用于卡片容器 */
 .game-grid {
     display: grid;
     grid-template-columns: var(--grid-columns);
     gap: var(--grid-gap-sm);
     margin-bottom: var(--spacing-sm);
-    background: linear-gradient(135deg, var(--hand-drawn-bg-gradient-start), var(--hand-drawn-bg-gradient-end));
+    background: linear-gradient(135deg,  var(--primary-color), var(--hand-drawn-bg-gradient-end));
     padding: var(--spacing-md);
     border-radius: var(--border-radius-md);
     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-
-
-
-/* 游戏卡片悬停效果 */
 .game-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(168, 140, 125, 0.3);
     border-color: var(--hand-drawn-border-color);
 }
 
-/* 搜索框样式 */
 .search-section {
     margin-bottom: var(--spacing-sm);
 }
@@ -598,7 +583,6 @@ html {
     background: transparent;
     color: var(--text-primary);
     border-radius: var(--border-radius-md);
-    /* 添加手绘风格内边框 */
     border: 1px solid rgba(168, 140, 125, 0.3);
 }
 
@@ -659,14 +643,14 @@ html {
     stroke-width: 2;
 }
 
-/* 搜索框悬停效果 */
+
 .search-bar:hover {
     border-color: var(--hand-drawn-border-color);
     box-shadow: 0 8px 25px rgba(168, 140, 125, 0.3),
                 inset 0 2px 6px rgba(255, 255, 255, 0.8);
 }
 
-/* 响应式调整 */
+
 @media (max-width: 768px) {
     .search-bar {
         max-width: 100%;
@@ -683,7 +667,7 @@ html {
     }
 }
 
-/* 响应式调整 */
+
 @media (max-width: 768px) {
     .game-card {
         padding: var(--spacing-xs);
