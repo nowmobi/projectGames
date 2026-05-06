@@ -1,5 +1,5 @@
-export const BASE_URL = "https://datajson.pages.dev/games7/db1.json";
-const baseUrl = 'https://games7.pages.dev';
+export const BASE_URL = "https://datajson.pages.dev/games8/db1.json";
+const baseUrl = 'https://games8-9t4.pages.dev';
 
 let gameDetails = [];
 let dataLoadPromise = null;
