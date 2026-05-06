@@ -1,6 +1,7 @@
-export const BASE_URL = "https://datajson.pages.dev/games5/db2.json";
 
-const baseUrl = 'https://games5-65b.pages.dev';
+export const BASE_URL = "https://datajson.pages.dev/games8/db2.json";
+const baseUrl = 'https://games8-9t4.pages.dev';
+
 
 export function getDataBaseUrl() {
   return baseUrl;
@@ -72,7 +73,7 @@ export function getGameDetail(id) {
 }
 
 export function getGameUrl(gameId) {
-  return `${baseUrl}/games1/${gameId}/index.html`;
+  return `${baseUrl}/games/${gameId}/index.html`;
 }
 
 const DEFAULT_CATEGORIES = [
