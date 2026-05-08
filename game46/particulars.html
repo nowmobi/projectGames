@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+    <link rel="stylesheet" href="./public/style/inpublic.css" />
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/c/font_5090017_ahkqcx9tit.css"
+    />
+     <link rel="icon" href="public/icon.png"/>
+  
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="header-icon back-button">
+          <svg
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <div class="header-center">
+           <p>camess.site</p>
+        </div>
+        <div class="header-icons">
+          <a href="#" class="header-icon" id="menuToggle">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="5"
+                width="6"
+                height="6"
+                stroke="currentColor"
+                stroke-width="1.8"
+                fill="none"
+                rx="0.5"
+              />
+              <line
+                x1="13"
+                y1="6"
+                x2="19"
+                y2="6"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+              <line
+                x1="13"
+                y1="10"
+                x2="19"
+                y2="10"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+
+              <rect
+                x="3"
+                y="14"
+                width="6"
+                height="6"
+                stroke="currentColor"
+                stroke-width="1.8"
+                fill="none"
+                rx="0.5"
+              />
+              <line
+                x1="13"
+                y1="15"
+                x2="19"
+                y2="15"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+              <line
+                x1="13"
+                y1="19"
+                x2="19"
+                y2="19"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="categories-menu" id="categoriesMenu">
+      <div class="categories-header">
+        <span class="categories-title">Menu</span>
+        <span class="close-categories" id="closeCategories">✕</span>
+      </div>
+      <div class="categories-list">
+        <div class="category-item active" data-category="home">
+          <span class="category-name">Home</span>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <div class="ads">
+        <div id="div-gpt-ad-detail1"></div>
+      </div>
+      <div class="game-detail-container" id="gameDetail">
+        <div class="game-hero">
+          <div class="game-icon-wrapper">
+            <img src="" alt="" class="game-icon" id="gameIcon" />
+          </div>
+          <div class="game-header">
+            <div class="game-info">
+              <h1 class="game-title" id="gameTitle">Loading...</h1>
+              <div class="game-meta">
+                <div class="game-category" id="gameCategory">Category</div>
+                <div class="game-rating">
+                  <span class="stars" id="gameStars">★★★★★</span>
+                  <span class="rating-text" id="ratingText">5/5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="game-content">
+          <p class="game-description" id="gameDescription">
+            Game description loading...
+          </p>
+          <div class="play-button-container">
+            <a href="#" class="play-button" id="playButton">Play Now</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="recommended-section">
+        <h2 class="section-title">Hot</h2>
+        <div class="recommended-list" id="recommendedGames"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="pages/privacy.html">Privacy Policy</a>
+        <a href="pages/terms.html">Terms of Use</a>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="footer-brand">camess.site</div>
+        <div class="footer-copyright-text">
+          © 2026 camess.site. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <div
+      class="top-btn iconfont icon-4fanhuidingbucheng"
+      id="topBtn"
+      style="font-size: 30px"
+    ></div>
+
+
+    <script src="./public/js/inpublic.js"></script>
+    <script type="module" src="./public/js/detail.js"></script>
+    <script type="module">
+      import { ad_code_identifier } from "./ads.js";
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./detailgg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./detailgg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
+    <div class="top-btn" id="topBtn">
+      <svg class="top-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </body>
+</html>
