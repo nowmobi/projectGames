@@ -1,6 +1,9 @@
 
-export const BASE_URL = "https://datajson.pages.dev/games8/db2.json";
-const baseUrl = 'https://games8-9t4.pages.dev';
+export const BASE_URL = "https://datajson.pages.dev/games5/db6.json";
+
+const baseUrl = 'https://games5-65b.pages.dev';
+
+
 
 let gameDetails = [];
 let dataLoadPromise = null;
@@ -47,7 +50,7 @@ export function getGameDetail(id) {
 }
 
 export function getGameUrl(gameId) {
-  return `${baseUrl}/games/${gameId}/index.html`;
+  return `${baseUrl}/games1/${gameId}/index.html`;
 }
 
 const DEFAULT_CATEGORIES = [
@@ -64,15 +67,19 @@ const DEFAULT_CATEGORIES = [
 export async function getCategoryOrder() {
   const infoType = 'info2';
   try {
-    // 复用已加载的数据，避免重复请求
-    const data = await loadGameData();
-    
+    const response = await fetch(BASE_URL);
+    if (!response.ok) {
+      return DEFAULT_CATEGORIES;
+    }
+    const data = await response.json();
+
     if (Array.isArray(data) && data.length > 0 && data[0] && data[0][infoType]) {
       const categories = data[0][infoType];
       if (Array.isArray(categories) && categories.length > 0) {
         return categories;
       }
     }
+
     return DEFAULT_CATEGORIES;
   } catch (error) {
     return DEFAULT_CATEGORIES;
