@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./public/style/inpublic.css">
 </head>
 <body class="detail-page">
@@ -17,11 +14,11 @@
                 <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </a>
-        <a href="index.html" class="logo">
-            <p>game.fylfot.cloud</p>
-        </a>
+        <div class="header-center">
+            <p class="center-logo-text">sec.flowflux.cloud</p>
+        </div>
         <a href="#" class="header-icon" id="menuToggle">
-            <img src="public/images/category.svg" alt="category" class="category-icon-img">
+            <img src="public/images/category.png" alt="category" class="category-icon-img">
         </a>
     </header>
     
@@ -33,7 +30,7 @@
             <img src="" alt="" class="game-image-large" id="gameIcon">
             <h3 class="purchase-title" id="purchaseTitle">Game Title</h3>
             <a href="#" class="buy-now-btn" id="playButton">
-                <img src="public/images/play.svg" alt="Play" class="play-button-image">
+                <img src="public/images/play.png" alt="Play" class="play-button-image">
                 <span class="play-text">Play</span>
             </a>
             <div class="game-intro" id="gameIntro">
@@ -43,7 +40,7 @@
         
         <section class="recommended-section">
             <h2 class="section-title">
-                <img src="public/images/hot2.svg" alt="Hot" class="section-icon">
+                <img src="public/images/hot2.png" alt="Hot" class="section-icon">
                 Popular Games
             </h2>
             <div id="recommendedGames" class="card-grid">
@@ -51,13 +48,11 @@
             </div>
         </section>
     </main>
-    
-    
-    <a href="index.html" class="home-float-button" title="back to home">
-        <img src="public/images/home.svg" alt="Home" class="home-float-button-image">
-    </a>
- 
-    
+
+    <button class="back-to-top" id="backToTop" title="Back to Top">
+        <span class="back-to-top-text">↑</span>
+    </button>
+
     <script type="module" src="./public/js/inpublic.js"></script>
     <script type="module" src="./public/js/detail.js"></script>
     <script type="module">
