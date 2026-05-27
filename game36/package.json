@@ -12,10 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.11.2",
-    "javascript-obfuscator": "^4.1.0",
     "archiver": "^7.0.1",
+    "canvas": "^3.2.3",
+    "javascript-obfuscator": "^4.1.0",
     "xlsx": "^0.18.5"
   }
 }
-

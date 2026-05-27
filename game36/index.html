@@ -1,157 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
-    <link rel="stylesheet" href="public/style/inpublic.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2972554976154991"
-     crossorigin="anonymous"></script>
-</head>
-<body>
-    
+    <link rel="stylesheet" href="public/style/inpublic.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3805038693101389"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <header class="header">
-        <div class="header-content">
-            <button class="menu-btn" id="menuToggle">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12H21M3 6H21M3 18H21" stroke="var(--color2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <p class="site-name">ruching.cloud</p>
-            <button class="search-btn" id="searchToggle">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="var(--color2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
+      <div class="header-content">
+        <button class="menu-btn" id="menuToggle">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 12H21M3 6H21M3 18H21"
+              stroke="var(--color2)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <p class="site-name">quaternion.fun</p>
+        <button class="search-btn" id="searchToggle">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z"
+              stroke="var(--color2)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
     </header>
-    
+
     <div class="search-container" id="searchContainer">
-        <div class="search-input">
-            <span class="search-back" id="searchBack">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 12H5M12 19L5 12L12 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </span>
-            <input type="text" id="searchInput" placeholder="Search for games">
-            <button class="search-button" id="searchButton">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-        <div class="search-results" id="searchResults"></div>
+      <div class="search-input">
+        <span class="search-back" id="searchBack">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 12H5M12 19L5 12L12 5"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        <input type="text" id="searchInput" placeholder="Search for games" />
+        <button class="search-button" id="searchButton">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
     </div>
 
     <div class="categories-menu" id="categoriesMenu">
-        <div class="categories-header">
-            <span class="categories-title">Categories</span>
-            <span class="close-categories" id="closeCategories">✕</span>
-        </div>
-        <div class="category-item active" data-category="home">
-            <span class="category-name">Home</span>
-            <span class="category-count" id="homeCategoryCount">0</span>
-        </div>
-        <div id="categoriesMenuItems">
-            
-        </div>
+      <div class="categories-header">
+        <span class="categories-title">Categories</span>
+        <span class="close-categories" id="closeCategories">✕</span>
+      </div>
+      <div class="category-item active" data-category="home">
+        <span class="category-name">Home</span>
+        <span class="category-count" id="homeCategoryCount">0</span>
+      </div>
+      <div id="categoriesMenuItems"></div>
     </div>
 
     <div class="categories-overlay" id="categoriesOverlay"></div>
 
-<main class="main-content" id="mainContent">
-    
-    <div class="ads">
+    <main class="main-content" id="mainContent">
+      <div class="ads">
         <div id="div-gpt-ad-home1"></div>
       </div>
 
-    <div class="category-section"> </div>
-    <div class="ads">
+      <div class="category-section"></div>
+      <div class="ads">
         <div id="div-gpt-ad-home2"></div>
       </div>
-    <div class="category-section"> </div>
-    <div class="ads">
+      <div class="category-section"></div>
+      <div class="ads">
         <div id="div-gpt-ad-home3"></div>
       </div>
-    <div class="category-section"> </div>
-    <div class="ads">
+      <div class="category-section"></div>
+      <div class="ads">
         <div id="div-gpt-ad-home4"></div>
       </div>
-    <div class="category-section"> </div>
-    <div class="ads">
+      <div class="category-section"></div>
+      <div class="ads">
         <div id="div-gpt-ad-home5"></div>
       </div>
-    <div class="category-section"> </div>
-    <div class="category-section"> </div>
-    <div class="category-section"> </div>
+      <div class="category-section"></div>
+      <div class="category-section"></div>
+      <div class="category-section"></div>
 
-    <div class="privacy-content">
-            <div class="privacy-section">
-                <h2>About Us</h2>
-                <p>Welcome to our H5 Game Platform!</p>
-            </div>
-
-            <div class="privacy-section">
-                <h3>Our Mission</h3>
-                <p>
-                    We are dedicated to providing the best H5 gaming experience for players worldwide. Our
-                    platform offers a diverse collection of high-quality games across various categories
-                    including puzzle, action, racing, adventure, sports, and more.
-                </p>
-            </div>
-
-            <div class="privacy-section">
-                <h3>What We Offer</h3>
-                <ul>
-                    <li>Hundreds of free H5 games</li>
-                    <li>Multiple game categories</li>
-                    <li>Mobile-friendly design</li>
-                    <li>Regular game updates</li>
-                    <li>User-friendly interface</li>
-                </ul>
-            </div>
+      <div class="privacy-content">
+        <div class="privacy-section">
+          <h2>About Us</h2>
+          <p>Welcome to our H5 Game Platform!</p>
         </div>
 
-</main>
+        <div class="privacy-section">
+          <h3>Our Mission</h3>
+          <p>
+            We are dedicated to providing the best H5 gaming experience for
+            players worldwide. Our platform offers a diverse collection of
+            high-quality games across various categories including puzzle,
+            action, racing, adventure, sports, and more.
+          </p>
+        </div>
+
+        <div class="privacy-section">
+          <h3>What We Offer</h3>
+          <ul>
+            <li>Hundreds of free H5 games</li>
+            <li>Multiple game categories</li>
+            <li>Mobile-friendly design</li>
+            <li>Regular game updates</li>
+            <li>User-friendly interface</li>
+          </ul>
+        </div>
+      </div>
+    </main>
 
     <footer class="footer">
-        <div class="footer-content">
-          <div class="footer-links mt-5">
-            <a href="pages/privacy.html" class="footer-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Privacy Policy
-            </a>
-            <a href="pages/terms.html" class="footer-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polyline points="14 2 14 8 20 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Terms of Use
-            </a>
-          </div>
-          <div class="footer-copyright">Copyright © 2025-2026 ruching.cloud All rights Reserved.</div>
+      <div class="footer-content">
+        <div class="footer-links mt-5">
+          <a href="pages/privacy.html" class="footer-link">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Privacy Policy
+          </a>
+          <a href="pages/terms.html" class="footer-link">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <polyline
+                points="14 2 14 8 20 8"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Terms of Use
+          </a>
         </div>
-      </footer>
+        <div class="footer-copyright">
+          Copyright © 2025-2026 quaternion.fun All rights Reserved.
+        </div>
+      </div>
+    </footer>
 
     <script type="module" src="public/js/index.js"></script>
     <script src="public/js/inpublic.js"></script>
-    <script type="module">
-        import { ad_code_identifier } from "./ads.js";
-   
-        if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
-        
-          const script = document.createElement("script");
-          script.type = "module";
-          script.src = "./homegg.js";
-          document.body.appendChild(script);
-        } else {
-          const script = document.createElement("script");
-          script.type = "module";
-          script.src = "./homegg_ads.js";
-          document.body.appendChild(script);
-        }
-      </script>
-</body>
+  </body>
 </html>
