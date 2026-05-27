@@ -1,7 +1,7 @@
 :root {
-    --color1: #e3e3e5;
-    --color2: #707899;
-    --text-primary: #000000;
+    --color1: #f8c6b5;
+    --color2: #5c4f55;
+    --text-primary: #ffffff;
     --text-muted: #999;
 }
 
@@ -173,6 +173,15 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
+    max-width: 80%;
+}
+
+.logo p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(18px, 3vw, 28px);
 }
 
 .header-icons {
@@ -456,6 +465,10 @@ body:has(.hot-games-section) .category-bar {
     text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
     animation: gradientShift 3s ease infinite;
     position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(20px, 4vw, 32px);
 }
 
 @keyframes gradientShift {
