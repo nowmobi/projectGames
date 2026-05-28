@@ -15,12 +15,16 @@
             </svg>
         </a>
         <a href="../index.html" class="logo">
-            <p>play.nimbiferous.com</p>
+            <p>play.apricate.cloud</p>
         </a>
         <div class="header-icons">
             
         </div>
     </header>
+    
+    <div class="ads" style="margin-top: 50px;">
+        <div id="div-gpt-ad-category1"></div>
+    </div>
 
     <main class="main-content category-page-main">
         <div class="category-page-container">
@@ -42,11 +46,30 @@
         </div>
     </main>
     
+    <div class="ads">
+        <div id="div-gpt-ad-category2"></div>
+    </div>
+    
     <a href="../index.html" class="home-float-button" title="back to home">
         <img src="../public/images/home.png" alt="Home" class="home-float-button-image">
     </a>
 
     
 <script type="module" src="../public/js/inpublic.js"></script>
+<script type="module">
+      import { ad_code_identifier } from "../ads.js";
+    
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "../categorygg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "../categorygg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
 </body>
 </html>
