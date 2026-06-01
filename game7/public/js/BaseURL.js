@@ -1,10 +1,3 @@
-// export const BASE_URL = "https://datajson.pages.dev/games5/db3.json";
-
-// export const Category_URL = BASE_URL;
-
-// const baseUrl = 'https://games5-65b.pages.dev';
-
-
 export const BASE_URL = "https://datajson.pages.dev/games7/db1.json";
 
 export const Category_URL = BASE_URL;
@@ -123,7 +116,7 @@ const DEFAULT_CATEGORIES = [
 
 
 export const getInfoType = () => {
-  return 'info1'; 
+  return 'info3'; 
 };
 
 export async function getCategoryOrder() {

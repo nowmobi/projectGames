@@ -173,20 +173,48 @@ function updateDomainInHTML(domain) {
     }
 }
 
-// 更新 BaseURL.js 中的第一行 BASE_URL 和 infoType
+// 更新 BaseURL.js 中的 BASE_URL 和 infoType
 function updateBaseURL(info, json) {
     try {
         const baseURLPath = path.join(__dirname, 'public', 'js', 'BaseURL.js');
         let jsContent = fs.readFileSync(baseURLPath, 'utf8');
         let hasChanges = false;
 
-        // 从现有的 BASE_URL 中提取基础 URL
-        const baseURLMatch = jsContent.match(/export\s+const\s+BASE_URL\s*=\s*["']([^"']+\/)[^"']*\.json["']/);
+        // 从非注释的 BASE_URL 中提取基础 URL
+        const lines = jsContent.split('\n');
         let baseUrlPrefix = '';
         
-        if (baseURLMatch) {
-            baseUrlPrefix = baseURLMatch[1];
-            console.log(`  检测到基础 URL: ${baseUrlPrefix}`);
+        for (let line of lines) {
+            const trimmedLine = line.trim();
+            if (!trimmedLine.startsWith('//')) {
+                const baseURLMatch = trimmedLine.match(/export\s+const\s+BASE_URL\s*=\s*["']([^"']+\/)[^"']*\.json["']/);
+                if (baseURLMatch) {
+                    baseUrlPrefix = baseURLMatch[1];
+                    console.log(`  检测到基础 URL: ${baseUrlPrefix}`);
+                    break;
+                }
+            }
+        }
+
+        // 修改非注释的 BASE_URL
+        if (baseUrlPrefix) {
+            let newLines = [];
+            for (let line of lines) {
+                const trimmedLine = line.trim();
+                if (!trimmedLine.startsWith('//')) {
+                    const baseURLRegex = /export\s+const\s+BASE_URL\s*=\s*["']([^"']+\/)[^"']*\.json["']/;
+                    if (baseURLRegex.test(line)) {
+                        newLines.push(line.replace(baseURLRegex, `export const BASE_URL = "${baseUrlPrefix}db${json}.json"`));
+                        hasChanges = true;
+                        console.log(`  ✓ BASE_URL 已更新为: ${baseUrlPrefix}db${json}.json`);
+                    } else {
+                        newLines.push(line);
+                    }
+                } else {
+                    newLines.push(line);
+                }
+            }
+            jsContent = newLines.join('\n');
         }
 
         // 根据 info 值修改 infoType
@@ -195,19 +223,6 @@ function updateBaseURL(info, json) {
             jsContent = jsContent.replace(infoTypeRegex, `return 'info${info}';`);
             hasChanges = true;
             console.log(`  ✓ infoType 已更新为: info${info}`);
-        }
-
-        // 只修改第一行的 BASE_URL
-        const lines = jsContent.split('\n');
-        if (lines.length > 0) {
-            const firstLine = lines[0];
-            const baseURLRegex = /export\s+const\s+BASE_URL\s*=\s*["']https?:\/\/[^"']+\.json["']/;
-            if (baseURLRegex.test(firstLine)) {
-                lines[0] = firstLine.replace(baseURLRegex, `export const BASE_URL = "${baseUrlPrefix}db${json}.json"`);
-                jsContent = lines.join('\n');
-                hasChanges = true;
-                console.log(`  ✓ BASE_URL 已更新为: ${baseUrlPrefix}db${json}.json`);
-            }
         }
 
         if (hasChanges) {
