@@ -88,17 +88,29 @@ function generateRecommendedGames(currentGame, gameDetails) {
     const recommended = shuffledGames.slice(0, 5);
     
     recommendedGames.innerHTML = recommended.map(game => {
+        const rating = game.rating || (Math.random() * 2 + 3).toFixed(1);
+        const players = game.players || Math.floor(Math.random() * 50000 + 1000);
+        const category = game.category || 'Game';
+        const formattedPlayers = players >= 1000 ? `${(players / 1000).toFixed(1)}K` : players;
+        
         return `
             <div class="recommended-game" onclick="window.location.href='particulars.html?id=${game.id}${window.channel ? "&channel=" + window.channel : ""}'">
                 <div class="recommended-game-image">
                     <img src="${game.image}" alt="${game.name}" loading="lazy">
                 </div>
                 <div class="recommended-game-info">
-                    <h3>${game.name}</h3>
-                    <div class="recommended-game-arrow">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div class="recommended-game-info-top">
+                        <h3>${game.name}</h3>
+                        <div class="recommended-game-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="recommended-game-meta">
+                        <span class="recommended-category">${category}</span>
+                        <span class="recommended-rating">⭐ ${rating}</span>
+                        <span class="recommended-players">👥 ${formattedPlayers}</span>
                     </div>
                 </div>
             </div>

@@ -231,11 +231,11 @@ function displayCategoryGames(games) {
       
       return (
         `
-                    <div class="game-card" onclick="window.location.href='../particulars.html?id=${gameId}' ` +
+                    <div class="category-game-card" onclick="window.location.href='../particulars.html?id=${gameId}' ` +
         (window.channel ? "&channel=" + window.channel : "") +
         `">
                         <img src="${gameImage}" alt="${gameName}" loading="lazy">
-                        <div class="game-name">${gameName}</div>
+                        <div class="category-game-name">${gameName}</div>
                     </div>
                 `
       );
