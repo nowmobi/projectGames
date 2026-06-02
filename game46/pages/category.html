@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../public/style/inpublic.css" />
   </head>
   <body>
-    
     <header class="header">
       <div class="header-content">
         <a href="../index.html" class="header-icon back-button">
@@ -28,7 +27,7 @@
           </svg>
         </a>
         <div class="header-center">
-           <p>camess.site</p>
+          <p>camess.site</p>
         </div>
         <div class="header-icons">
           <a href="#" class="header-icon" id="menuToggle">
@@ -39,7 +38,6 @@
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              
               <rect
                 x="3"
                 y="5"
@@ -69,7 +67,6 @@
                 stroke-linecap="round"
               />
 
-              
               <rect
                 x="3"
                 y="14"
@@ -103,8 +100,10 @@
         </div>
       </div>
     </header>
+    <div class="ads" style="margin-top: 50px">
+      <div id="div-gpt-ad-category1"></div>
+    </div>
 
-    
     <div class="categories-menu" id="categoriesMenu">
       <div class="categories-header">
         <span class="categories-title">Menu</span>
@@ -117,30 +116,28 @@
       </div>
     </div>
 
-    
     <main class="main-content">
-      
       <div class="category-header">
         <div class="category-title-section">
           <h1 class="category-title" id="categoryTitle">Loading...</h1>
         </div>
       </div>
 
-      
-      <div id="gamesGrid">
-        
+      <div class="ads">
+        <div id="div-gpt-ad-category2"></div>
       </div>
+      <div id="gamesGrid"></div>
     </main>
+    <div class="ads">
+      <div id="div-gpt-ad-category2"></div>
+    </div>
 
-    
     <footer class="footer">
-      
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Use</a>
       </div>
 
-      
       <div class="footer-copyright">
         <div class="footer-brand">camess.site</div>
         <div class="footer-copyright-text">
@@ -150,5 +147,21 @@
     </footer>
 
     <script src="../public/js/inpublic.js"></script>
+
+    <script type="module">
+      import { ad_code_identifier } from "../ads.js";
+
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "../categorygg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "../categorygg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
   </body>
 </html>
