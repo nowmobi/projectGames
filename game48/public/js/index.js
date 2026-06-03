@@ -429,6 +429,8 @@ function initCategoryBarAutoScroll() {
             const originalHTML = buttonsWrap.innerHTML;
             buttonsWrap.innerHTML = originalHTML + originalHTML;
             buttonsWrap.dataset.cloned = 'true';
+            // 复制按钮后重新初始化交互事件
+            initCategoryBarInteractions();
         }
 
         // 获取第一个按钮的实际宽度（包括margin）

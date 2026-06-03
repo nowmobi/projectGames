@@ -444,3 +444,23 @@ async function initCategoryPage() {
         console.error('Failed to initialize category page:', error);
     }
 }
+
+// 页面初始化
+const isCategoryPage = window.location.pathname.includes('category.html');
+if (isCategoryPage) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initCategoryPage();
+        });
+    } else {
+        initCategoryPage();
+    }
+} else {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initPublicFeatures();
+        });
+    } else {
+        initPublicFeatures();
+    }
+}

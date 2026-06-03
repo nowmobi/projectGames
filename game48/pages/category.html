@@ -19,17 +19,19 @@
         </div>
     </header>
 
+    <div class="category-bar category-page-top-bar">
+        <div class="category-scroll-container category-page-scroll-container">
+            <div class="category-buttons" id="categoryButtons">
+                
+            </div>
+        </div>
+    </div>
+
     <main class="main-content category-page-main">
+        <div class="ads">
+            <div id="div-gpt-ad-category1"></div>
+        </div>
         <div class="category-page-container">
-            <aside class="category-sidebar">
-                <div class="category-bar category-page-sidebar">
-                    <div class="category-scroll-container">
-                        <div class="category-buttons" id="categoryButtons">
-                            
-                        </div>
-                    </div>
-                </div>
-            </aside>
             <div class="category-content">
                 <div class="category-content-title-wrapper">
                     <img class="category-content-title-icon" id="categoryContentTitleIcon" src="" alt="category">
@@ -50,5 +52,19 @@
     </button>
     
 <script type="module" src="../public/js/inpublic.js"></script>
+<script type="module">
+    import { ad_code_identifier } from "../ads.js";
+    if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "../categorygg.js";
+        document.body.appendChild(script);
+    } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "../categorygg_ads.js";
+        document.body.appendChild(script);
+    }
+</script>
 </body>
 </html>
