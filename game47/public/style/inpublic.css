@@ -596,7 +596,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fff8e1 50%, #f8f4e1 100%);
   margin-bottom: 20px;
   width: 100%;
   gap: 10px;
@@ -622,7 +622,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(96, 165, 250, 0.1) 50%,
+    rgba(210, 105, 30, 0.1) 50%,
     transparent 100%
   );
   animation: headerShimmer 3s ease-in-out infinite;
@@ -640,7 +640,7 @@ body {
 
 .section-header:hover {
   box-shadow: 
-    0 6px 20px rgba(96, 165, 250, 0.15),
+    0 6px 20px rgba(210, 105, 30, 0.15),
     0 3px 12px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transform: translateY(-2px);
@@ -655,18 +655,18 @@ body {
   height: 3px;
   background: linear-gradient(
     90deg,
-    #60a5fa 0%,
-    #3b82f6 25%,
-    #8b5cf6 50%,
-    #ec4899 75%,
-    #f43f5e 100%
+    #f4dcb3 0%,
+    var(--primary-color) 25%,
+    #d2691e 50%,
+    #cd853f 75%,
+    #8b4513 100%
   );
   background-size: 200% 100%;
   animation: gradientFlow 4s ease infinite;
 }
 
 .section-more {
-  background: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, #d2691e 100%);
   color: transparent;
   text-decoration: none;
   width: 45px;
@@ -679,8 +679,8 @@ body {
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 
-    0 4px 12px rgba(96, 165, 250, 0.3),
-    0 2px 6px rgba(139, 92, 246, 0.2);
+    0 4px 12px rgba(210, 105, 30, 0.3),
+    0 2px 6px rgba(139, 69, 19, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -691,7 +691,7 @@ body {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(135deg, #60a5fa, #8b5cf6, #ec4899, #60a5fa);
+  background: linear-gradient(135deg, var(--primary-color), #d2691e, #cd853f, var(--primary-color));
   border-radius: 50%;
   z-index: -1;
   opacity: 0;
@@ -715,8 +715,8 @@ body {
 .section-more:hover {
   transform: scale(1.1) rotate(90deg);
   box-shadow: 
-    0 6px 20px rgba(96, 165, 250, 0.5),
-    0 3px 10px rgba(139, 92, 246, 0.4);
+    0 6px 20px rgba(210, 105, 30, 0.5),
+    0 3px 10px rgba(139, 69, 19, 0.4);
 }
 
 .section-more:hover::before {
@@ -729,6 +729,10 @@ body {
   display: block;
   animation: slideRight 1.5s ease-in-out infinite;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.section-more svg path {
+  stroke: white;
 }
 
 @keyframes slideRight {
@@ -752,7 +756,7 @@ body {
 .section-title {
   font-size: 22px;
   font-weight: 800;
-  background: linear-gradient(135deg, #1e293b 0%, #3b82f6 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #8b4513 0%, var(--primary-color) 50%, #d2691e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -762,16 +766,16 @@ body {
   display: inline-block;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.2));
+  filter: drop-shadow(0 2px 4px rgba(210, 105, 30, 0.2));
   animation: titleGlow 3s ease-in-out infinite;
 }
 
 @keyframes titleGlow {
   0%, 100% {
-    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.2));
+    filter: drop-shadow(0 2px 4px rgba(210, 105, 30, 0.2));
   }
   50% {
-    filter: drop-shadow(0 2px 8px rgba(139, 92, 246, 0.4));
+    filter: drop-shadow(0 2px 8px rgba(255, 140, 0, 0.4));
   }
 }
 
@@ -784,9 +788,9 @@ body {
   height: 3px;
   background: linear-gradient(
     to right,
-    #60a5fa 0%,
-    #8b5cf6 50%,
-    #ec4899 100%
+    #f4dcb3 0%,
+    var(--primary-color) 50%,
+    #d2691e 100%
   );
   border-radius: 2px;
   animation: underlineExpand 2s ease-in-out infinite;
@@ -1122,7 +1126,7 @@ body {
   font-size: 11px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.3), rgba(139, 92, 246, 0.3));
+  background: linear-gradient(135deg, rgba(210, 105, 30, 0.3), rgba(139, 69, 19, 0.3));
   padding: 4px 10px;
   border-radius: 12px;
   text-transform: uppercase;
@@ -1536,7 +1540,12 @@ body {
 
 .play-button-container {
   text-align: center;
-  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fff8e1 0%, #f8f4e1 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .play-button {
@@ -1558,7 +1567,6 @@ body {
   min-height: 60px;
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-top: 20px;
 }
 
 .play-button:active {
@@ -1573,7 +1581,6 @@ body {
   text-align: center;
   line-height: 1;
   position: relative;
-  margin-top: -20px;
   z-index: 1;
 }
 
@@ -1630,243 +1637,94 @@ body {
 }
 
 .recommended-section .game-grid.game-grid-four-columns {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.recommended-section .game-card {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  animation: fadeInUp 0.6s ease-out backwards,
-    subtleFloat 4s ease-in-out infinite, gentleGlow 3s ease-in-out infinite;
-  cursor: pointer;
-}
-
-.recommended-section .game-card:nth-child(1) {
-  animation-delay: 0.05s;
-}
-.recommended-section .game-card:nth-child(2) {
-  animation-delay: 0.1s;
-}
-.recommended-section .game-card:nth-child(3) {
-  animation-delay: 0.15s;
-}
-.recommended-section .game-card:nth-child(4) {
-  animation-delay: 0.2s;
-}
-.recommended-section .game-card:nth-child(5) {
-  animation-delay: 0.25s;
-}
-.recommended-section .game-card:nth-child(6) {
-  animation-delay: 0.3s;
-}
-.recommended-section .game-card:nth-child(7) {
-  animation-delay: 0.35s;
-}
-.recommended-section .game-card:nth-child(8) {
-  animation-delay: 0.4s;
-}
-.recommended-section .game-card:nth-child(9) {
-  animation-delay: 0.45s;
-}
-.recommended-section .game-card:nth-child(10) {
-  animation-delay: 0.5s;
-}
-.recommended-section .game-card:nth-child(11) {
-  animation-delay: 0.55s;
-}
-.recommended-section .game-card:nth-child(12) {
-  animation-delay: 0.6s;
-}
-.recommended-section .game-card:nth-child(13) {
-  animation-delay: 0.65s;
-}
-.recommended-section .game-card:nth-child(14) {
-  animation-delay: 0.7s;
-}
-.recommended-section .game-card:nth-child(15) {
-  animation-delay: 0.75s;
-}
-.recommended-section .game-card:nth-child(16) {
-  animation-delay: 0.8s;
-}
-
-.recommended-section .game-card::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 14px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-rgba-30) 0%,
-    var(--primary-color-rgba-30) 50%,
-    var(--primary-color-rgba-30) 100%
-  );
-  opacity: 0.3;
-  z-index: -1;
-  pointer-events: none;
-  filter: blur(6px);
-  animation: borderGlow 4s ease-in-out infinite;
-  background-size: 200% 200%;
-}
-
-.recommended-section .game-card-image-wrapper {
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-rgba-10),
-    var(--primary-color-rgba-10)
-  );
-  animation: gradientFlow 8s ease infinite;
-  background-size: 200% 200%;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.recommended-section .game-card-image-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 100%
-  );
-  animation: shimmer 3s infinite;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.recommended-section .game-card-image-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 70%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.recommended-section .game-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.recommended-section .game-card:hover .game-card-image-wrapper {
-  transform: scale(1.05);
-}
-
-.recommended-section .game-card:hover img {
-  transform: scale(1.05);
-}
-
-.recommended-section .game-card-title-overlay {
-  display: none;
-}
-
-#gamesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
-  margin-bottom: 40px;
 }
 
+/* 为详情页和分类页应用与首页相同的游戏卡片样式 */
+.recommended-section .game-card,
 #gamesGrid .game-card {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  animation: fadeInUp 0.6s ease-out backwards,
-    subtleFloat 4s ease-in-out infinite, gentleGlow 3s ease-in-out infinite;
-  cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: fadeInUp 0.6s ease-out backwards,
+        subtleFloat 4s ease-in-out infinite, gentleGlow 3s ease-in-out infinite;
+    cursor: pointer;
 }
 
+.recommended-section .game-card:nth-child(1),
 #gamesGrid .game-card:nth-child(1) {
   animation-delay: 0.05s;
 }
+.recommended-section .game-card:nth-child(2),
 #gamesGrid .game-card:nth-child(2) {
   animation-delay: 0.1s;
 }
+.recommended-section .game-card:nth-child(3),
 #gamesGrid .game-card:nth-child(3) {
   animation-delay: 0.15s;
 }
+.recommended-section .game-card:nth-child(4),
 #gamesGrid .game-card:nth-child(4) {
   animation-delay: 0.2s;
 }
+.recommended-section .game-card:nth-child(5),
 #gamesGrid .game-card:nth-child(5) {
   animation-delay: 0.25s;
 }
+.recommended-section .game-card:nth-child(6),
 #gamesGrid .game-card:nth-child(6) {
   animation-delay: 0.3s;
 }
+.recommended-section .game-card:nth-child(7),
 #gamesGrid .game-card:nth-child(7) {
   animation-delay: 0.35s;
 }
+.recommended-section .game-card:nth-child(8),
 #gamesGrid .game-card:nth-child(8) {
   animation-delay: 0.4s;
 }
+.recommended-section .game-card:nth-child(9),
 #gamesGrid .game-card:nth-child(9) {
   animation-delay: 0.45s;
 }
+.recommended-section .game-card:nth-child(10),
 #gamesGrid .game-card:nth-child(10) {
   animation-delay: 0.5s;
 }
+.recommended-section .game-card:nth-child(11),
 #gamesGrid .game-card:nth-child(11) {
   animation-delay: 0.55s;
 }
+.recommended-section .game-card:nth-child(12),
 #gamesGrid .game-card:nth-child(12) {
   animation-delay: 0.6s;
 }
+.recommended-section .game-card:nth-child(13),
 #gamesGrid .game-card:nth-child(13) {
   animation-delay: 0.65s;
 }
+.recommended-section .game-card:nth-child(14),
 #gamesGrid .game-card:nth-child(14) {
   animation-delay: 0.7s;
 }
+.recommended-section .game-card:nth-child(15),
 #gamesGrid .game-card:nth-child(15) {
   animation-delay: 0.75s;
 }
+.recommended-section .game-card:nth-child(16),
 #gamesGrid .game-card:nth-child(16) {
   animation-delay: 0.8s;
 }
 
+.recommended-section .game-card::before,
 #gamesGrid .game-card::before {
   content: "";
   position: absolute;
@@ -1889,8 +1747,9 @@ body {
   background-size: 200% 200%;
 }
 
+.recommended-section .game-card-image-wrapper,
 #gamesGrid .game-card-image-wrapper {
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
   background: linear-gradient(
@@ -1907,6 +1766,7 @@ body {
   transition: transform 0.3s ease;
 }
 
+.recommended-section .game-card-image-wrapper::before,
 #gamesGrid .game-card-image-wrapper::before {
   content: "";
   position: absolute;
@@ -1925,6 +1785,7 @@ body {
   pointer-events: none;
 }
 
+.recommended-section .game-card-image-wrapper::after,
 #gamesGrid .game-card-image-wrapper::after {
   content: "";
   position: absolute;
@@ -1943,6 +1804,7 @@ body {
   z-index: 1;
 }
 
+.recommended-section .game-card img,
 #gamesGrid .game-card img {
   width: 100%;
   height: 100%;
@@ -1951,13 +1813,231 @@ body {
   transition: transform 0.3s ease;
 }
 
+.recommended-section .game-card:hover .game-card-image-wrapper,
 #gamesGrid .game-card:hover .game-card-image-wrapper {
   transform: scale(1.05);
 }
 
+.recommended-section .game-card:hover img,
 #gamesGrid .game-card:hover img {
   transform: scale(1.05);
 }
+
+.recommended-section .game-card-title-overlay,
+#gamesGrid .game-card-title-overlay {
+  display: none;
+}
+
+/* 文字覆盖层样式 - 为详情页和分类页也添加 */
+.recommended-section .game-card-text-overlay,
+#gamesGrid .game-card-text-overlay {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.75) 0%,
+    transparent 100%
+  );
+  padding: 16px 20px 16px 16px;
+  border-radius: 12px;
+  max-width: 70%;
+  z-index: 2;
+  pointer-events: none;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.recommended-section .game-card-text-overlay .game-card-title,
+#gamesGrid .game-card-text-overlay .game-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.recommended-section .game-card-category,
+#gamesGrid .game-card-category {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(135deg, rgba(210, 105, 30, 0.3), rgba(139, 69, 19, 0.3));
+  padding: 5px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+}
+
+/* 评分样式 */
+.recommended-section .game-card-rating,
+#gamesGrid .game-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.recommended-section .game-card-rating .stars,
+#gamesGrid .game-card-rating .stars {
+  font-size: 15px;
+  color: #fbbf24;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.recommended-section .game-card-rating .rating-value,
+#gamesGrid .game-card-rating .rating-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(251, 191, 36, 0.2);
+  padding: 3px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+/* 下载量样式 */
+.recommended-section .game-card-downloads,
+#gamesGrid .game-card-downloads {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.recommended-section .game-card-downloads svg,
+#gamesGrid .game-card-downloads svg {
+  width: 12px;
+  height: 12px;
+  stroke: rgba(255, 255, 255, 0.8);
+}
+
+.recommended-section .game-card-downloads span,
+#gamesGrid .game-card-downloads span {
+  font-weight: 500;
+}
+
+/* 描述文字样式 */
+.recommended-section .game-card-description,
+#gamesGrid .game-card-description {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 8px 0 0 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 响应式调整 */
+@media (max-width: 480px) {
+  .recommended-section .game-card-text-overlay,
+  #gamesGrid .game-card-text-overlay {
+    left: 8px;
+    padding: 12px 14px 12px 12px;
+    max-width: 70%;
+  }
+  
+  .recommended-section .game-card-text-overlay .game-card-title,
+  #gamesGrid .game-card-text-overlay .game-card-title {
+    font-size: 13px;
+  }
+  
+  .recommended-section .game-card-category,
+  #gamesGrid .game-card-category {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  
+  .recommended-section .game-card-rating .stars,
+  #gamesGrid .game-card-rating .stars {
+    font-size: 12px;
+  }
+  
+  .recommended-section .game-card-rating .rating-value,
+  #gamesGrid .game-card-rating .rating-value {
+    font-size: 11px;
+  }
+  
+  .recommended-section .game-card-downloads,
+  #gamesGrid .game-card-downloads {
+    font-size: 10px;
+  }
+  
+  .recommended-section .game-card-description,
+  #gamesGrid .game-card-description {
+    font-size: 10px;
+    -webkit-line-clamp: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recommended-section .game-card-text-overlay,
+  #gamesGrid .game-card-text-overlay {
+    left: 12px;
+    padding: 16px 20px 16px 16px;
+    max-width: 60%;
+  }
+  
+  .recommended-section .game-card-text-overlay .game-card-title,
+  #gamesGrid .game-card-text-overlay .game-card-title {
+    font-size: 17px;
+  }
+  
+  .recommended-section .game-card-category,
+  #gamesGrid .game-card-category {
+    font-size: 12px;
+  }
+  
+  .recommended-section .game-card-rating .stars,
+  #gamesGrid .game-card-rating .stars {
+    font-size: 14px;
+  }
+  
+  .recommended-section .game-card-rating .rating-value,
+  #gamesGrid .game-card-rating .rating-value {
+    font-size: 13px;
+  }
+  
+  .recommended-section .game-card-downloads,
+  #gamesGrid .game-card-downloads {
+    font-size: 12px;
+  }
+  
+  .recommended-section .game-card-description,
+  #gamesGrid .game-card-description {
+    font-size: 12px;
+  }
+}
+
+#gamesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
+
 
 .privacy-content,
 .terms-content {
