@@ -4,7 +4,6 @@ const baseUrl = 'https://games9-4av.pages.dev';
 
 let gameDetails = [];
 let categoryDetails = [];
-// 使用Map来缓存基于URL的fetch请求结果
 const fetchCache = new Map();
 
 export async function loadGameData() {
