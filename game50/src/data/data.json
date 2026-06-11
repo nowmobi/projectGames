@@ -1,0 +1,50 @@
+// {
+//   "code": 200,
+//   "data": [
+//     {
+//       "id": 1,
+//       "title": "2024年全球经济展望：挑战与机遇并存",
+//       "summary": "随着全球经济逐渐复苏，各国政府和企业面临着前所未有的挑战和机遇。本文深入分析了当前全球经济形势。",
+//       "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=200&fit=crop",
+//       "categoryName": "财经",
+//       "publishTime": "2024-01-15T10:30:00",
+//       "viewCount": "12,532"
+//     },
+//     {
+//       "id": 2,
+//       "title": "人工智能技术突破：GPT-5或将带来革命性变化",
+//       "summary": "最新消息显示，GPT-5的研发取得重大进展，预计将在自然语言处理方面实现质的飞跃。",
+//       "imageUrl": "https://images.unsplash.com/photo-1677442136106-4465f0c31b50?w=300&h=200&fit=crop",
+//       "categoryName": "科技",
+//       "publishTime": "2024-01-14T14:20:00",
+//       "viewCount": "28,910"
+//     },
+//     {
+//       "id": 3,
+//       "title": "新能源汽车市场持续火热，销量再创历史新高",
+//       "summary": "2023年新能源汽车销量突破千万辆大关，各大车企纷纷加大研发投入，市场竞争日益激烈。",
+//       "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=300&h=200&fit=crop",
+//       "categoryName": "汽车",
+//       "publishTime": "2024-01-13T09:15:00",
+//       "viewCount": "18,456"
+//     },
+//     {
+//       "id": 4,
+//       "title": "健康生活方式成为新趋势，运动健身产业蓬勃发展",
+//       "summary": "越来越多的人开始关注健康生活，运动健身APP下载量持续增长，健身房会员数量稳步上升。",
+//       "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=200&fit=crop",
+//       "categoryName": "健康",
+//       "publishTime": "2024-01-12T16:45:00",
+//       "viewCount": "9,876"
+//     },
+//     {
+//       "id": 5,
+//       "title": "全球气候变化峰会取得重要共识",
+//       "summary": "各国代表达成多项重要协议，承诺共同应对气候变化挑战，推动可持续发展目标实现。",
+//       "imageUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&h=200&fit=crop",
+//       "categoryName": "环保",
+//       "publishTime": "2024-01-11T11:30:00",
+//       "viewCount": "35,210"
+//     }
+//   ]
+// }
