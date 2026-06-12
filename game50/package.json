@@ -1,21 +1,20 @@
 {
-  "name": "news-consultation",
+  "name": "game-theme-config",
   "version": "1.0.0",
-  "type": "module",
+  "description": "Theme configuration tool for game website",
+  "main": "node1.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "node1": "node node_templete.js",
+    "node2": "node node_compress.js",
+    "batch": "node node_batch.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "vue": "^3.4.21",
-    "lucide-vue-next": "^0.21.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "tailwindcss": "^3.4.14",
-    "postcss": "^8.4.38",
-    "autoprefixer": "^10.4.18",
-    "vite": "^5.4.15"
+    "@napi-rs/canvas": "^1.0.0",
+    "archiver": "^7.0.1",
+    "javascript-obfuscator": "^4.1.0",
+    "xlsx": "^0.18.5"
   }
 }

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="../public/style/inpublic.css">
 </head>
-<body class="category-page-body">
+<body class="about-page">
     
     <header class="header">
         <div class="header-content">
@@ -36,22 +36,33 @@
         <div class="search-results" id="searchResults"></div>
     </div>
 
-
-
     <main class="main-content">
-            <div class="ads" style="margin-top: 30px">
-      <div id="div-gpt-ad-category1"></div>
-    </div>
-        <div class="category-header">
-            <div class="category-title-section">
-                <h1 class="category-title" id="categoryTitle">Loading...</h1>
+        <div class="privacy-content">
+            <div class="privacy-section">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our support team</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Get In Touch</h3>
+                <p>If you have any questions, concerns, or feedback regarding our website or any of our policies, please feel free to contact us.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Email</h3>
+                <p>You can reach us by email at: chenghu95991@gmail.com</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Response Time</h3>
+                <p>We will do our best to respond to your inquiries in a timely manner. Typically, you can expect a response within 24-48 hours.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Thank You</h3>
+                <p>Thank you for visiting our website and for your continued support!</p>
             </div>
         </div>
-
-        <div id="gamesGrid"></div>
-      
-    
-    </div>
     </main>
 
     <footer class="footer">
@@ -67,20 +78,5 @@
       </footer>
 
     <script type="module" src="../public/js/inpublic.js"></script>
-    <script type="module">
-      import { ad_code_identifier } from "../ads.js";
-
-      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
-        const script = document.createElement("script");
-        script.type = "module";
-        script.src = "../categorygg.js";
-        document.body.appendChild(script);
-      } else {
-        const script = document.createElement("script");
-        script.type = "module";
-        script.src = "../categorygg_ads.js";
-        document.body.appendChild(script);
-      }
-    </script>
 </body>
 </html>
