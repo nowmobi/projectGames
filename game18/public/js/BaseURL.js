@@ -62,7 +62,7 @@ const DEFAULT_CATEGORIES = [
 
 
 export async function getCategoryOrder() {
-  const infoType = 'info2';
+  const infoType = 'info4';
   try {
     // 复用已加载的数据，避免重复请求
     const data = await loadGameData();

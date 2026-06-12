@@ -1,13 +1,13 @@
 
 :root {
-    --color1: #746097;
-    --color2: #6b8242;
+    --color1: #ffc408;
+    --color2: #0033d4;
     --primary-gradient: linear-gradient(
         135deg,
         color-mix(in srgb, var(--color1) 85%, #ffffff 15%) 0%,
         color-mix(in srgb, var(--color2) 92%, #ffffff 8%) 100%
     );
-    --text-primary: #ffffff;
+    --text-primary: #2c2c2c;
     --text-muted: #999;
 }
 
