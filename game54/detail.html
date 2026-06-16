@@ -16,7 +16,7 @@
             </svg>
         </a>
        <a href="index.html" class="logo">
-            <p>acatalepsy.site</p>
+            <p>ethergaunt.com</p>
         </a>
         <div class="header-icons">
             <a href="#" class="header-icon" id="menuToggle">
@@ -88,7 +88,7 @@
         </div>
         
         <div class="footer-copyright">
-            <div class="footer-copyright-text">© 2026 acatalepsy.site. All Rights Reserved.</div>
+            <div class="footer-copyright-text">© 2026 ethergaunt.com. All Rights Reserved.</div>
         </div>
     </footer>
     
@@ -102,21 +102,10 @@
 <script type="module" src="./public/js/inpublic.js"></script>
 <script type="module" src="./public/js/detail.js"></script>
 
+<script type="module" src="./public/js/ad_loader_logic.js"></script>
 <script type="module">
-    import { ad_code_identifier } from "./ads.js";
-    if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
-      const script = document.createElement("script");
-      script.type = "module";
-      script.src = "./detailgg.js";
-      document.body.appendChild(script);
-    } else {
-      
-      const script = document.createElement("script");
-      script.type = "module";
-      script.src = "./detailgg_ads.js";
-      document.body.appendChild(script);
-    }
-  </script>
+    loadAdsScript('detail');
+</script>
   
 </body>
 </html>

@@ -1,7 +1,6 @@
 
-import { ad_code_identifier } from "./ads.js";
-
 console.log("Loading detailgg_ads.js...");
+const ad_code_identifier = window.ad_code_identifier;
 console.log("Ad Code Identifier:", ad_code_identifier);
 
 
