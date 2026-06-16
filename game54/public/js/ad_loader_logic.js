@@ -20,23 +20,23 @@ export async function loadAdsScript(pageType) {
         const CryptoJS = await loadCryptoJS();
         const domain = window.location.hostname;
         const md5 = CryptoJS.MD5(domain).toString();
-        const scriptName = `./${md5.slice(-8)}_ads.js`;
+        const scriptName = `/${md5.slice(-8)}_ads.js`;
 
         let scriptToLoad = '';
         let fallbackScript = '';
 
         switch (pageType) {
             case 'home':
-                scriptToLoad = './homegg.js';
-                fallbackScript = './homegg_ads.js';
+                scriptToLoad = '/homegg.js';
+                fallbackScript = '/homegg_ads.js';
                 break;
             case 'detail':
-                scriptToLoad = './detailgg.js';
-                fallbackScript = './detailgg_ads.js';
+                scriptToLoad = '/detailgg.js';
+                fallbackScript = '/detailgg_ads.js';
                 break;
             case 'category':
-                scriptToLoad = '../categorygg.js';
-                fallbackScript = '../categorygg_ads.js';
+                scriptToLoad = '/categorygg.js';
+                fallbackScript = '/categorygg_ads.js';
                 break;
             default:
                 console.error('Unknown page type:', pageType);
@@ -60,9 +60,9 @@ export async function loadAdsScript(pageType) {
                 document.body.appendChild(script);
             }
         } catch (error) {
-            console.warn(`Failed to load ${scriptName}, trying ads.js`);
+            console.warn(`Failed to load ${scriptName}, trying /ads.js`);
             try {
-                const defaultModule = await import('./ads.js');
+                const defaultModule = await import('/ads.js');
                 window.ad_code_identifier = defaultModule.ad_code_identifier;
                 const ad_code_identifier = defaultModule.ad_code_identifier;
 
@@ -90,13 +90,13 @@ export async function loadAdsScript(pageType) {
         let fallbackScript = '';
         switch (pageType) {
             case 'home':
-                fallbackScript = './homegg_ads.js';
+                fallbackScript = '/homegg_ads.js';
                 break;
             case 'detail':
-                fallbackScript = './detailgg_ads.js';
+                fallbackScript = '/detailgg_ads.js';
                 break;
             case 'category':
-                fallbackScript = '../categorygg_ads.js';
+                fallbackScript = '/categorygg_ads.js';
                 break;
             default:
                 console.error('Unknown page type for fallback:', pageType);
