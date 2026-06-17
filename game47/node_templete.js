@@ -165,7 +165,7 @@ function updateDomainInHTML(domain) {
     try {
         const displayDomain = domain.replace(/^https?:\/\//, '').split('/')[0].split('?')[0].trim();
         const currentYear = new Date().getFullYear();
-        const htmlFiles = ['index.html', 'detail.html', 'pages/about.html', 'pages/privacy.html', 'pages/terms.html', 'pages/category.html']
+        const htmlFiles = ['index.html', 'item.html', 'pages/about.html', 'pages/privacy.html', 'pages/terms.html', 'pages/category.html']
             .map(f => path.join(__dirname, f));
         
         let updatedCount = 0;

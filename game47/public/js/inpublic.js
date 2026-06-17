@@ -18,8 +18,8 @@ const PATHS = {
     HOME_FROM_PAGES: '../index.html',
     CATEGORY: 'pages/category.html',
     CATEGORY_FROM_PAGES: 'category.html',
-    DETAIL: 'detail.html',
-    DETAIL_FROM_PAGES: '../detail.html'
+    DETAIL: 'item.html',
+    DETAIL_FROM_PAGES: '../item.html'
 };
 
 

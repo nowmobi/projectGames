@@ -8,13 +8,13 @@ const filesToPack = [
   "pages",
   "public",
   "index.html",
-  "detail.html",
+  "item.html",
   "robots.txt",
-  "homegg_ads.js",
-  "detailgg_ads.js",
+  "maingg_ads.js",
+  "itemgg_ads.js",
   "categorygg_ads.js",
-  "detailgg.js",
-  "homegg.js",
+  "itemgg.js",
+  "maingg.js",
   "categorygg.js",
 ];
 
