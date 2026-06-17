@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="public/style/inpublic.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuToggle">
+                <svg t="1781576070015" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10662" width="40" height="40">
+                    <path d="M512 0a512 512 0 1 0 512 512A512 512 0 0 0 512 0z m-26.88 688A58.666667 58.666667 0 0 1 426.666667 746.666667h-90.666667A58.666667 58.666667 0 0 1 277.333333 688V597.333333a58.666667 58.666667 0 0 1 58.666667-58.666666H426.666667A58.88 58.88 0 0 1 485.12 597.333333z m0-261.546667A58.88 58.88 0 0 1 426.666667 485.12h-90.666667A58.666667 58.666667 0 0 1 277.333333 426.666667v-90.666667A58.666667 58.666667 0 0 1 336 277.333333H426.666667a58.666667 58.666667 0 0 1 58.666666 58.666667z m59.52-72.746666l42.666667-42.666667a58.666667 58.666667 0 0 1 82.773333 0l42.666667 42.666667a58.666667 58.666667 0 0 1 0 82.773333l-42.666667 42.666667a58.24 58.24 0 0 1-82.773333 0l-42.666667-42.666667a58.24 58.24 0 0 1 0-82.773333zM746.666667 688A58.666667 58.666667 0 0 1 688 746.666667H597.333333a58.666667 58.666667 0 0 1-58.666666-58.666667V597.333333A58.88 58.88 0 0 1 597.333333 538.88h90.453334A58.666667 58.666667 0 0 1 746.666667 597.333333z" fill=" var(--theme-color)" p-id="10663"></path>
+                </svg>
+            </button>
+           <p>amortizing.site</p>
+            <button class="search-btn" id="searchToggle">
+                <svg t="1781576444430" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="17407" width="40" height="40">
+                    <path d="M512 0A512 512 0 1 1 0 512 512 512 0 0 1 512 0z m330.752 795.136l-140.544-142.08a300.544 300.544 0 0 0-235.264-481.792 299.776 299.776 0 0 0 0 599.296 293.12 293.12 0 0 0 184.832-65.536l140.032 141.824a36.096 36.096 0 0 0 51.2 0 36.864 36.864 0 0 0 0-51.2z m-534.272-163.84a229.12 229.12 0 0 1 0-320.768 222.464 222.464 0 0 1 316.928 0 229.12 229.12 0 0 1 0 320.768 222.464 222.464 0 0 1-316.928 0z m0 0" fill=" var(--theme-color)" p-id="17408"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+        <div class="search-input">
+            <span class="search-back" id="searchBack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="var(--logo-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Search for games">
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="categories-menu" id="categoriesMenu">
+        <div class="categories-header">
+            
+            <span class="categories-title">Menu</span>
+            <span class="close-categories" id="closeCategories">✕</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+    <div class="ads">
+        <div id="div-gpt-ad-home1"></div>
+      </div>
+
+      <div class="carousel-container">
+        <a href="#" class="rotate-game-card" id="carouselCard">
+            <div class="rotate-card-inner">
+                <div class="inner-border">
+                    <div class="img-manage">
+                        <img src="" alt="" class="inner-img" id="carouselImage" loading="lazy">
+                    </div>
+                </div>
+                <div class="rotate-bg"></div>
+                <div class="top-desc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="57" height="67" viewBox="0 0 57 67" fill="none">
+                        <circle cx="25.4212" cy="54.5" r="10" fill="white" stroke="black" stroke-width="5"></circle>
+                        <path d="M23.3467 55.442C24.4192 56.3116 25.9935 56.1471 26.8631 55.0746C27.7327 54.0021 27.5682 52.4278 26.4957 51.5582L23.3467 55.442ZM26.4957 51.5582C8.75064 37.1702 9.22752 20.4111 16.7641 12.1893L13.0784 8.81073C3.01497 19.789 4.09186 39.8298 23.3467 55.442L26.4957 51.5582ZM16.7641 12.1893C20.0902 8.56091 26.4602 8.17602 32.6545 11.0985C38.7455 13.9723 43.4212 19.524 43.4212 26.0001H48.4212C48.4212 16.9761 41.9969 9.97775 34.788 6.57655C27.6823 3.22403 18.5523 2.83916 13.0784 8.81073L16.7641 12.1893Z" fill="black"></path>
+                    </svg>
+                </div>
+            </div>
+        </a>
+      </div>
+
+           <div class="ads">
+            <div id="div-gpt-ad-home2"></div>
+          </div>
+
+
+<div class="hot-games-section">
+    <div class="section-header">
+        <h2 class="section-title">Hot Games</h2>
+    </div>
+    <div class="hot-games-list" id="hotGamesList">
+    </div>
+</div>
+
+   <div class="ads">
+            <div id="div-gpt-ad-home3"></div>
+          </div>
+
+        <div class="category-section">
+            <div class="section-header">
+                <h2 class="section-title base1" data-category="recommended">Recommend</h2>
+            </div>
+            <div class="homepage-game-grid" id="recommendedGamesGrid">
+                
+            </div>
+        </div>
+
+   
+       
+       <div class="ads">
+            <div id="div-gpt-ad-home4"></div>
+          </div>
+        <div class="category-section"></div>
+          <div class="ads">
+            <div id="div-gpt-ad-home5"></div>
+          </div>
+         
+        <div class="category-section"></div>
+ 
+        <div class="category-section"></div>
+   
+
+          <div class="category-section"></div>
+          <div class="category-section"></div>
+          <div class="side-categories-header">
+              <h3 class="side-categories-title">
+                  <svg t="1778319181053" class="icon category-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6856" width="20" height="20">
+                      <path d="M512 919.194002l-64.352657-58.361199C219.085764 653.353378 68.191078 516.438079 68.191078 348.900342c0-136.915299 107.180068-244.094344 244.094344-244.094344 77.222779 0 151.3388 35.948747 199.713554 92.53451 48.374754-56.585763 122.490775-92.53451 199.713554-92.53451 136.915299 0 244.094344 107.180068 244.094344 244.094344 0 167.537737-150.894685 304.453037-379.456265 511.933485L512 919.194002z" p-id="6857" fill="#ffffff"></path>
+                  </svg>
+                  Popular Categories
+              </h3>
+          </div>
+          <div class="side-categories-grid" id="sideCategoriesGrid">
+              <a href="pages/category.html?category=action" class="side-category-item">
+                  <span class="side-category-name">Action</span>
+              </a>
+              <a href="pages/category.html?category=adventure" class="side-category-item">
+                  <span class="side-category-name">Adventure</span>
+              </a>
+              <a href="pages/category.html?category=racing" class="side-category-item">
+                  <span class="side-category-name">Racing</span>
+              </a>
+              <a href="pages/category.html?category=puzzle" class="side-category-item">
+                  <span class="side-category-name">Puzzle</span>
+              </a>
+              <a href="pages/category.html?category=sports" class="side-category-item">
+                  <span class="side-category-name">Sports</span>
+              </a>
+              <a href="pages/category.html?category=kids" class="side-category-item">
+                  <span class="side-category-name">Kids</span>
+              </a>
+              <a href="pages/category.html?category=girl" class="side-category-item">
+                  <span class="side-category-name">Girls</span>
+              </a>
+              <a href="pages/category.html?category=recommended" class="side-category-item">
+                  <span class="side-category-name">Recommend</span>
+              </a>
+          </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-links">
+            <div class="footer-links-row">
+                <a href="pages/about.html" class="footer-link">About us</a>
+                <a href="pages/contact.html" class="footer-link">Contact Us</a>
+            </div>
+            <div class="footer-links-row">
+                <a href="pages/terms.html" class="footer-link">Terms of Service</a>
+                <a href="pages/privacy.html" class="footer-link">Privacy Policy</a>
+            </div>
+          </div>
+          <div class="footer-copyright">Copyright © 2025-2026 amortizing.site All rights Reserved.</div>
+        </div>
+      </footer>
+
+    <script type="module" src="./public/js/index.js"></script>
+    <script type="module" src="./public/js/inpublic.js"></script>
+    <script type="module">
+        import { ad_code_identifier } from "./ads.js";
+     
+       
+        if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./homegg.js";
+          document.body.appendChild(script);
+        } else {
+       
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./homegg_ads.js";
+          document.body.appendChild(script);
+        }
+      </script>
+</body>
+</html>
