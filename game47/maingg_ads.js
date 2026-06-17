@@ -1,7 +1,7 @@
-
+// Dynamic ad script injector for home page
 import { ad_code_identifier } from "./ads.js";
 
-console.log("Loading detailgg_ads.js...");
+console.log("Loading maingg_ads.js...");
 console.log("Ad Code Identifier:", ad_code_identifier);
 
 
@@ -73,26 +73,26 @@ function insertAdsToContainers() {
   const adsContainers = document.querySelectorAll(".ads");
   console.log(`Found ${adsContainers.length} ad containers with class "ads"`);
 
-  if (!selectedAdunit || !selectedAdunit.detail) {
-    console.warn("⚠️ No detail ads found in selected adunit");
+  if (!selectedAdunit || !selectedAdunit.home) {
+    console.warn("⚠️ No home ads found in selected adunit");
     return;
   }
 
-  let detailAds = [...selectedAdunit.detail]; 
-  console.log(`Found ${detailAds.length} detail ads in configuration`);
+  let homeAds = [...selectedAdunit.home]; 
+  console.log(`Found ${homeAds.length} home ads in configuration`);
 
   
   const randadParam = ad_code_identifier.randad;
-  if (randadParam == 1 || randadParam == 3) {
-    console.log("🎲 Randad is 1 or 3, shuffling detail ads...");
+  if (randadParam == 2 || randadParam == 3) {
+    console.log("🎲 Randad is 2 or 3, shuffling home ads...");
 
     
-    for (let i = detailAds.length - 1; i > 0; i--) {
+    for (let i = homeAds.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [detailAds[i], detailAds[j]] = [detailAds[j], detailAds[i]];
+      [homeAds[i], homeAds[j]] = [homeAds[j], homeAds[i]];
     }
 
-    console.log("✅ Detail ads shuffled:", detailAds);
+    console.log("✅ Home ads shuffled:", homeAds);
   }
 
   
@@ -112,7 +112,7 @@ function insertAdsToContainers() {
     console.log(`🧹 Cleared content of ads container ${index + 1}`);
 
     
-    detailAds.forEach((ad, adIndex) => {
+    homeAds.forEach((ad, adIndex) => {
       
       const insElement = document.createElement("ins");
       insElement.className = "adsbygoogle";
@@ -151,4 +151,4 @@ if (document.readyState === "loading") {
   setTimeout(insertAdsToContainers, 500);
 }
 
-console.log("✅ detailgg_ads.js loaded successfully");
+console.log("✅ maingg_ads.js loaded successfully");

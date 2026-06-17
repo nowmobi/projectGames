@@ -1,7 +1,7 @@
-// Dynamic ad script injector for home page
+
 import { ad_code_identifier } from "./ads.js";
 
-console.log("Loading homegg_ads.js...");
+console.log("Loading itemgg_ads.js...");
 console.log("Ad Code Identifier:", ad_code_identifier);
 
 
@@ -73,26 +73,26 @@ function insertAdsToContainers() {
   const adsContainers = document.querySelectorAll(".ads");
   console.log(`Found ${adsContainers.length} ad containers with class "ads"`);
 
-  if (!selectedAdunit || !selectedAdunit.home) {
-    console.warn("⚠️ No home ads found in selected adunit");
+  if (!selectedAdunit || !selectedAdunit.detail) {
+    console.warn("⚠️ No detail ads found in selected adunit");
     return;
   }
 
-  let homeAds = [...selectedAdunit.home]; 
-  console.log(`Found ${homeAds.length} home ads in configuration`);
+  let detailAds = [...selectedAdunit.detail]; 
+  console.log(`Found ${detailAds.length} detail ads in configuration`);
 
   
   const randadParam = ad_code_identifier.randad;
-  if (randadParam == 2 || randadParam == 3) {
-    console.log("🎲 Randad is 2 or 3, shuffling home ads...");
+  if (randadParam == 1 || randadParam == 3) {
+    console.log("🎲 Randad is 1 or 3, shuffling detail ads...");
 
     
-    for (let i = homeAds.length - 1; i > 0; i--) {
+    for (let i = detailAds.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [homeAds[i], homeAds[j]] = [homeAds[j], homeAds[i]];
+      [detailAds[i], detailAds[j]] = [detailAds[j], detailAds[i]];
     }
 
-    console.log("✅ Home ads shuffled:", homeAds);
+    console.log("✅ Detail ads shuffled:", detailAds);
   }
 
   
@@ -112,7 +112,7 @@ function insertAdsToContainers() {
     console.log(`🧹 Cleared content of ads container ${index + 1}`);
 
     
-    homeAds.forEach((ad, adIndex) => {
+    detailAds.forEach((ad, adIndex) => {
       
       const insElement = document.createElement("ins");
       insElement.className = "adsbygoogle";
@@ -151,4 +151,4 @@ if (document.readyState === "loading") {
   setTimeout(insertAdsToContainers, 500);
 }
 
-console.log("✅ homegg_ads.js loaded successfully");
+console.log("✅ itemgg_ads.js loaded successfully");

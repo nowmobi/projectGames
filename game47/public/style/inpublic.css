@@ -18,17 +18,17 @@
 }
 
 :root {
-  --primary-color: #f0ff31; /* 更淡的主色调 */
-  --primary-color-light: #fcffd6; /* 更淡的浅色 */
-  --primary-color-lighter: #f9ffad; /* 更淡的浅色 */
-  --primary-color-rgb: 240, 255, 49; /* 更新RGB值 */
-  --primary-color-rgba-15: rgba(240, 255, 49, 0.15);
-  --primary-color-rgba-25: rgba(240, 255, 49, 0.25);
-  --primary-color-rgba-30: rgba(240, 255, 49, 0.3);
-  --primary-color-rgba-10: rgba(240, 255, 49, 0.1);
+  --primary-color: #7d929f; /* 更淡的主色调 */
+  --primary-color-light: #e5e9ec; /* 更淡的浅色 */
+  --primary-color-lighter: #cbd3d9; /* 更淡的浅色 */
+  --primary-color-rgb: 125, 146, 159; /* 更新RGB值 */
+  --primary-color-rgba-15: rgba(125, 146, 159, 0.15);
+  --primary-color-rgba-25: rgba(125, 146, 159, 0.25);
+  --primary-color-rgba-30: rgba(125, 146, 159, 0.3);
+  --primary-color-rgba-10: rgba(125, 146, 159, 0.1);
   --text-primary: #555; /* 使文本颜色更淡 */
   --text-muted: #bbb;
-    --logo-color: #606614; /* 使次要文本更淡 */
+    --logo-color: #323a40; /* 使次要文本更淡 */
   --bg-primary: #ffffff;
 }
 
@@ -283,7 +283,7 @@ body {
   box-shadow: 
     0 4px 16px rgba(189, 208, 196, 0.4),
     0 2px 8px rgba(189, 208, 196, 0.3),
-    inset 0 1px 0 rgba(240, 255, 49, 0.3);
+    inset 0 1px 0 rgba(125, 146, 159, 0.3);
   transform: translateY(-2px);
 }
 
