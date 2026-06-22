@@ -1,4 +1,4 @@
-export const BASE_URL = "https://datajson.pages.dev/games7/db6.json";
+export const BASE_URL = "https://datajson.pages.dev/games7/db5.json";
 const baseUrl = 'https://games7.pages.dev';
 
 let gameDetails = [];
@@ -61,7 +61,7 @@ const DEFAULT_CATEGORIES = [
 
 
 export async function getCategoryOrder() {
-  const infoType = 'info5';
+  const infoType = 'info1';
   try {
      const data = await loadGameData();
     if (Array.isArray(data) && data.length > 0 && data[0] && data[0][infoType]) {
