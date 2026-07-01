@@ -1,5 +1,5 @@
 :root {
-  --theme-color: #b65458;
+  --theme-color: #4189b3;
   --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --text-primary: #0f172a;
@@ -11,7 +11,7 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
-  --text-color: #ffa4a8;
+  --text-color: #91d9ff;
 }
 
 * {
