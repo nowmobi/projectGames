@@ -16,7 +16,7 @@
             <img src="public/images/search.svg" alt="search" class="search-icon-img">
         </button>
         <a href="index.html" class="logo">
-            <p>sec.lavendula.cloud</p>
+            <p>sec.feverishness.com</p>
         </a>
         <a href="#" class="header-icon" id="menuToggle">
             <img src="public/images/category.svg" alt="category" class="category-icon-img">
@@ -63,7 +63,7 @@
             <span class="footer-separator">|</span>
             <a href="pages/credits.html">Credits</a>
         </div>
-        <div class="footer-brand">sec.lavendula.cloud</div>
+        <div class="footer-brand">sec.feverishness.com</div>
         <div class="footer-notice">
             <p>Discover exciting HTML5 games, play free online games, and explore endless entertainment. Stay updated with the latest game releases and gaming trends.</p>
         </div>
@@ -73,19 +73,8 @@
 <script type="module" src="./public/js/inpublic.js"></script>
 <script type="module" src="./public/js/index.js"></script>
 <script type="module">
-      import { ad_code_identifier } from "./ads.js";
-    
-      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
-        const script = document.createElement("script");
-        script.type = "module";
-        script.src = "./homegg.js";
-        document.body.appendChild(script);
-      } else {
-        const script = document.createElement("script");
-        script.type = "module";
-        script.src = "./homegg_ads.js";
-        document.body.appendChild(script);
-      }
+        import { loadAdsScript } from './public/js/ad_loader_logic.js';
+    loadAdsScript('home');
     </script>
 </body>
 </html>
