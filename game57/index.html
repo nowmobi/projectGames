@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="./public/style/inpublic.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <p>scribo.fun</p>
+        </a>
+        <div class="header-icons">
+          <a href="#" class="header-icon" id="searchToggle">🔍</a>
+          <a href="#" class="header-icon" id="menuToggle">
+            <img src="./public/category.png" alt="Categories" class="category-icon">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+      <div class="search-input">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search games..." />
+        <span class="close-search" id="closeSearch">✕</span>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="categories-menu" id="categoriesMenu">
+      <div class="categories-header">
+        <span class="categories-title">Categories</span>
+        <span class="close-categories" id="closeCategories">✕</span>
+      </div>
+      <div class="category-item active" data-category="home">
+        <span class="category-name">Home</span>
+        <span class="category-count" id="homeCount">0</span>
+      </div>
+      <div id="categoryItemsContainer">
+        
+      </div>
+    </div>
+
+    <main class="main-content">
+
+      <div class="ads" style="margin-top: 50px;">
+        <div id="div-gpt-ad-home1"></div>
+      </div>
+
+      <div class="fun-games-section">
+        <h2 class="fun-games-title">FUNNY GAMES</h2>
+        <div class="fun-games-container" id="funGamesContainer">
+        </div>
+      </div>
+
+      <div class="surprise-games-section">
+        <h2 class="surprise-games-title">AMAZING GAMES</h2>
+        <div class="surprise-games-grid" id="surpriseGamesGrid">
+          <a href="#" class="surprise-game-card" data-index="0">
+            <div class="surprise-game-image">
+              <img src="" alt="" class="surprise-game-img">
+            </div>
+            <div class="surprise-game-name"></div>
+          </a>
+          <a href="#" class="surprise-game-card" data-index="1">
+            <div class="surprise-game-image">
+              <img src="" alt="" class="surprise-game-img">
+            </div>
+            <div class="surprise-game-name"></div>
+          </a>
+          <div class="surprise-games-ad">
+            <div id="div-gpt-ad-home2"></div>
+          </div>
+          <a href="#" class="surprise-game-card" data-index="2">
+            <div class="surprise-game-image">
+              <img src="" alt="" class="surprise-game-img">
+            </div>
+            <div class="surprise-game-name"></div>
+          </a>
+          <a href="#" class="surprise-game-card" data-index="3">
+            <div class="surprise-game-image">
+              <img src="" alt="" class="surprise-game-img">
+            </div>
+            <div class="surprise-game-name"></div>
+          </a>
+          <a href="#" class="surprise-game-card" data-index="4">
+            <div class="surprise-game-image">
+              <img src="" alt="" class="surprise-game-img">
+            </div>
+            <div class="surprise-game-name"></div>
+          </a>
+          <a href="#" class="surprise-game-card" data-index="5">
+            <div class="surprise-game-image">
+              <img src="" alt="" class="surprise-game-img">
+            </div>
+            <div class="surprise-game-name"></div>
+          </a>
+          <a href="#" class="surprise-game-card" data-index="6">
+            <div class="surprise-game-image">
+              <img src="" alt="" class="surprise-game-img">
+            </div>
+            <div class="surprise-game-name"></div>
+          </a>
+          <a href="#" class="surprise-game-card" data-index="7">
+            <div class="surprise-game-image">
+              <img src="" alt="" class="surprise-game-img">
+            </div>
+            <div class="surprise-game-name"></div>
+          </a>
+        </div>
+      </div>
+     <div class="ads">
+        <div id="div-gpt-ad-home3"></div>
+      </div>
+      <div class="online-games-section">
+        <h2 class="online-games-title">ONLINE GAMES</h2>
+        <div class="online-games-list" id="onlineGamesList">
+          <a href="#" class="online-game-card" data-index="0">
+            <img src="" alt="" class="online-game-img">
+            <div class="online-game-info">
+              <div class="online-game-name"></div>
+              <div class="online-game-meta">
+                <span class="online-game-download">
+                  <span></span>
+                  <span class="download-label">plays</span>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="online-game-card" data-index="1">
+            <img src="" alt="" class="online-game-img">
+            <div class="online-game-info">
+              <div class="online-game-name"></div>
+              <div class="online-game-meta">
+                <span class="online-game-download">
+                  <span></span>
+                  <span class="download-label">plays</span>
+                </span>
+              </div>
+            </div>
+          </a>
+     <div class="ads">
+        <div id="div-gpt-ad-home4"></div>
+      </div>
+          <a href="#" class="online-game-card" data-index="2">
+            <img src="" alt="" class="online-game-img">
+            <div class="online-game-info">
+              <div class="online-game-name"></div>
+              <div class="online-game-meta">
+                <span class="online-game-download">
+                  <span></span>
+                  <span class="download-label">plays</span>
+                </span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="online-game-card" data-index="3">
+            <img src="" alt="" class="online-game-img">
+            <div class="online-game-info">
+              <div class="online-game-name"></div>
+              <div class="online-game-meta">
+                <span class="online-game-download">
+                  <span></span>
+                  <span class="download-label">plays</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+ 
+
+
+
+      <div class="ads">
+        <div id="div-gpt-ad-home5"></div>
+      </div>
+
+<div class="fun-games-section">
+        <h2 class="fun-games-title">GUESS YOUR LIKE</h2>
+        <div class="fun-games-container" id="recommendGamesContainer">
+        </div>
+      </div>
+
+      <div class="top-games-section">
+        <h2 class="top-games-title">Top 5 Games</h2>
+        <div class="top-games-list" id="topGamesList">
+          <a href="#" class="top-game-card" data-index="0">
+            <img src="" alt="" class="top-game-img">
+            <div class="top-game-info">
+              <div class="top-game-name"></div>
+              <div class="top-game-rank">#1 Top Game</div>
+            </div>
+          </a>
+          <a href="#" class="top-game-card" data-index="1">
+            <img src="" alt="" class="top-game-img">
+            <div class="top-game-info">
+              <div class="top-game-name"></div>
+              <div class="top-game-rank">#2 Top Game</div>
+            </div>
+          </a>
+          <a href="#" class="top-game-card" data-index="2">
+            <img src="" alt="" class="top-game-img">
+            <div class="top-game-info">
+              <div class="top-game-name"></div>
+              <div class="top-game-rank">#3 Top Game</div>
+            </div>
+          </a>
+          <a href="#" class="top-game-card" data-index="3">
+            <img src="" alt="" class="top-game-img">
+            <div class="top-game-info">
+              <div class="top-game-name"></div>
+              <div class="top-game-rank">#4 Top Game</div>
+            </div>
+          </a>
+          <a href="#" class="top-game-card" data-index="4">
+            <img src="" alt="" class="top-game-img">
+            <div class="top-game-info">
+              <div class="top-game-name"></div>
+              <div class="top-game-rank">#5 Top Game</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="/pages/privacy.html">Privacy</a>
+        <a href="/pages/contact.html">Contact</a>
+        <a href="/pages/about.html">About</a>
+        <a href="/pages/terms.html">Terms</a>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="footer-copyright-text">
+          <p>Copyright © 2026 scribo.fun</p>
+          <p>All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./public/js/index.js"></script>
+    <script type="module" src="./public/js/inpublic.js"></script>
+    <script type="module">
+      import { ad_code_identifier } from "./ads.js";
+    
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./homegg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./homegg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
+    
+  </body>
+</html>
