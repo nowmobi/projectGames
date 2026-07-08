@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="public/style/inpublic.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <button class="menu-btn" id="menuToggle">
+                <svg t="1781764525164" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="18952" width="40" height="40">
+                    <path d="M487 347.43C487 424.512 424.512 487 347.43 487H237.57C160.488 487 98 424.512 98 347.43V237.57C98 160.488 160.488 98 237.57 98h109.86C424.512 98 487 160.488 487 237.57v109.86zM487 786.43C487 863.512 424.512 926 347.43 926H237.57C160.488 926 98 863.512 98 786.43V676.57C98 599.488 160.488 537 237.57 537h109.86C424.512 537 487 599.488 487 676.57v109.86zM926 347.43C926 424.512 863.512 487 786.43 487H676.57C599.488 487 537 424.512 537 347.43V237.57C537 160.488 599.488 98 676.57 98h109.86C863.512 98 926 160.488 926 237.57v109.86zM730.7 533.6c-107.861 0-195.3 87.439-195.3 195.3s87.439 195.3 195.3 195.3S926 836.761 926 728.9s-87.439-195.3-195.3-195.3z m0 309.734c-63.2 0-114.435-51.234-114.435-114.434S667.5 614.465 730.7 614.465 845.134 665.7 845.134 728.9 793.9 843.334 730.7 843.334z" fill="var(--theme-color)" p-id="18953"></path>
+                </svg>
+            </button>
+           <p>oubliette.cloud</p>
+            <button class="search-btn" id="searchToggle">
+                <svg t="1781764403554" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14625" width="35" height="35">
+                    <path d="M443.733333 14.933333c-234.666667 0-426.666667 192-426.666666 426.666667s192 426.666667 426.666666 426.666667 426.666667-192 426.666667-426.666667c0-236.8-192-426.666667-426.666667-426.666667z m-157.866666 202.666667c-10.666667 4.266667-19.2 8.533333-27.733334 14.933333-8.533333 6.4-17.066667 12.8-25.6 21.333334-6.4 6.4-14.933333 14.933333-19.2 23.466666-6.4 8.533333-10.666667 19.2-14.933333 27.733334-4.266667 8.533333-12.8 12.8-21.333333 8.533333-8.533333-4.266667-12.8-12.8-8.533334-21.333333 4.266667-10.666667 10.666667-23.466667 19.2-34.133334 6.4-10.666667 14.933333-21.333333 23.466667-29.866666 8.533333-8.533333 19.2-17.066667 29.866667-23.466667 10.666667-6.4 21.333333-12.8 34.133333-19.2 8.533333-4.266667 19.2 0 21.333333 8.533333 2.133333 10.666667-2.133333 19.2-10.666666 23.466667z m441.6 377.6c-10.666667 23.466667-23.466667 44.8-42.666667 64-19.2 19.2-40.533333 34.133333-64 42.666667-23.466667 10.666667-49.066667 14.933333-76.8 14.933333-8.533333 0-17.066667-8.533333-17.066667-17.066667s6.4-17.066667 17.066667-17.066666c21.333333 0 42.666667-4.266667 64-12.8 19.2-8.533333 38.4-19.2 53.333333-36.266667 17.066667-14.933333 27.733333-34.133333 36.266667-53.333333 8.533333-19.2 12.8-42.666667 12.8-64 0-8.533333 8.533333-17.066667 17.066667-17.066667s17.066667 8.533333 17.066666 17.066667c-2.133333 27.733333-8.533333 55.466667-17.066666 78.933333z m260.266666 302.933333l-119.466666-123.733333c-12.8-12.8-27.733333-19.2-44.8-19.2s-32 6.4-44.8 19.2c-25.6 25.6-25.6 66.133333 0 91.733333l119.466666 123.733334c12.8 12.8 27.733333 19.2 44.8 19.2s32-6.4 44.8-19.2c25.6-25.6 25.6-66.133333 0-91.733334z" fill="var(--theme-color)" p-id="14626"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="search-container" id="searchContainer">
+        <div class="search-input">
+            <span class="search-back" id="searchBack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="var(--logo-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Search for games">
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="categories-menu" id="categoriesMenu">
+        <div class="categories-header">
+            
+            <span class="categories-title">Menu</span>
+            <span class="close-categories" id="closeCategories">✕</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+    <div class="ads">
+        <div id="div-gpt-ad-home1"></div>
+      </div>
+      <div class="content-carousel-container">
+        <div class="content-carousel" id="contentCarousel">
+            <div class="carousel-item active">
+                <div class="carousel-content">
+                    <h3 class="carousel-title" id="carouselTitle">Title</h3>
+                    <p class="carousel-description" id="carouselDescription">Description</p>
+                    <span class="carousel-category" id="carouselCategory">Category</span>
+                </div>
+                <div class="carousel-image-wrapper">
+                    <img src="" alt="" class="carousel-image" id="carouselImage">
+                </div>
+            </div>
+        </div>
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+      </div>
+          <div class="side-categories-header">
+              <h3 class="side-categories-title">
+                  <svg t="1781765455578" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="19973" width="30" height="30">
+                    <path d="M1024.549 360.609c0-170.492-133.815-309.265-298.055-309.265-81.129 0-157.91 34.998-213.344 94.701-55.509-59.702-132.367-94.701-213.344-94.701C135.49 51.344 1.751 190.041 1.751 360.609c0 5.719 0.534 10.827 0.991 15.021-0.076 1.373-0.152 2.745-0.152 4.194 0 30.193 7.319 63.361 21.73 98.59 0.458 1.295 0.915 2.516 1.449 3.657 90.812 217.844 440.412 468.474 455.279 479.985 9.227 7.092 20.205 10.6 31.263 10.6 11.209 0 22.266-3.659 31.566-10.903 12.733-9.911 310.941-224.551 429.279-427.603 4.498-6.861 7.854-13.494 10.828-19.215 0.914-1.829 1.753-3.658 2.744-5.413l0.382-0.839c0.382-0.686 0.839-1.449 1.296-2.059 7.091-13.802 12.732-26.611 17.232-39.116 12.274-32.177 18.3-60.847 18.3-87.61 0-2.058-0.077-3.888-0.229-5.414C1024.093 370.979 1024.549 366.251 1024.549 360.609z" fill="var(--theme-color)" p-id="19974"></path>
+                </svg>
+                  Popular Categories
+              </h3>
+          </div>
+          <div class="side-categories-grid" id="sideCategoriesGrid">
+              <a href="pages/category.html?category=action" class="side-category-item">
+                  <span class="side-category-name">Action</span>
+              </a>
+              <a href="pages/category.html?category=adventure" class="side-category-item">
+                  <span class="side-category-name">Adventure</span>
+              </a>
+              <a href="pages/category.html?category=racing" class="side-category-item">
+                  <span class="side-category-name">Racing</span>
+              </a>
+              <a href="pages/category.html?category=puzzle" class="side-category-item">
+                  <span class="side-category-name">Puzzle</span>
+              </a>
+              <a href="pages/category.html?category=sports" class="side-category-item">
+                  <span class="side-category-name">Sports</span>
+              </a>
+              <a href="pages/category.html?category=kids" class="side-category-item">
+                  <span class="side-category-name">Kids</span>
+              </a>
+              <a href="pages/category.html?category=girl" class="side-category-item">
+                  <span class="side-category-name">Girls</span>
+              </a>
+              <a href="pages/category.html?category=recommended" class="side-category-item">
+                  <span class="side-category-name">Recommend</span>
+              </a>
+          </div>
+           <div class="ads">
+            <div id="div-gpt-ad-home2"></div>
+          </div>
+
+        <div class="category-section">
+            <div class="section-header">
+                <h2 class="section-title base1" data-category="recommended">Recommend</h2>
+            </div>
+            <div class="homepage-game-grid" id="recommendedGamesGrid">
+
+            </div>
+        </div>
+
+
+       <div class="ads">
+            <div id="div-gpt-ad-home3"></div>
+          </div>
+        <div class="category-section"></div>
+          <div class="ads">
+            <div id="div-gpt-ad-home4"></div>
+          </div>
+
+        <div class="category-section"></div>
+        <div class="ads">
+            <div id="div-gpt-ad-home5"></div>
+          </div>
+        <div class="category-section"></div>
+
+
+          <div class="category-section"></div>
+          <div class="category-section"></div>
+
+<div class="hot-games-section">
+    <div class="section-header">
+        <h2 class="section-title">Hot Games</h2>
+    </div>
+    <div class="hot-games-list" id="hotGamesList">
+    </div>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-links">
+            <div class="footer-links-row">
+                <a href="pages/about.html" class="footer-link">About us</a>
+                <a href="pages/contact.html" class="footer-link">Contact Us</a>
+            </div>
+            <div class="footer-links-row">
+                <a href="pages/terms.html" class="footer-link">Terms of Service</a>
+                <a href="pages/privacy.html" class="footer-link">Privacy Policy</a>
+            </div>
+          </div>
+          <div class="footer-copyright">Copyright © 2025-2026 oubliette.cloud All rights Reserved.</div>
+        </div>
+      </footer>
+
+    <script type="module" src="./public/js/index.js"></script>
+    <script type="module" src="./public/js/inpublic.js"></script>
+    <script type="module">
+        import { ad_code_identifier } from "./ads.js";
+     
+       
+        if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./homegg.js";
+          document.body.appendChild(script);
+        } else {
+       
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "./homegg_ads.js";
+          document.body.appendChild(script);
+        }
+      </script>
+</body>
+</html>
