@@ -65,7 +65,7 @@ const DEFAULT_CATEGORIES = [
 
 
 export async function getCategoryOrder() {
-  const infoType = 'info2';
+  const infoType = 'info3';
   try {
     const response = await fetch(BASE_URL);
     if (!response.ok) {

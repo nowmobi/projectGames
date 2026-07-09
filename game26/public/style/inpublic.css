@@ -1,6 +1,6 @@
 
 :root {
-  --theme-color: #bce3fe;
+  --theme-color: #7d929f;
   --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --text-primary: #0f172a;
@@ -12,7 +12,7 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
-   --text-color: #6c93ae;}
+   --text-color: #2d424f;}
 
 * {
   margin: 0;
