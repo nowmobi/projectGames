@@ -115,7 +115,7 @@ const DEFAULT_CATEGORIES = [
 
 
 export const getInfoType = () => {
-  return 'info2'; 
+  return 'info5'; 
 };
 
 export async function getCategoryOrder() {
