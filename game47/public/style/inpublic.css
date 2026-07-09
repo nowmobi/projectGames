@@ -1,4 +1,4 @@
-/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+
 @font-face {
   font-family: "iconfont"; /* Project id 5081869 */
   src: url("//at.alicdn.com/t/c/font_5081869_ojg4vbf31kr.woff2?t=1764920932221")
@@ -18,17 +18,17 @@
 }
 
 :root {
-  --primary-color: #f597ba; /* 更淡的主色调 */
-  --primary-color-light: #fdeaf1; /* 更淡的浅色 */
-  --primary-color-lighter: #fbd5e3; /* 更淡的浅色 */
-  --primary-color-rgb: 245, 151, 186; /* 更新RGB值 */
-  --primary-color-rgba-15: rgba(245, 151, 186, 0.15);
-  --primary-color-rgba-25: rgba(245, 151, 186, 0.25);
-  --primary-color-rgba-30: rgba(245, 151, 186, 0.3);
-  --primary-color-rgba-10: rgba(245, 151, 186, 0.1);
-  --text-primary: #555; /* 使文本颜色更淡 */
+  --primary-color: #bdd0c4; 
+  --primary-color-light: #f2f6f3; 
+  --primary-color-lighter: #e5ece7; 
+  --primary-color-rgb: 189, 208, 196; 
+  --primary-color-rgba-15: rgba(189, 208, 196, 0.15);
+  --primary-color-rgba-25: rgba(189, 208, 196, 0.25);
+  --primary-color-rgba-30: rgba(189, 208, 196, 0.3);
+  --primary-color-rgba-10: rgba(189, 208, 196, 0.1);
+  --text-primary: #555; 
   --text-muted: #bbb;
-    --logo-color: #623c4a; /* 使次要文本更淡 */
+    --logo-color: #4c534e; 
   --bg-primary: #ffffff;
 }
 
@@ -52,7 +52,7 @@ body {
     #fffde7,
     #f8f4e1,
     #fff8e1
-  ); /* 淡黄色渐变背景 */
+  ); 
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   background-attachment: fixed;
@@ -283,7 +283,7 @@ body {
   box-shadow: 
     0 4px 16px rgba(189, 208, 196, 0.4),
     0 2px 8px rgba(189, 208, 196, 0.3),
-    inset 0 1px 0 rgba(245, 151, 186, 0.3);
+    inset 0 1px 0 rgba(189, 208, 196, 0.3);
   transform: translateY(-2px);
 }
 
@@ -823,57 +823,52 @@ body {
   gap: 12px;
 }
 
-/* 为8个游戏卡片实现：第一行2列，第二行3列，第三行3列的布局 */
 .category-section .game-grid.game-layout-233 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3列网格 */
+  grid-template-columns: 1fr 1fr 1fr; 
   gap: 12px;
 }
 
-/* 第一行：2个卡片，放大并占据更多空间 */
 .category-section .game-grid.game-layout-233 .game-card:nth-child(1) {
-  grid-column: 1 / span 1; /* 占据第1列 */
-  height: fit-content; /* 高度根据内容自适应 */
+  grid-column: 1 / span 1; 
+  height: fit-content; 
 }
 
 .category-section .game-grid.game-layout-233 .game-card:nth-child(2) {
-  grid-column: 2 / span 1; /* 占据第2列 */
-  height: fit-content; /* 高度根据内容自适应 */
+  grid-column: 2 / span 1; 
+  height: fit-content; 
 }
 
-/* 第二行：3个卡片 */
 .category-section .game-grid.game-layout-233 .game-card:nth-child(3) {
-  grid-column: 1 / span 1; /* 占据第1列 */
-  height: fit-content; /* 高度根据内容自适应 */
+  grid-column: 1 / span 1; 
+  height: fit-content; 
 }
 
 .category-section .game-grid.game-layout-233 .game-card:nth-child(4) {
-  grid-column: 2 / span 1; /* 占据第2列 */
-  height: fit-content; /* 高度根据内容自适应 */
+  grid-column: 2 / span 1; 
+  height: fit-content; 
 }
 
 .category-section .game-grid.game-layout-233 .game-card:nth-child(5) {
-  grid-column: 3 / span 1; /* 占据第3列 */
-  height: fit-content; /* 高度根据内容自适应 */
+  grid-column: 3 / span 1;
+  height: fit-content; 
 }
 
-/* 第三行：3个卡片 */
 .category-section .game-grid.game-layout-233 .game-card:nth-child(6) {
-  grid-column: 1 / span 1; /* 占据第1列 */
-  height: fit-content; /* 高度根据内容自适应 */
+  grid-column: 1 / span 1; 
+  height: fit-content; 
 }
 
 .category-section .game-grid.game-layout-233 .game-card:nth-child(7) {
-  grid-column: 2 / span 1; /* 占据第2列 */
-  height: fit-content; /* 高度根据内容自适应 */
+  grid-column: 2 / span 1; 
+  height: fit-content; 
 }
 
 .category-section .game-grid.game-layout-233 .game-card:nth-child(8) {
-  grid-column: 3 / span 1; /* 占据第3列 */
-  height: fit-content; /* 高度根据内容自适应 */
+  grid-column: 3 / span 1; 
+  height: fit-content; 
 }
 
-/* 为第一行的卡片图片增加尺寸，同时保持比例 */
 .category-section
   .game-grid.game-layout-233
   .game-card:nth-child(1)
@@ -882,13 +877,12 @@ body {
   .game-grid.game-layout-233
   .game-card:nth-child(2)
   .game-card-image-wrapper {
-  aspect-ratio: 1; /* 保持正方形比例 */
-  max-width: 140px; /* 增加最大宽度 */
-  max-height: 140px; /* 增加最大高度 */
-  margin: 0 auto; /* 居中显示 */
+  aspect-ratio: 1; 
+  max-width: 140px;
+  max-height: 140px; 
+  margin: 0 auto; 
 }
 
-/* 对于第二、三行，保持正常尺寸 */
 .category-section
   .game-grid.game-layout-233
   .game-card:nth-child(3)
@@ -1828,7 +1822,6 @@ body {
   display: none;
 }
 
-/* 文字覆盖层样式 - 为详情页和分类页也添加 */
 .recommended-section .game-card-text-overlay,
 #gamesGrid .game-card-text-overlay {
   position: absolute;
@@ -1882,7 +1875,6 @@ body {
   backdrop-filter: blur(2px);
 }
 
-/* 评分样式 */
 .recommended-section .game-card-rating,
 #gamesGrid .game-card-rating {
   display: flex;
@@ -1910,7 +1902,6 @@ body {
   border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
-/* 下载量样式 */
 .recommended-section .game-card-downloads,
 #gamesGrid .game-card-downloads {
   display: flex;
@@ -1933,7 +1924,6 @@ body {
   font-weight: 500;
 }
 
-/* 描述文字样式 */
 .recommended-section .game-card-description,
 #gamesGrid .game-card-description {
   font-size: 12px;
@@ -2113,15 +2103,13 @@ body {
   }
 }
 
-/* 新增：符合规范的响应式网格布局，图片大小不一 */
 .category-section .game-grid.game-layout-responsive-mixed {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 12px;
   padding: 5px;
 }
 
-/* 第一行：两个小图（第1、2个卡片） */
 .category-section
   .game-grid.game-layout-responsive-mixed
   > .game-card:nth-child(1),
@@ -2132,16 +2120,13 @@ body {
   grid-column: span 1;
 }
 
-/* 第二行：大图（第3个卡片），跨越两列 */
 .category-section
   .game-grid.game-layout-responsive-mixed
   > .game-card:nth-child(3) {
   grid-row: span 1;
-  grid-column: span 2; /* 跨越两列 */
+  grid-column: span 2; 
 }
 
-/* 为不同尺寸的卡片设置不同的图片样式 */
-/* 小尺寸卡片的图片（第1、2个） */
 .category-section
   .game-grid.game-layout-responsive-mixed
   > .game-card:nth-child(1)
@@ -2153,35 +2138,35 @@ body {
   width: 100%;
   height: auto;
   min-height: 110px;
-  aspect-ratio: 1; /* 保持固定宽高比 */
+  aspect-ratio: 1; 
 }
 
-/* 大尺寸卡片的图片（第3个） */
+
 .category-section
   .game-grid.game-layout-responsive-mixed
   > .game-card:nth-child(3)
   .game-card-image-wrapper {
   width: 100%;
   height: 100%;
-  min-height: 200px; /* 更大的高度 */
-  aspect-ratio: 2 / 1; /* 宽屏比例 */
+  min-height: 200px;
+  aspect-ratio: 2 / 1; 
 }
 
-/* 圆形图片设计（可选） */
+
 .category-section
   .game-grid.game-layout-responsive-mixed.game-layout-circular
   > .game-card
   .game-card-image-wrapper {
-  border-radius: 50%; /* 圆形设计 */
+  border-radius: 50%; 
   overflow: hidden;
 }
 
-/* 平行四边形图片设计（可选） */
+
 .category-section
   .game-grid.game-layout-responsive-mixed.game-layout-skewed
   > .game-card
   .game-card-image-wrapper {
-  transform: skew(-10deg); /* 容器倾斜 */
+  transform: skew(-10deg); 
   transition: transform 0.3s ease;
 }
 
@@ -2189,7 +2174,7 @@ body {
   .game-grid.game-layout-responsive-mixed.game-layout-skewed
   > .game-card
   img {
-  transform: skew(10deg); /* 图片内容反向倾斜保持正向 */
+  transform: skew(10deg); 
   transition: transform 0.3s ease;
 }
 
@@ -2197,17 +2182,17 @@ body {
   .game-grid.game-layout-responsive-mixed.game-layout-skewed
   > .game-card:hover
   .game-card-image-wrapper {
-  transform: skew(-10deg) scale(1.05); /* 悬停时的倾斜+放大效果 */
+  transform: skew(-10deg) scale(1.05); 
 }
 
 .category-section
   .game-grid.game-layout-responsive-mixed.game-layout-skewed
   > .game-card:hover
   img {
-  transform: skew(10deg) scale(1.05); /* 悬停时的倾斜+放大效果 */
+  transform: skew(10deg) scale(1.05); 
 }
 
-/* 保持卡片交互效果规范 */
+
 .category-section
   .game-grid.game-layout-responsive-mixed
   > .game-card:nth-child(3n + 1):hover,
@@ -2217,18 +2202,18 @@ body {
 .category-section
   .game-grid.game-layout-responsive-mixed
   > .game-card:nth-child(3n + 3):hover {
-  transform: translateY(-2px) scale(1.02); /* 卡片交互效果规范 */
-  transition: transform 0.3s ease-in-out; /* 过渡动画 */
+  transform: translateY(-2px) scale(1.02); 
+  transition: transform 0.3s ease-in-out; 
 }
 
-/* 响应式增强：在不同屏幕尺寸下调整网格 */
+
 @media (max-width: 480px) {
   .category-section .game-grid.game-layout-responsive-mixed {
-    grid-template-columns: repeat(2, 1fr); /* 小屏幕下保持两列 */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 10px;
   }
 
-  /* 小屏幕下大图的高度减小 */
+
   .category-section
     .game-grid.game-layout-responsive-mixed
     > .game-card:nth-child(3)
@@ -2239,11 +2224,11 @@ body {
 
 @media (min-width: 1024px) {
   .category-section .game-grid.game-layout-responsive-mixed {
-    grid-template-columns: repeat(2, 1fr); /* 大屏幕下保持两列 */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 15px;
   }
 
-  /* 大屏幕下更大的卡片 */
+
   .category-section
     .game-grid.game-layout-responsive-mixed
     > .game-card:nth-child(1)
@@ -2259,7 +2244,7 @@ body {
     .game-grid.game-layout-responsive-mixed
     > .game-card:nth-child(3)
     .game-card-image-wrapper {
-    min-height: 240px; /* 大屏幕下更大的高度 */
+    min-height: 240px; 
   }
 }
 
@@ -2271,11 +2256,11 @@ body {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: var(--primary-color, #60a5fa);  /* 与header相同的背景色变量 */
-    color: white;  /* 白色箭头 */
+    background-color: var(--primary-color, #60a5fa); 
+    color: white;  
     cursor: pointer;
     padding: 15px;
-    border-radius: 8px;  /* 正方形带轻微圆角 */
+    border-radius: 8px;  
     font-size: 18px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
@@ -2291,7 +2276,7 @@ body {
 }
 
 .back-to-top:hover {
-    background-color: rgba(96, 165, 250, 0.9);  /* 悬停时稍微透明一点 */
+    background-color: rgba(96, 165, 250, 0.9);  
     transform: translateY(-3px) scale(1.05);
 }
 
