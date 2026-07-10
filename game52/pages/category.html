@@ -67,19 +67,9 @@
 
     <script type="module" src="../public/js/inpublic.js"></script>
     <script type="module">
-      import { ad_code_identifier } from "../ads.js";
-
-      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
-        const script = document.createElement("script");
-        script.type = "module";
-        script.src = "../categorygg.js";
-        document.body.appendChild(script);
-      } else {
-        const script = document.createElement("script");
-        script.type = "module";
-        script.src = "../categorygg_ads.js";
-        document.body.appendChild(script);
-      }
+    
+          import { loadAdsScript } from '../public/js/ad_loader_logic.js';
+      loadAdsScript('category');
     </script>
 </body>
 </html>
