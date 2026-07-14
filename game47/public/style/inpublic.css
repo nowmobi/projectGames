@@ -53,8 +53,6 @@ body {
     #f8f4e1,
     #fff8e1
   ); 
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
   background-attachment: fixed;
 }
 
@@ -612,31 +610,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.section-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(210, 105, 30, 0.1) 50%,
-    transparent 100%
-  );
-  animation: headerShimmer 3s ease-in-out infinite;
-  pointer-events: none;
-}
 
-@keyframes headerShimmer {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
 
 .section-header:hover {
   box-shadow: 
@@ -661,8 +635,6 @@ body {
     #cd853f 75%,
     #8b4513 100%
   );
-  background-size: 200% 100%;
-  animation: gradientFlow 4s ease infinite;
 }
 
 .section-more {
@@ -696,20 +668,6 @@ body {
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
-  animation: rotateBorder 3s linear infinite;
-  background-size: 400% 400%;
-}
-
-@keyframes rotateBorder {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .section-more:hover {
@@ -727,7 +685,6 @@ body {
   width: 28px;
   height: 14px;
   display: block;
-  animation: slideRight 1.5s ease-in-out infinite;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
@@ -767,16 +724,6 @@ body {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   filter: drop-shadow(0 2px 4px rgba(210, 105, 30, 0.2));
-  animation: titleGlow 3s ease-in-out infinite;
-}
-
-@keyframes titleGlow {
-  0%, 100% {
-    filter: drop-shadow(0 2px 4px rgba(210, 105, 30, 0.2));
-  }
-  50% {
-    filter: drop-shadow(0 2px 8px rgba(255, 140, 0, 0.4));
-  }
 }
 
 .section-title::after {
@@ -793,18 +740,6 @@ body {
     #d2691e 100%
   );
   border-radius: 2px;
-  animation: underlineExpand 2s ease-in-out infinite;
-}
-
-@keyframes underlineExpand {
-  0%, 100% {
-    width: 50px;
-    opacity: 0.8;
-  }
-  50% {
-    width: 80px;
-    opacity: 1;
-  }
 }
 
 .category-section {
@@ -923,8 +858,7 @@ body {
     rgba(255, 255, 255, 0.1) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  animation: fadeInUp 0.6s ease-out backwards,
-    subtleFloat 4s ease-in-out infinite, gentleGlow 3s ease-in-out infinite;
+  animation: fadeInUp 0.6s ease-out backwards;
   cursor: pointer;
 }
 
@@ -975,46 +909,18 @@ body {
   right: -2px;
   bottom: -2px;
   border-radius: 14px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-rgba-30) 0%,
-    var(--primary-color-rgba-30) 50%,
-    var(--primary-color-rgba-30) 100%
-  );
+  background: var(--primary-color-rgba-30);
   opacity: 0.3;
   z-index: -1;
   pointer-events: none;
   filter: blur(6px);
-  animation: borderGlow 4s ease-in-out infinite;
-  background-size: 200% 200%;
-}
-
-@keyframes borderGlow {
-  0% {
-    background-position: 0% 50%;
-    opacity: 0.2;
-  }
-  50% {
-    background-position: 100% 50%;
-    opacity: 0.4;
-  }
-  100% {
-    background-position: 0% 50%;
-    opacity: 0.2;
-  }
 }
 
 .category-section .game-card-image-wrapper {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-rgba-10),
-    var(--primary-color-rgba-10)
-  );
-  animation: gradientFlow 8s ease infinite;
-  background-size: 200% 200%;
+  background: var(--primary-color-rgba-10);
   aspect-ratio: 1;
   display: flex;
   align-items: center;
@@ -1022,23 +928,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.category-section .game-card-image-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 100%
-  );
-  animation: shimmer 3s infinite;
-  z-index: 2;
-  pointer-events: none;
-}
+
 
 .category-section .game-card-image-wrapper::after {
   content: "";
@@ -1256,61 +1146,7 @@ body {
   }
 }
 
-/* 静态动画效果 */
-@keyframes subtleFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
 
-@keyframes gentleGlow {
-  0%,
-  100% {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
-      0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-      0 0 15px var(--primary-color-rgba-15);
-  }
-  50% {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
-      0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-      0 0 25px var(--primary-color-rgba-25);
-  }
-}
-
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes subtlePulse {
-  0%,
-  100% {
-    filter: brightness(1) saturate(1);
-  }
-  50% {
-    filter: brightness(1.03) saturate(1.05);
-  }
-}
 
 .no-results {
   text-align: center;
@@ -1648,8 +1484,7 @@ body {
         rgba(255, 255, 255, 0.1) 0%,
         rgba(255, 255, 255, 0) 100%
     );
-    animation: fadeInUp 0.6s ease-out backwards,
-        subtleFloat 4s ease-in-out infinite, gentleGlow 3s ease-in-out infinite;
+    animation: fadeInUp 0.6s ease-out backwards;
     cursor: pointer;
 }
 
@@ -1727,18 +1562,11 @@ body {
   right: -2px;
   bottom: -2px;
   border-radius: 14px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-rgba-30) 0%,
-    var(--primary-color-rgba-30) 50%,
-    var(--primary-color-rgba-30) 100%
-  );
+  background: var(--primary-color-rgba-30);
   opacity: 0.3;
   z-index: -1;
   pointer-events: none;
   filter: blur(6px);
-  animation: borderGlow 4s ease-in-out infinite;
-  background-size: 200% 200%;
 }
 
 .recommended-section .game-card-image-wrapper,
@@ -1746,13 +1574,7 @@ body {
   border-radius: 12px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-rgba-10),
-    var(--primary-color-rgba-10)
-  );
-  animation: gradientFlow 8s ease infinite;
-  background-size: 200% 200%;
+  background: var(--primary-color-rgba-10);
   aspect-ratio: 1;
   display: flex;
   align-items: center;
@@ -1760,24 +1582,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.recommended-section .game-card-image-wrapper::before,
-#gamesGrid .game-card-image-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 100%
-  );
-  animation: shimmer 3s infinite;
-  z-index: 2;
-  pointer-events: none;
-}
+
 
 .recommended-section .game-card-image-wrapper::after,
 #gamesGrid .game-card-image-wrapper::after {
@@ -2091,17 +1896,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
 
 .category-section .game-grid.game-layout-responsive-mixed {
   display: grid;
