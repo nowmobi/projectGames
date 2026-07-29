@@ -27,12 +27,12 @@ export async function loadAdsScript(pageType) {
 
         switch (pageType) {
             case 'home':
-                scriptToLoad = '/maingg.js';
-                fallbackScript = '/maingg_ads.js';
+                scriptToLoad = '/homegg.js';
+                fallbackScript = '/homegg_ads.js';
                 break;
             case 'detail':
-                scriptToLoad = '/itemgg.js';
-                fallbackScript = '/itemgg_ads.js';
+                scriptToLoad = '/detailgg.js';
+                fallbackScript = '/detailgg_ads.js';
                 break;
             case 'category':
                 scriptToLoad = '/categorygg.js';
@@ -90,10 +90,10 @@ export async function loadAdsScript(pageType) {
         let fallbackScript = '';
         switch (pageType) {
             case 'home':
-                fallbackScript = '/maingg_ads.js';
+                fallbackScript = '/homegg_ads.js';
                 break;
             case 'detail':
-                fallbackScript = '/itemgg_ads.js';
+                fallbackScript = '/detailgg_ads.js';
                 break;
             case 'category':
                 fallbackScript = '/categorygg_ads.js';
