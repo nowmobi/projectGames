@@ -113,22 +113,28 @@ function insertAdsToContainers() {
 
     
     homeAds.forEach((ad, adIndex) => {
-      
+      // 用 div 包裹 ins，使 .ads > div 的宽度规则(width:100%;max-width:300px)生效，
+      // 否则空的 <ins> 作为 flex 子元素会塌缩成宽度 0，导致 AdSense 报 availableWidth=0
+      const wrapper = document.createElement("div");
+
       const insElement = document.createElement("ins");
       insElement.className = "adsbygoogle";
       insElement.style.display = "block";
+      insElement.style.width = "100%";
       insElement.setAttribute("data-ad-client", clientId);
       insElement.setAttribute("data-ad-slot", ad.slot);
       insElement.setAttribute("data-ad-format", "auto");
       insElement.setAttribute("data-full-width-responsive", "true");
 
-      
-      container.appendChild(insElement);
+      wrapper.appendChild(insElement);
+      container.appendChild(wrapper);
 
-      
-      const script = document.createElement("script");
-      script.textContent = "(adsbygoogle = window.adsbygoogle || []).push({});";
-      container.appendChild(script);
+      // 等待浏览器完成布局后再 push，确保 AdSense 能量到非零宽度
+      requestAnimationFrame(() => {
+        const script = document.createElement("script");
+        script.textContent = "(adsbygoogle = window.adsbygoogle || []).push({});";
+        container.appendChild(script);
+      });
 
       console.log(
         `✅ Inserted ad ${adIndex + 1} into container ${index + 1} with slot: ${
