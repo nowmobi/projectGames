@@ -43,6 +43,17 @@ function generateHomepageGames(gameDetails) {
         `;
     })
     .join("");
+
+  const featuredCard = homepageGameGrid.querySelector(".game-card.featured");
+  if (featuredCard) {
+    const adsWrapper = document.createElement("div");
+    adsWrapper.className = "ads";
+    adsWrapper.style.gridColumn = "1 / -1";
+    const adDiv = document.createElement("div");
+    adDiv.id = "div-gpt-ad-home1";
+    adsWrapper.appendChild(adDiv);
+    featuredCard.after(adsWrapper);
+  }
 }
 
 function generateCategoryGames(gameDetails, category, gridId, categoryName) {
