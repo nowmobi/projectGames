@@ -27,7 +27,6 @@ const TEXT = {
 
 
 let savedGameDetails = null;
-let categoryCarouselTimer = null;
 
 
 function isValidGameData(gameDetails) {
@@ -367,7 +366,6 @@ async function generateCategoryButtons() {
         categoryButtons.innerHTML = homeButton + categoryButtonsHTML;
         
         initCategoryBarInteractions();
-        initCategoryBarAutoScroll();
     } catch (error) {
         console.error('Failed to generate category buttons:', error);
     }
@@ -410,106 +408,6 @@ function initCategoryBarInteractions() {
             handleCategoryButtonClick(category);
         }
     });
-}
-
-function initCategoryBarAutoScroll() {
-    const carouselWrapper = document.querySelector('.category-carousel-wrapper');
-    const buttonsWrap = document.querySelector('.category-buttons');
-    if (!carouselWrapper || !buttonsWrap) return;
-
-    // 等待DOM更新完成
-    setTimeout(() => {
-        const buttons = buttonsWrap.querySelectorAll('.category-btn');
-        if (buttons.length === 0) return;
-
-        const totalButtons = buttons.length;
-        
-        if (totalButtons <= 1) return; // 如果按钮数量少于等于1个，不需要轮播
-
-        // 复制按钮以实现无限循环
-        if (!buttonsWrap.dataset.cloned) {
-            const originalHTML = buttonsWrap.innerHTML;
-            buttonsWrap.innerHTML = originalHTML + originalHTML;
-            buttonsWrap.dataset.cloned = 'true';
-        }
-
-        // 获取第一个按钮的实际宽度（包括margin）
-        const firstButton = buttons[0];
-        if (!firstButton) return;
-        const buttonRect = firstButton.getBoundingClientRect();
-        const buttonWidth = buttonRect.width;
-        const gap = 120; // 按钮之间的间距
-
-        let currentIndex = 0;
-        let isTransitioning = false;
-
-        const stop = () => {
-            if (categoryCarouselTimer) {
-                clearInterval(categoryCarouselTimer);
-                categoryCarouselTimer = null;
-            }
-        };
-
-        const goToIndex = (index, immediate = false) => {
-            if (isTransitioning && !immediate) return;
-            
-            const translateX = -(index * (buttonWidth + gap));
-            if (immediate) {
-                carouselWrapper.style.transition = 'none';
-            } else {
-                carouselWrapper.style.transition = 'transform 0.6s ease-in-out';
-            }
-            carouselWrapper.style.transform = `translateX(${translateX}px)`;
-            currentIndex = index;
-        };
-
-        const start = () => {
-            stop();
-            categoryCarouselTimer = setInterval(() => {
-                if (isTransitioning) return;
-                
-                currentIndex += 1; // 每次只移动1个按钮
-                
-                // 如果滚动到第二组（复制的部分），无缝跳转到第一组对应位置
-                if (currentIndex >= totalButtons) {
-                    currentIndex = currentIndex - totalButtons;
-                    goToIndex(currentIndex, true);
-                    // 等待一帧后继续滚动
-                    setTimeout(() => {
-                        isTransitioning = false;
-                        currentIndex += 1;
-                        goToIndex(currentIndex, false);
-                    }, 50);
-                } else {
-                    goToIndex(currentIndex, false);
-                }
-            }, 3000); // 每3秒切换一次，停顿3秒
-        };
-
-        // 监听过渡结束事件
-        carouselWrapper.addEventListener('transitionend', () => {
-            isTransitioning = false;
-            // 如果滚动到第二组的末尾，无缝跳转到第一组
-            if (currentIndex >= totalButtons) {
-                currentIndex = currentIndex - totalButtons;
-                goToIndex(currentIndex, true);
-            }
-        });
-
-        // 初始化显示第一页
-        goToIndex(0, true);
-        setTimeout(() => {
-            isTransitioning = false;
-            start();
-        }, 100);
-
-        // 鼠标悬停时暂停
-        const categoryBar = document.querySelector('.category-bar');
-        if (categoryBar) {
-            categoryBar.addEventListener('mouseenter', stop);
-            categoryBar.addEventListener('mouseleave', start);
-        }
-    }, 100);
 }
 
 function updateSearchIcon(hasContent) {

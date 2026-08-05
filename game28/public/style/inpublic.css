@@ -851,18 +851,25 @@ body {
     margin: 10px auto;
 }
 
+
 .home-main .category-carousel-container {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.home-main .category-carousel-container::-webkit-scrollbar {
+    display: none;
 }
 
 .home-main .category-carousel-wrapper {
     display: flex;
     align-items: center;
-    transition: transform 0.6s ease-in-out;
-    will-change: transform;
 }
+
 
 .home-main .category-buttons {
     display: flex;
