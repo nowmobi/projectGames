@@ -1,6 +1,6 @@
 import { ad_code_identifier } from "./ads.js";
 
-console.log("Loading detailgg_ads.js...");
+console.log("Loading categorygg_ads.js...");
 
 export function initAdsense() {
     const adConf = ad_code_identifier;
@@ -22,21 +22,21 @@ export function initAdsense() {
         return;
     }
     const firstAdUnit = adUnitList[0];
-    const rawDetailSlots = firstAdUnit.detail || [];
+    const rawCategorySlots = firstAdUnit.category || [];
 
     // Adsense SDK
     loadAdSenseSDK(clientId, function () {
-        // ========== detail ==========
-        let detailSlots = rawDetailSlots.map(item => item.slot);
+        // ========== category ==========
+        let categorySlots = rawCategorySlots.map(item => item.slot);
         if (adConf.randad !== 0) {
-            detailSlots = shuffleArray(detailSlots);
-            console.log("detail ad is rand", detailSlots);
+            categorySlots = shuffleArray(categorySlots);
+            console.log("category ad is rand", categorySlots);
         }
-        detailSlots.forEach((slot, index) => {
-            const targetId = `div-gpt-ad-detail${index + 1}`;
+        categorySlots.forEach((slot, index) => {
+            const targetId = `div-gpt-ad-category${index + 1}`;
             const wrapDom = document.getElementById(targetId);
             if (!wrapDom) {
-                console.warn(`can not found detail div #${targetId}`);
+                console.warn(`can not found category div #${targetId}`);
                 return;
             }
             buildAdSlot(wrapDom, clientId, slot);
@@ -134,7 +134,7 @@ function tryPushAd(adEl) {
     }
 }
 
-// detailgg_ads.js 由 detail.html 内联模块脚本动态创建，
+// categorygg_ads.js 由 category.html 内联模块脚本动态创建，
 // 此时 DOMContentLoaded 早已触发，需要直接调用
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initAdsense);
@@ -142,4 +142,4 @@ if (document.readyState === "loading") {
     initAdsense();
 }
 
-console.log("✅ detailgg_ads.js loaded successfully");
+console.log("✅ categorygg_ads.js loaded successfully");
