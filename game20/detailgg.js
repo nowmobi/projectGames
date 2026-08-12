@@ -1,6 +1,6 @@
 // Auto-generated detail page ad configuration file - Generated at: 2025/11/12 12:11:53
 
-import { ad_code_identifier } from "./ads.js";
+const ad_code_identifier = window.ad_code_identifier;
 console.log("Ad Code Identifier:", ad_code_identifier);
 
 // Banner ad configuration list
