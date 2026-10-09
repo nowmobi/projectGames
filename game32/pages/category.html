@@ -23,6 +23,9 @@
     </header>
 
     <main class="main-content category-page-main">
+          <div class="ads">
+      <div id="div-gpt-ad-category1"></div>
+    </div>
         <div class="category-page-container">
             <aside class="category-sidebar">
                 <div class="category-bar category-page-sidebar">
@@ -48,5 +51,20 @@
 
     
 <script type="module" src="../public/js/inpublic.js"></script>
+<script type="module">
+      import { ad_code_identifier } from "../ads.js";
+
+      if (ad_code_identifier.cate == "adx" && ad_code_identifier.status == 1) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "../categorygg.js";
+        document.body.appendChild(script);
+      } else {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "../categorygg_ads.js";
+        document.body.appendChild(script);
+      }
+    </script>
 </body>
 </html>

@@ -1216,67 +1216,68 @@ body:has(.hot-games-section) .category-bar {
 }
 
 .category-sidebar {
-    width: 120px;
+    width: 100%;
     background-color: white;
-    flex-shrink: 0;
     padding: 0;
-    position: fixed;
+    position: sticky;
     top: 50px;
-    left: 0;
-    height: calc(100vh - 50px);
-    max-height: calc(100vh - 50px);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    left: auto;
+    height: auto;
+    max-height: none;
+    display: block;
+    overflow: visible;
     z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 
-@media (min-width: 1200px) {
-    .category-sidebar {
-        left: calc((100% - 1200px) / 2);
-    }
+
+
+
+
+.category-page-main .category-page-sidebar {
+    height: auto;
+    min-height: 0;
 }
-
-
 
 .category-page-sidebar .category-scroll-container,
 .category-sidebar .category-scroll-container {
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: auto;
     width: 100%;
     -webkit-overflow-scrolling: touch;
-    flex: 1;
 }
 
 .category-page-sidebar .category-buttons,
 .category-sidebar .category-buttons {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    width: 100%;
-    min-width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    width: max-content;
+    min-width: 100%;
+    padding: 4px 8px;
 }
 
 .category-page-sidebar .category-btn,
 .category-sidebar .category-btn {
-    width: 100%;
+    width: auto;
     min-width: auto;
-    padding: 10px 0 10px 5px;
-    border-radius: 0;
+    padding: 6px 12px;
+    border-radius: 10px;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 6px;
     text-align: left;
-    border-left: 3px solid transparent;
+    border-left: none;
+    border-bottom: 3px solid transparent;
     background: transparent;
     flex-shrink: 0;
     height: 50px;
-    transition: background-color 0.2s ease, border-left-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease, border-bottom-color 0.2s ease, color 0.2s ease;
 }
 
 .category-page-sidebar .category-btn:hover {
@@ -1286,7 +1287,7 @@ body:has(.hot-games-section) .category-bar {
 .category-page-sidebar .category-btn.active,
 .category-sidebar .category-btn.active {
     background-color: var(--color1);
-    border-left-color: var(--color2);
+    border-bottom-color: var(--color2);
     box-shadow: none;
     color: var(--color2);
 }
@@ -1324,9 +1325,10 @@ body:has(.hot-games-section) .category-bar {
 .category-sidebar .category-btn-text {
     font-size: 16px;
     text-align: left;
-    flex: 1;
+    flex: 0 0 auto;
+    white-space: nowrap;
     color: inherit;
-    width: 100%;
+    width: auto;
 }
 
 .category-content {
@@ -1334,7 +1336,6 @@ body:has(.hot-games-section) .category-bar {
     min-width: 0;
     overflow: hidden;
     background-color: var(--color1);
-    margin-left: 120px; 
 }
 
 .category-content-title {

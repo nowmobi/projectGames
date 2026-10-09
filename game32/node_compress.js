@@ -12,6 +12,8 @@ const filesToPack = [
     'robots.txt',
     'homegg_ads.js',
     'detailgg_ads.js',
+    'categorygg_ads.js',
+    'categorygg.js',
     'detailgg.js',
     'homegg.js'
 ];
