@@ -1,6 +1,6 @@
 
 :root {
-    --primary-color: #a515f9;
+    --primary-color: #a7dbc8;
     --primary-gradient: linear-gradient(
         135deg,
         color-mix(in srgb, var(--primary-color) 85%, #ffffff 15%) 0%,

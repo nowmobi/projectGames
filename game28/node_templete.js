@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { createCanvas } = require('canvas');
 
 // 读取配置文件
 function readConfig() {
@@ -17,87 +16,6 @@ function readConfig() {
     } catch (error) {
         console.error('读取配置文件失败:', error.message);
         process.exit(1);
-    }
-}
-
-// 生成新的logo图
-async function generateLogo(color, domain) {
-    try {
-        // 确保public目录存在
-        const publicDir = path.join(__dirname, 'public');
-        if (!fs.existsSync(publicDir)) {
-            fs.mkdirSync(publicDir, { recursive: true });
-        }
-        
-        const canvas = createCanvas(400, 100);
-        const ctx = canvas.getContext('2d');
-        
-        // 清除画布
-        ctx.clearRect(0, 0, 400, 100);
-        
-        // 绘制背景（使用主题色，无圆角）
-        ctx.fillStyle = color;
-        ctx.fillRect(0, 0, 400, 100);
-        
-        // 设置文字样式
-        ctx.fillStyle = '#FFFFFF';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        
-        // 绘制域名文字（只显示主域名部分，去掉协议和路径）
-        const displayDomain = domain.replace(/^https?:\/\//, '').split('/')[0];
-        
-        // 根据域名长度调整字体大小 - 增大字体让域名更醒目
-        let fontSize;
-        if (displayDomain.length <= 8) {
-            // 短域名使用更大字体
-            fontSize = 64;
-        } else if (displayDomain.length <= 12) {
-            fontSize = 56;
-        } else if (displayDomain.length <= 16) {
-            fontSize = 48;
-        } else if (displayDomain.length <= 20) {
-            fontSize = 42;
-        } else if (displayDomain.length <= 25) {
-            fontSize = 36;
-        } else {
-            fontSize = 32;
-        }
-        
-        ctx.font = `bold ${fontSize}px Arial`;
-        
-        // 如果域名很长，可能需要换行显示
-        if (displayDomain.length > 25) {
-            const parts = displayDomain.split('.');
-            if (parts.length >= 2) {
-                const mainPart = parts.slice(0, -1).join('.');
-                const tld = '.' + parts[parts.length - 1];
-                ctx.fillText(mainPart, 200, 40);
-                ctx.font = 'bold 32px Arial';
-                ctx.fillText(tld, 200, 65);
-            } else {
-                ctx.fillText(displayDomain.substring(0, 25), 200, 50);
-            }
-        } else {
-            ctx.fillText(displayDomain, 200, 50);
-        }
-        
-        // 保存logo
-        const logoPath = path.join(publicDir, 'logo.png');
-        const buffer = canvas.toBuffer('image/png');
-        fs.writeFileSync(logoPath, buffer);
-        
-        console.log(`✓ Logo已生成: ${logoPath}`);
-        console.log(`  颜色: ${color}`);
-        console.log(`  域名: ${domain}`);
-        
-    } catch (error) {
-        console.error('生成logo失败:', error.message);
-        // 如果canvas有问题，提供替代方案提示
-        if (error.message.includes('canvas') || error.message.includes('native')) {
-            console.error('提示: 如果遇到canvas依赖问题，请尝试运行: npm rebuild canvas');
-        }
-        throw error;
     }
 }
 
@@ -272,8 +190,6 @@ async function main() {
         console.log(`  颜色: ${config.color}`);
         console.log(`  域名: ${config.domain}\n`);
         
-        await generateLogo(config.color, config.domain);
-        console.log('');
         updateCSSColor(config.color);
         console.log('');
         updateDomainInHTML(config.domain);
