@@ -534,6 +534,12 @@ body:has(.hot-games-section) .category-bar {
     margin: 5px 0;
 }
 
+a.game-card {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .game-card::before {
     content: " ";
     position: absolute;

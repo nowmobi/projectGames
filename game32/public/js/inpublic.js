@@ -133,9 +133,10 @@ export function createGameCardHTML(game, detailPagePath) {
     const cardClass = isCategoryPage ? 'game-card category-page-card' : 'game-card home-page-card';
     const ratingValue = formatGameRating(game.rating);
     const downloadDisplay = formatDownloadsDisplay(game.downloads);
+    const safeName = gameName.replace(/"/g, '&quot;');
     
     return `
-        <div class="${cardClass}" onclick="window.location.href='${finalDetailPath}?id=${game.id}'">
+        <a href="${finalDetailPath}?id=${game.id}" class="${cardClass}" aria-label="${safeName}">
             <div class="red-glow glow"></div>
             <div class="cyan-glow glow"></div>
             <div class="purple-glow glow"></div>
@@ -151,7 +152,7 @@ export function createGameCardHTML(game, detailPagePath) {
                     <div class="game-card-download">${downloadDisplay}</div>
                 </div>
             </div>
-        </div>
+        </a>
     `;
 }
 
