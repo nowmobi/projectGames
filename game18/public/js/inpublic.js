@@ -150,7 +150,7 @@ export function createGameCardHTML(game, detailPagePath, options = {}) {
     const hotBadgeHTML = showHotIcon ? `<img src="${hotImagePath}" alt="HOT" class="card-hot-badge">` : '';
     
     return `
-        <div class="card" onclick="window.location.href='${finalDetailPath}?id=${game.id}'">
+        <a class="card" href="${finalDetailPath}?id=${game.id}">
             <div class="card-media">
                 <img src="${gameImage}" alt="${gameName}" loading="lazy" ${imageErrorHandler}>
                 ${hotBadgeHTML}
@@ -165,7 +165,7 @@ export function createGameCardHTML(game, detailPagePath, options = {}) {
                 </div>
                 <div class="card-description">${gameDescription}</div>
             </div>
-        </div>
+        </a>
     `;
 }
 
