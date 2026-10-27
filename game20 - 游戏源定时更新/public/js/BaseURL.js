@@ -158,7 +158,7 @@ const DEFAULT_CATEGORIES = [
 ];
 
 export async function getCategoryOrder() {
-  const infoType = 'info5';
+  const infoType = 'info1';
   try {
     const data = await loadGameData();
     if (Array.isArray(data) && data.length > 0 && data[0] && data[0][infoType]) {
