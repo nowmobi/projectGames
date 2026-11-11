@@ -9,8 +9,14 @@ let bannerAdList = [];
 // Anchor ad configuration list
 let anchorAdList = [];
 
+// Defined anchor slots (used to trigger the first ad request)
+const anchorSlots = [];
+
 // Interstitial ad configuration list
 let interstitialAdList = [];
+
+// Defined interstitial slots (used to trigger the first ad request)
+const interstitialSlots = [];
 
 (function () {
   
@@ -185,6 +191,9 @@ const loadAnchorAd = (slotName) => {
     );
     if (anchorSlot) {
       anchorSlot.setTargeting("test", "anchor").addService(googletag.pubads());
+      anchorSlots.push(anchorSlot);
+    } else {
+      console.warn("⚠️ Anchor ad is not supported on this page/device");
     }
   } catch (error) {
     console.error("Error loading anchor ad:", error);
@@ -202,6 +211,9 @@ const loadInterstitialAd = (slotName) => {
       interstitialSlot.addService(googletag.pubads()).setConfig({
         interstitial: { triggers: { navBar: true, unhideWindow: true } },
       });
+      interstitialSlots.push(interstitialSlot);
+    } else {
+      console.warn("⚠️ Interstitial ad is not supported on this page/device");
     }
   } catch (error) {
     console.error("Error loading interstitial ad:", error);
@@ -230,15 +242,31 @@ const initializeAllAds = () => {
 
   
   googletag.cmd.push(function () {
+    let displayedCount = 0;
+
     bannerAdList.forEach((ad) => {
       const element = document.getElementById(ad.id);
       if (element) {
-        
         googletag.display(ad.id);
+        displayedCount++;
+        console.log("✅ Displayed banner ad:", ad.id);
       } else {
-        
+        console.warn("⏳ Skip non-existent banner ad container:", ad.id);
       }
     });
+
+    const outOfPageSlots = [...anchorSlots, ...interstitialSlots];
+
+    if (displayedCount === 0 && outOfPageSlots.length > 0) {
+      outOfPageSlots.forEach((slot) => {
+        googletag.display(slot);
+        console.log("✅ Displayed out-of-page ad:", slot.getAdUnitPath());
+      });
+    }
+
+    if (displayedCount === 0 && outOfPageSlots.length === 0) {
+      console.warn("⚠️ No ad slots to display, no ad request will be sent");
+    }
   });
 };
 
