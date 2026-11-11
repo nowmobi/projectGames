@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400&display=swap');
 
 :root {
-  --primary: #f597ba;
+  --primary: #98b0ca;
   --stars-color: #ffd700;
 
   /* 清晰风格基础色（主题色统一走 --primary，由构建脚本替换） */
