@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const JavaScriptObfuscator = require('javascript-obfuscator');
 const archiver = require('archiver');
 
 // 需要打包的文件和文件夹
@@ -16,7 +15,7 @@ const filesToPack = [
     'homegg.js'
 ];
 
-// 临时目录用于存放混淆后的文件
+// 临时目录用于存放待打包的文件（JS 原样复制，不做混淆）
 const tempDir = path.join(__dirname, '.temp_obfuscated');
 
 // 读取配置文件获取域名
@@ -126,58 +125,24 @@ function initTempDir() {
     fs.mkdirSync(tempDir, { recursive: true });
 }
 
-// 混淆 JS 文件
-function obfuscateJS(filePath, outputPath) {
+// 原样复制 JS 文件（不做混淆）
+function copyJS(filePath, outputPath) {
     try {
-        const code = fs.readFileSync(filePath, 'utf8');
-        
-        const obfuscationResult = JavaScriptObfuscator.obfuscate(code, {
-            compact: true,
-            controlFlowFlattening: true,
-            controlFlowFlatteningThreshold: 0.75,
-            deadCodeInjection: true,
-            deadCodeInjectionThreshold: 0.4,
-            debugProtection: false,
-            debugProtectionInterval: 0,
-            disableConsoleOutput: false,
-            identifierNamesGenerator: 'hexadecimal',
-            log: false,
-            numbersToExpressions: true,
-            renameGlobals: false,
-            selfDefending: true,
-            simplify: true,
-            splitStrings: true,
-            splitStringsChunkLength: 10,
-            stringArray: true,
-            stringArrayCallsTransform: true,
-            stringArrayEncoding: ['base64'],
-            stringArrayIndexShift: true,
-            stringArrayRotate: true,
-            stringArrayShuffle: true,
-            stringArrayWrappersCount: 2,
-            stringArrayWrappersChunkCallsTransform: true,
-            stringArrayWrappersParametersMaxCount: 4,
-            stringArrayWrappersType: 'function',
-            stringArrayThreshold: 0.75,
-            transformObjectKeys: true,
-            unicodeEscapeSequence: false
-        });
-
         // 确保输出目录存在
         const outputDir = path.dirname(outputPath);
         if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir, { recursive: true });
         }
 
-        fs.writeFileSync(outputPath, obfuscationResult.getObfuscatedCode(), 'utf8');
+        fs.copyFileSync(filePath, outputPath);
         return true;
     } catch (error) {
-        console.error(`  混淆失败: ${filePath}`, error.message);
+        console.error(`  复制失败: ${filePath}`, error.message);
         return false;
     }
 }
 
-// 递归处理目录，混淆所有 JS 文件
+// 递归处理目录，原样复制所有文件
 function processDirectory(srcDir, destDir, basePath = '') {
     if (!fs.existsSync(srcDir)) {
         console.log(`  跳过不存在的目录: ${srcDir}`);
@@ -201,9 +166,9 @@ function processDirectory(srcDir, destDir, basePath = '') {
         } else if (stat.isFile()) {
             // 处理文件
             if (item.endsWith('.js')) {
-                // JS 文件需要混淆
-                console.log(`  混淆 JS: ${relativePath}`);
-                obfuscateJS(srcPath, destPath);
+                // JS 文件原样复制
+                console.log(`  复制 JS: ${relativePath}`);
+                copyJS(srcPath, destPath);
             } else {
                 // 其他文件直接复制
                 const destFileDir = path.dirname(destPath);
@@ -238,9 +203,9 @@ function processFile(itemPath, baseDir) {
         }
 
         if (itemPath.endsWith('.js')) {
-            // JS 文件需要混淆
-            console.log(`  混淆 JS: ${relativePath}`);
-            obfuscateJS(itemPath, destPath);
+            // JS 文件原样复制
+            console.log(`  复制 JS: ${relativePath}`);
+            copyJS(itemPath, destPath);
         } else {
             // 其他文件直接复制
             fs.copyFileSync(itemPath, destPath);
@@ -284,7 +249,7 @@ function createZip() {
 
 // 主函数
 async function main() {
-    console.log('开始执行打包和混淆...\n');
+    console.log('开始执行打包...\n');
     
     // 读取域名信息
     try {
@@ -300,7 +265,7 @@ async function main() {
     initTempDir();
     console.log('✓ 临时目录已初始化\n');
 
-    console.log('步骤 2: 混淆 JS 文件并准备打包文件');
+    console.log('步骤 2: 复制文件（JS 原样保留，不混淆）');
     const baseDir = __dirname;
     
     let processedCount = 0;
