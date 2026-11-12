@@ -1,4 +1,4 @@
-export const BASE_URL = "https://datajson.pages.dev/games9/db2.json";
+export const BASE_URL = "https://datajson.pages.dev/games9/db4.json";
 
 const baseUrl = 'https://games9-4av.pages.dev';
 
