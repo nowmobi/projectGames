@@ -6,7 +6,7 @@
     <title>Categories</title>
     <link rel="stylesheet" href="../public/style/inpublic.css">
 </head>
-<body>
+<body class="category-page">
     
     <header class="header">
         <a href="../index.html" class="header-icon back-button">
@@ -15,26 +15,28 @@
             </svg>
         </a>
         <div class="header-center">
-            <span class="center-logo">sec.voidspire.cloud</span>
+            <span class="center-logo">sec.guardrails.site</span>
         </div>
     </header>
 
+    <div class="ads">
+        <div id="div-gpt-ad-category1"></div>
+    </div>
+
+    <div class="category-bar category-carousel-bar">
+        <div class="category-carousel-container">
+            <div class="category-carousel-wrapper">
+                <div class="category-buttons" id="categoryButtons">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="main-content category-page-main">
         <div class="category-page-container">
-            <aside class="category-sidebar">
-                <div class="category-bar category-page-sidebar">
-                    <div class="category-scroll-container">
-                        <div class="category-buttons" id="categoryButtons">
-                            
-                        </div>
-                    </div>
-                </div>
-            </aside>
             <div class="category-content">
-                <div class="category-content-title-wrapper">
-                    <img class="category-content-title-icon" id="categoryContentTitleIcon" src="" alt="category">
-                    <span class="category-content-title-text" id="categoryContentTitle">category</span>
-                </div>
+         
                 <div id="gamesGrid" class="category-products-grid">
                     
                 </div>
@@ -48,5 +50,9 @@
 
     
 <script type="module" src="../public/js/inpublic.js"></script>
+<script type="module">
+    import { loadAdsScript } from "../public/js/ad_loader_logic.js";
+    loadAdsScript("category");
+</script>
 </body>
 </html>
