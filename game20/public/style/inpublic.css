@@ -1,7 +1,7 @@
 
 :root {
-    --color1: #7d929f;
-    --color2: #9f8a7d;
+    --color1: #4189b3;
+    --color2: #b36b41;
     --primary-gradient1: linear-gradient(
         180deg,
         color-mix(in srgb, var(--color1) 85%, #ffffff 15%) 0%,
@@ -12,9 +12,9 @@
         color-mix(in srgb, var(--color2) 85%, #ffffff 15%) 0%,
         color-mix(in srgb, var(--color1) 92%,  #ffffff 8%) 100%
     );
-    --text-primary: #2c2c2c;
+    --text-primary: #ffffff;
     --text-muted: #999;
-    --logo-color: #2c2c2c;
+    --logo-color: #ffffff;
 }
 
 * {
@@ -38,10 +38,25 @@ body {
     color: white;
 }
 
-.detail-page .main-content {
-    padding: 70px 12px 40px;
-    max-width: 480px;
-    position: relative;
+.category-page {
+    background: white;
+    color: var(--text-primary);
+}
+
+/* category 页面 header 下方内容避开 fixed header (50px) */
+.category-page > .ads:first-of-type {
+    margin-top: 55px;
+}
+
+.category-page > .category-carousel-bar {
+    margin-top: 8px;
+    max-width: 1200px;
+}
+
+.category-page > main.main-content {
+    margin-top: 0;
+    padding: 0 15px 40px;
+    color: var(--text-primary);
 }
 
 .detail-page .main-content::before {
@@ -214,10 +229,6 @@ body {
     padding: 0;
 }
 
-.main-content:has(.game-detail-container),
-.main-content:has(#gamesGrid) {
-    margin-top: 50px;
-}
 
 .main-content:has(.game-detail-container) {
     padding: 5px 0;
@@ -950,6 +961,122 @@ body {
 }
 
 
+/* ========== Category page carousel nav (horizontal scroll) ========== */
+
+.category-carousel-bar {
+    display: block;
+    min-height: auto;
+    margin: 6px auto 0;
+    border-radius: 14px;
+    border: 2px solid var(--color1);
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.category-carousel-bar .category-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+.category-carousel-bar .category-carousel-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.category-carousel-bar .category-carousel-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.category-carousel-bar .category-carousel-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+}
+
+.category-carousel-bar .category-carousel-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.category-carousel-bar .category-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 10px;
+    height: 100%;
+    width: max-content;
+}
+
+.category-carousel-bar .category-btn {
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    min-width: 70px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.category-carousel-bar .category-btn:active {
+    transform: scale(0.95);
+}
+
+.category-carousel-bar .category-btn.active {
+    background: var(--primary-gradient1);
+    border: 2px solid var(--color2);
+}
+
+.category-carousel-bar .category-btn.active .category-btn-text {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.category-carousel-bar .category-btn-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    order: unset;
+}
+
+.category-carousel-bar .category-btn-icon img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.category-carousel-bar .category-btn-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 4px;
+    white-space: nowrap;
+}
+
+.category-carousel-bar .category-btn::before {
+    display: none;
+}
+
+
 .category-sidebar {
     position: fixed;
     top: 50px;
@@ -1119,7 +1246,7 @@ body {
     margin: 0 auto;
     min-height: calc(100vh - 50px);
     position: relative;
-    padding-left: 100px; 
+    padding-left: 0; 
 }
 
 .category-content {
@@ -1127,13 +1254,6 @@ body {
     min-width: 0;
     overflow: hidden;
     margin-left: 0;
-}
-
-.category-content-title-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0;
 }
 
 .category-content-title-icon {
