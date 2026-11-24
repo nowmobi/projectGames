@@ -268,7 +268,7 @@ export async function initCategoryPage() {
             if (index === 1) {
                 html += `
             <div class="ads ads-full-width">
-                <div id="div-gpt-ad-category2">2</div>
+                <div id="div-gpt-ad-category2"></div>
             </div>
             `;
             }

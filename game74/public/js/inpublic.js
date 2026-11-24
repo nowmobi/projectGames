@@ -412,7 +412,7 @@ if (document.body.classList.contains("category-page")) {
       if (games.length > 4) {
         gameCards.splice(4, 0, `
           <div class="ads" style="grid-column: 1 / -1; ">
-            <div id="div-gpt-ad-category2">2</div>
+            <div id="div-gpt-ad-category2"></div>
           </div>
         `);
       }
