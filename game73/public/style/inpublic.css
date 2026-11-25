@@ -4,7 +4,7 @@
   --primary: #98b0ca;
   --stars-color: #ffd700;
 
-  /* 清晰风格基础色（主题色统一走 --primary，由构建脚本替换） */
+  
   --bg: #f4f6fa;
   --card: #ffffff;
   --line: #e6ecf3;
@@ -14,7 +14,7 @@
   --text-muted: #6b7280;
   --text-sub: #98a2b3;
 
-  /* 阴影层次（越往上越重，营造纸面层叠感） */
+
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 10px 24px rgba(15, 23, 42, 0.10);
   --shadow-lg: 0 18px 44px rgba(15, 23, 42, 0.16);
@@ -73,6 +73,25 @@ body {
   font-weight: bold;
   color: white;
   margin-left: 10px;
+}
+
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.home-button svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+}
+
+.home-button:active {
+  transform: scale(0.95);
 }
 
 .header-icons {
@@ -332,16 +351,16 @@ body {
 }
 
 
-/* 内容面板：灰底色之上的白色「纸张」，形成桌面→面板→卡片的层次 */
+
 .main-content {
-  margin: 45px auto 32px; /* 顶部留出固定 header 的高度 */
+  margin: 45px auto 32px; 
   padding: 26px 28px 30px;
   max-width: 1200px;
   position: relative;
   z-index: 1;
 }
 
-/* 通用区块标题（清晰风格：左侧主色竖条） */
+
 .section-title {
   display: flex;
   align-items: center;
@@ -429,7 +448,7 @@ body {
 }
 
 
-/* ---------- 首页分区（白卡片） ---------- */
+
 .category-section {
   background: var(--card);
   border: 1px solid var(--line);
@@ -505,7 +524,7 @@ body {
   color: var(--stars-color);
 }
 
-/* ---------- 首页精选（横向大卡片） ---------- */
+
 .featured-games {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -833,14 +852,13 @@ body {
   display: block;
 }
 
-/* 普通卡片作为定位上下文，承载顶部主色装饰条 */
+
 .game-card,
 .recommended-game {
   position: relative;
 }
 
-/* 顶部主色装饰条：与特色卡片的左边条呼应，统一主色语言，
-   平时淡而短、hover 时变长变实，形成由浅到深的层次 */
+
 .game-card::before,
 .recommended-game::before {
   content: "";
@@ -877,7 +895,6 @@ body {
 
 .privacy-content,
 .terms-content {
-  margin-top: 60px;
   background: white;
   border-radius: 20px;
   padding: 20px;
@@ -1011,9 +1028,7 @@ body {
   text-overflow: ellipsis;
 }
 
-/* ===================================================================
-   自适应（PC 为主，兼顾平板与手机）
-   =================================================================== */
+
 @media (max-width: 1100px) {
   .game-grid,
   .recommended-grid {
